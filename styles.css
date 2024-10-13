@@ -1,0 +1,126 @@
+/* Variables */
+:root {
+
+    --content-padding: 5vw;
+
+    /* Light colors */
+    --primary-text: #222;
+    --secondary-text: #2226;
+
+    /* Dark colors */
+    --primary-text-night: #eee;
+    --secondary-text-night: #eee6;
+
+    --background-light: #eee;
+    --background-dark: #222;
+    --background-svatebka: #BE7F7F;
+    --background-univerzita: #8C1E50;
+}
+
+/* Layout */
+.section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-type: y mandatory;
+}
+
+.left-half, .right-half {
+    width: 50%;
+    height: 100vh;
+    position: relative; /* To allow absolute positioning inside */
+}
+
+.left-half .content {
+    padding: var(--content-padding);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Full height to allow spacing */
+}
+
+.right-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the right half properly */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.logo {
+    width: 33%;
+}
+
+.fill-width {
+    width: 100%;
+    padding: 20px;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.icon {
+    width: 32px; /* Size of the icon */
+}
+
+.spacer { /* Spacer to fill available space */
+    flex-grow: 1;
+}
+
+
+/* Font styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif; /* Lexend font from Google Fonts */
+}
+
+html, body {
+    box-sizing: border-box;
+    font-family: Lexend, sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    overflow-y: scroll;
+}
+
+/* Ratio: 80px from Figma = 4vw */
+h1 {
+    font-size: 4vw;
+    color: var(--primary-text);
+    font-weight: 700;
+}
+h1.dark {
+    color: var(--primary-text-night)
+}
+h2 {
+    font-size: 3vw;
+    color: var(--primary-text);
+    font-weight: 700;
+}
+h2.dark {
+    color: var(--primary-text-night)
+}
+p {
+    font-size: 2vw;
+    color: var(--primary-text);
+    font-weight: 400;
+}
+p.dark {
+    color: var(--primary-text-night)
+}
+h6 {
+    font-size: 2vw;
+    color: var(--secondary-text);
+    font-weight: 400;
+}
+h6.dark {
+    color: var(--secondary-text-night)
+}
+
+/* Custom collors */
+.skills {
+    background-color: var(--background-dark);
+}
