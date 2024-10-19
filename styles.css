@@ -32,14 +32,14 @@
     position: relative; /* To allow absolute positioning inside */
 }
 
-.left-half .content {
+.content {
     padding: var(--content-padding);
     display: flex;
     flex-direction: column;
     height: 100%; /* Full height to allow spacing */
 }
 
-.right-half img {
+.right-half img.full {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the image covers the right half properly */
@@ -50,6 +50,27 @@
 
 .logo {
     width: 33%;
+}
+.end {
+    align-self: end;
+}
+
+.button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    gap: 10px;
+
+    border-radius: 20px;
+    background: #EEE;
+}
+.button p img {
+    height: 33%;
 }
 
 .fill-width {
@@ -66,6 +87,10 @@
 
 .spacer { /* Spacer to fill available space */
     flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -108,6 +133,11 @@ p {
     color: var(--primary-text);
     font-weight: 400;
 }
+p.small {
+    font-size: 1.5vw;
+    color: var(--primary-text);
+    font-weight: 400;
+}
 p.dark {
     color: var(--primary-text-night)
 }
@@ -123,4 +153,7 @@ h6.dark {
 /* Custom collors */
 .skills {
     background-color: var(--background-dark);
+}
+.svatebka {
+    background-color: var(--background-svatebka);
 }
