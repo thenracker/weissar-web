@@ -41,7 +41,7 @@ fun SvatebkaSection() {
         },
         right = {
             Content {
-                Logo(src = "svatebka.svg", alt = "Svatebka", alignEnd = true)
+                Logo(src = "svatebka.svg", alt = "Svatebka", alignEnd = true, hideOnMobile = true)
 
                 Spacer()
 

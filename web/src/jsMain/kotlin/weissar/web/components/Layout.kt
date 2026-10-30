@@ -53,10 +53,11 @@ fun Group(content: @Composable () -> Unit) {
 }
 
 @Composable
-fun Logo(src: String, alt: String, alignEnd: Boolean = false) {
+fun Logo(src: String, alt: String, alignEnd: Boolean = false, hideOnMobile: Boolean = false) {
     Img(src = src, alt = alt) {
         classes(AppStyles.logo)
         if (alignEnd) classes(AppStyles.end)
+        if (hideOnMobile) classes(AppStyles.hideOnMobile)
     }
 }
 

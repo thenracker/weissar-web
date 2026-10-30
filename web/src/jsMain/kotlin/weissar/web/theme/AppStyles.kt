@@ -147,6 +147,9 @@ object AppStyles : StyleSheet() {
     val fullImage by style {
         // Hidden until the photo is loaded and its section is on screen
         property("clip-path", "inset(0 0 0 100%)")
+        // Keeps the photo on its own GPU layer, otherwise it's repainted (blinks) when the reveal ends
+        property("will-change", "transform, clip-path")
+        property("backface-visibility", "hidden")
         width(100.percent)
         height(100.percent)
         property("object-fit", "cover")
@@ -203,6 +206,8 @@ object AppStyles : StyleSheet() {
     val logo by style {
         width(33.percent)
     }
+
+    val hideOnMobile by style {}
 
     val icon by style {
         width(32.px)
@@ -304,6 +309,9 @@ object AppStyles : StyleSheet() {
             property("animation-delay", "var(--delay)")
         }
         ".$visible .$fullImage.$loaded" style {
+            // Same as the last keyframe, so nothing changes when the animation ends
+            property("clip-path", "inset(0 0 0 0)")
+            property("transform", "scale(1)")
             animation(photoReveal) {
                 duration(1.6.s)
                 timingFunction(easeOutExpo)
@@ -312,6 +320,9 @@ object AppStyles : StyleSheet() {
         }
 
         media(MOBILE) {
+            ".$hideOnMobile" style {
+                display(DisplayStyle.None)
+            }
             ".$section" style {
                 flexDirection(FlexDirection.Column)
                 property("height", "auto")

@@ -44,7 +44,7 @@ fun SkillsSection() {
         },
         right = {
             Content {
-                Logo(src = "pw-logo-white.svg", alt = "PW", alignEnd = true)
+                Logo(src = "pw-logo-white.svg", alt = "PW", alignEnd = true, hideOnMobile = true)
             }
         },
     )
