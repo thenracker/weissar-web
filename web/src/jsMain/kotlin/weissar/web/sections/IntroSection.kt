@@ -55,7 +55,7 @@ fun IntroSection() {
             var photoLoaded by remember { mutableStateOf(false) }
 
             Div({ classes(AppStyles.photoFrame) }) {
-                Img(src = "weissar.jpg", alt = "Petr Weissar") {
+                Img(src = "weissar.webp", alt = "Petr Weissar") {
                     classes(AppStyles.fullImage)
                     if (photoLoaded) classes(AppStyles.loaded)
                     addEventListener("load") { photoLoaded = true }
