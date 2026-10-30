@@ -1,0 +1,18 @@
+package weissar.web.theme
+
+import org.jetbrains.compose.web.css.Color
+
+object Colors {
+    // Light
+    val primaryText = Color("#222")
+    val secondaryText = Color("#2226")
+
+    // Dark
+    val primaryTextNight = Color("#eee")
+    val secondaryTextNight = Color("#eee6")
+
+    val backgroundLight = Color("#eee")
+    val backgroundDark = Color("#222")
+    val backgroundSvatebka = Color("#BE7F7F")
+    val backgroundUniverzita = Color("#8C1E50")
+}

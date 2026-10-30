@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "firebase-public",
+    "ignore": ["**/.*"],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "weissar-web",
+          "region": "europe-west1"
+        }
+      }
+    ]
+  }
+}
