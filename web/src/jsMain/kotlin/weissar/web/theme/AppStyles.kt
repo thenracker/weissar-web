@@ -106,6 +106,9 @@ object AppStyles : StyleSheet() {
     /** Added to a section once it scrolls into view – starts its animations. */
     val visible by style {}
 
+    /** Added to an image once it's downloaded. */
+    val loaded by style {}
+
     val section by style {
         display(DisplayStyle.Flex)
         width(100.percent)
@@ -113,8 +116,8 @@ object AppStyles : StyleSheet() {
         property("scroll-snap-align", "start")
     }
 
-    /** On mobile shows the right half above the left one. */
-    val sectionReverse by style {}
+    /** On mobile the right half lies under the left one as a background. */
+    val sectionOverlay by style {}
 
     val half by style {
         width(50.percent)
@@ -142,6 +145,8 @@ object AppStyles : StyleSheet() {
     }
 
     val fullImage by style {
+        // Hidden until the photo is loaded and its section is on screen
+        property("clip-path", "inset(0 0 0 100%)")
         width(100.percent)
         height(100.percent)
         property("object-fit", "cover")
@@ -298,7 +303,7 @@ object AppStyles : StyleSheet() {
             }
             property("animation-delay", "var(--delay)")
         }
-        ".$visible .$fullImage" style {
+        ".$visible .$fullImage.$loaded" style {
             animation(photoReveal) {
                 duration(1.6.s)
                 timingFunction(easeOutExpo)
@@ -307,15 +312,10 @@ object AppStyles : StyleSheet() {
         }
 
         media(MOBILE) {
-            "html" style {
-                property("scroll-snap-type", "y proximity")
-            }
             ".$section" style {
                 flexDirection(FlexDirection.Column)
                 property("height", "auto")
-            }
-            ".$sectionReverse" style {
-                flexDirection(FlexDirection.ColumnReverse)
+                property("min-height", "100svh")
             }
             ".$half" style {
                 width(100.percent)
@@ -323,21 +323,53 @@ object AppStyles : StyleSheet() {
                 display(DisplayStyle.Flex)
                 flexDirection(FlexDirection.Column)
             }
+            ".$half:first-child" style {
+                flexGrow(1)
+            }
             ".$content" style {
                 property("height", "auto")
+                flexGrow(1)
                 padding(40.px, 24.px)
             }
-            ".$section:not(.$sectionReverse) .$half + .$half .$content" style {
+            ".$half + .$half .$content" style {
                 property("padding-top", "0")
             }
             ".$spacer" style {
-                flexGrow(0)
-                property("min-height", "32px")
+                property("min-height", "24px")
             }
-            ".$photoFrame" style {
+
+            // Intro: photo fills the top of the screen, texts overlap its faded bottom
+            ".$sectionOverlay" style {
                 position(Position.Relative)
-                property("height", "62svh")
+                property("height", "100svh")
             }
+            ".$sectionOverlay > .$half:last-child" style {
+                position(Position.Absolute)
+                property("inset", "0 0 auto 0")
+                property("height", "68svh")
+            }
+            ".$sectionOverlay > .$half:first-child" style {
+                property("z-index", "1")
+            }
+            ".$sectionOverlay .$content" style {
+                justifyContent(JustifyContent.FlexEnd)
+                property("padding-bottom", "16px")
+            }
+            ".$sectionOverlay .$spacer" style {
+                flexGrow(0)
+                property("min-height", "20px")
+            }
+            ".$sectionOverlay .$logo" style {
+                width(28.percent)
+            }
+            ".$photoFrame::after" style {
+                property("content", "''")
+                position(Position.Absolute)
+                property("inset", "auto 0 0 0")
+                property("height", "55%")
+                property("background", "linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 85%)")
+            }
+
             ".$title" style { property("font-size", "clamp(36px, 11vw, 64px)") }
             ".$subtitle" style { property("font-size", "clamp(26px, 7.5vw, 44px)") }
             ".$body" style { property("font-size", "clamp(17px, 4.8vw, 26px)") }
@@ -359,6 +391,9 @@ object AppStyles : StyleSheet() {
             }
             ".$content > *, .$group > *" style {
                 property("opacity", "1 !important")
+            }
+            ".$fullImage" style {
+                property("clip-path", "none")
             }
         }
     }

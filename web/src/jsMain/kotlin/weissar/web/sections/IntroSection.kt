@@ -1,6 +1,10 @@
 package weissar.web.sections
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
@@ -19,7 +23,7 @@ import weissar.web.theme.AppStyles
 fun IntroSection() {
     Section(
         id = "intro",
-        reverseOnMobile = true,
+        overlayOnMobile = true,
         left = {
             Content {
                 Logo(src = "pw-logo.svg", alt = "PW")
@@ -48,8 +52,19 @@ fun IntroSection() {
             }
         },
         right = {
+            var photoLoaded by remember { mutableStateOf(false) }
+
             Div({ classes(AppStyles.photoFrame) }) {
-                Img(src = "weissar.jpg", alt = "Petr Weissar") { classes(AppStyles.fullImage) }
+                Img(src = "weissar.jpg", alt = "Petr Weissar") {
+                    classes(AppStyles.fullImage)
+                    if (photoLoaded) classes(AppStyles.loaded)
+                    addEventListener("load") { photoLoaded = true }
+                    // Cached image may be loaded before onLoad is attached
+                    ref { image ->
+                        if (image.complete) photoLoaded = true
+                        onDispose { }
+                    }
+                }
             }
         },
     )

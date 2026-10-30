@@ -10,20 +10,20 @@ import weissar.web.theme.AppStyles
 
 /**
  * Full-screen section split into left and right half.
- * On mobile the halves are stacked, [reverseOnMobile] puts the right one on top.
+ * On mobile the halves are stacked, [overlayOnMobile] lays the left one over the right one.
  */
 @Composable
 fun Section(
     id: String,
     background: CSSColorValue? = null,
-    reverseOnMobile: Boolean = false,
+    overlayOnMobile: Boolean = false,
     left: @Composable () -> Unit,
     right: @Composable () -> Unit,
 ) {
     Div({
         id(id)
         classes(AppStyles.section)
-        if (reverseOnMobile) classes(AppStyles.sectionReverse)
+        if (overlayOnMobile) classes(AppStyles.sectionOverlay)
         if (background != null) style { backgroundColor(background) }
         ref { element ->
             SectionObserver.observe(element)
