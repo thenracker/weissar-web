@@ -11,6 +11,8 @@ object Colors {
     val primaryTextNight = Color("#eee")
     val secondaryTextNight = Color("#eee6")
 
+    val white = Color("#fff")
+
     val backgroundLight = Color("#eee")
     val backgroundDark = Color("#222")
     val backgroundSvatebka = Color("#BE7F7F")

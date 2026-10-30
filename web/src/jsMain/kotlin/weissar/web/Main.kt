@@ -2,6 +2,7 @@ package weissar.web
 
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
+import weissar.web.components.SectionDots
 import weissar.web.sections.IntroSection
 import weissar.web.sections.SkillsSection
 import weissar.web.sections.SvatebkaSection
@@ -14,5 +15,7 @@ fun main() {
         IntroSection()
         SkillsSection()
         SvatebkaSection()
+
+        SectionDots(listOf("intro", "skills", "svatebka"))
     }
 }
