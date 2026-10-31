@@ -621,11 +621,134 @@ object AppStyles : StyleSheet() {
         color(Colors.primaryText)
     }
 
+    private val blink by keyframes {
+        from { opacity(1) }
+        each(50.percent) { opacity(0) }
+        to { opacity(0) }
+    }
+
+    /** Fixed box for 4 lines, new lines appear at the bottom and push the old ones up. */
+    val typewriter by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        justifyContent(JustifyContent.FlexEnd)
+        property("height", "calc(4 * 1.25 * 2vw)")
+        color(Colors.primaryText)
+    }
+
+    val typewriterLine by style {
+        property("line-height", "1.25")
+        property("white-space", "pre")
+    }
+
+    val cursor by style {
+        property("margin-left", ".04em")
+        animation(blink) {
+            duration(1.s)
+            timingFunction(AnimationTimingFunction.StepEnd)
+            iterationCount(null)
+        }
+    }
+
+    /** Cards on a white section, so they need a grey background. */
+    val cardGridMuted by style {}
+
+    val chipGroups by style {
+        display(DisplayStyle.Grid)
+        property("grid-template-columns", "repeat(auto-fill, minmax(260px, 1fr))")
+        property("gap", "28px 32px")
+        alignItems(AlignItems.Start)
+    }
+
+    val chipLabel by style {
+        property("font-size", "clamp(13px, .9vw, 17px)")
+        fontWeight(700)
+        property("text-transform", "uppercase")
+        property("letter-spacing", ".08em")
+        color(Colors.secondaryTextNight)
+        property("margin-bottom", "12px")
+    }
+
+    val chipLabelLight by style {
+        color(Colors.secondaryText)
+    }
+
+    val chips by style {
+        display(DisplayStyle.Flex)
+        property("flex-wrap", "wrap")
+        gap(8.px)
+    }
+
+    val chip by style {
+        property("font-size", "clamp(13px, .95vw, 18px)")
+        padding(6.px, 13.px)
+        borderRadius(999.px)
+        backgroundColor(Color("rgba(255, 255, 255, .07)"))
+        property("box-shadow", "inset 0 0 0 1px rgba(255, 255, 255, .1)")
+        color(Colors.primaryTextNight)
+        property("transition", "scale .25s ease, background-color .25s ease")
+    }
+
+    /** Highlighted chips – what's hot right now. */
+    val chipFeatured by style {
+        backgroundColor(Color("rgba(245, 166, 91, .16)"))
+        property("box-shadow", "inset 0 0 0 1px rgba(245, 166, 91, .55)")
+        color(Colors.white)
+    }
+
+    val chipLight by style {
+        backgroundColor(Colors.backgroundLight)
+        property("box-shadow", "none")
+        color(Colors.primaryText)
+    }
+
+    val educationHeader by style {
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.SpaceBetween)
+        alignItems(AlignItems.FlexStart)
+        gap(24.px)
+    }
+
+    /** Small tilted photo in the corner of a section. */
+    val cornerPhoto by style {
+        property("width", "clamp(130px, 15vw, 280px)")
+        property("aspect-ratio", "4 / 3")
+        property("object-fit", "cover")
+        borderRadius(16.px)
+        property("rotate", "3deg")
+        property("box-shadow", "0 14px 34px rgba(0, 0, 0, .18)")
+        property("transition", "rotate .5s cubic-bezier(.34, 1.56, .64, 1), scale .5s cubic-bezier(.34, 1.56, .64, 1)")
+    }
+
     // endregion
 
     init {
         ".$sectionFull > .$content" style {
             width(100.percent)
+        }
+        // Full sections grow when their content doesn't fit the screen
+        ".$sectionFull" style {
+            property("height", "auto")
+            property("min-height", "100vh")
+        }
+        ".$sectionFull > .$content" style {
+            property("height", "auto")
+        }
+        ".$cardGrid.$cardGridMuted" style {
+            property("grid-template-columns", "repeat(auto-fill, minmax(220px, 1fr))")
+        }
+        ".$cardGridMuted .$card" style {
+            backgroundColor(Color("#f4f4f4"))
+        }
+        ".$cardGridMuted .$tag" style {
+            backgroundColor(Colors.white)
+        }
+        ".$chip:hover" style {
+            property("scale", "1.05")
+        }
+        ".$cornerPhoto:hover" style {
+            property("rotate", "0deg")
+            property("scale", "1.04")
         }
 
         // Hover effects
@@ -921,6 +1044,7 @@ object AppStyles : StyleSheet() {
             ".$title" style { property("font-size", "clamp(36px, 11vw, 64px)") }
             ".$subtitle" style { property("font-size", "clamp(26px, 7.5vw, 44px)") }
             ".$body" style { property("font-size", "clamp(17px, 4.8vw, 26px)") }
+            ".$typewriter" style { property("height", "calc(4 * 1.25 * clamp(17px, 4.8vw, 26px))") }
             ".$bodySmall" style { property("font-size", "clamp(14px, 4vw, 21px)") }
             ".$overline" style { property("font-size", "clamp(15px, 4.4vw, 24px)") }
             ".$icon" style { width(28.px) }

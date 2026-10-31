@@ -9,7 +9,6 @@ import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import weissar.web.components.AnimatedLogo
-import weissar.web.components.Body
 import weissar.web.components.Content
 import weissar.web.components.Group
 import weissar.web.components.Icon
@@ -17,6 +16,7 @@ import weissar.web.components.Overline
 import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Title
+import weissar.web.components.Typewriter
 import weissar.web.i18n.tr
 import weissar.web.theme.AppStyles
 
@@ -39,10 +39,16 @@ fun IntroSection() {
                 Spacer()
 
                 Group {
-                    Body(tr("Senior Android vývojář", "Android senior developer"))
-                    Body(tr("Softwarový analytik", "Software analyst"))
-                    Body(tr("UX/UI konzultant", "UX/UI consultant"))
-                    Body(tr("Lektor", "Lecturer"))
+                    // Starts typing once the name and the photo are in
+                    Typewriter(
+                        lines = listOf(
+                            tr("Senior Android vývojář", "Android senior developer"),
+                            tr("Softwarový analytik", "Software analyst"),
+                            tr("UX/UI konzultant", "UX/UI consultant"),
+                            tr("Lektor", "Lecturer"),
+                        ),
+                        startDelayMs = 1700,
+                    )
 
                     Div({ classes(AppStyles.fillWidth) }) {
                         A(href = "#skills", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
