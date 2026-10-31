@@ -226,8 +226,8 @@ val projects = listOf(
         location = Translated("Broumov", "Broumov"),
         tags = listOf("Java", "OpenSwing", "SQL"),
         detail = Translated(
-            "Moje první práce v IT – v textilce, kde jsem začínal jako IT technik a postupně přešel k vývoji desktopových databázových aplikací.",
-            "My first job in IT – at a textile company where I started as an IT technician and moved on to building desktop database apps.",
+            "Moje první práce v IT – začínal jsem jako IT technik a postupně přešel k vývoji desktopových databázových aplikací.",
+            "My first job in IT – I started as an IT technician and moved on to building desktop database apps.",
         ),
         timeline = listOf(
             Milestone(Translated("2011 – 2012", "2011 – 2012"), Translated("IT technik", "IT technician")),

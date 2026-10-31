@@ -46,7 +46,6 @@ fun IntroSection() {
                             tr("Senior Android vývojář", "Android senior developer"),
                             tr("Softwarový analytik", "Software analyst"),
                             tr("UX/UI konzultant", "UX/UI consultant"),
-                            tr("Lektor", "Lecturer"),
                         ),
                         startDelayMs = 1700,
                         finale = tr("S čím vám mohu pomoci?", "How can I help you?"),
