@@ -52,6 +52,7 @@ val education = listOf(
             Translated("cvičení z programování mobilních aplikací", "mobile app development classes"),
             Translated("počítačová grafika – rasterizace, 3D, Bézierovy plochy", "computer graphics – rasterization, 3D, Bézier surfaces"),
             Translated("výzkum indoor lokalizace a senzorů", "research on indoor positioning and sensors"),
+            Translated("1. místo na hackathonu HackFIT", "1st place at the HackFIT hackathon"),
         ),
     ),
     Project(
@@ -147,27 +148,9 @@ val education = listOf(
         ),
         highlights = listOf(
             Translated("bakalářská práce: Mobilní horolezecký průvodce", "thesis: Mobile climbing guide"),
-            Translated("UHK Helper – appka na volné učebny", "UHK Helper – an app for free classrooms"),
+            Translated("UHK Helper – aplikace na volné učebny", "UHK Helper – an app for free classrooms"),
         ),
         link = "https://theses.cz/id/qaha4q/",
-    ),
-    Project(
-        company = "VEBA",
-        logo = "veba.webp",
-        description = Translated("Desktopové databázové aplikace v Javě", "Desktop database apps in Java"),
-        role = Translated("IT technik, Java vývojář", "IT technician, Java developer"),
-        years = Translated("2011 – 2015", "2011 – 2015"),
-        location = Translated("Broumov", "Broumov"),
-        tags = listOf("Java", "OpenSwing", "SQL"),
-        detail = Translated(
-            "Brigády v textilce, kde jsem začínal jako IT technik a postupně přešel k vývoji desktopových databázových aplikací.",
-            "Summer jobs at a textile company where I started as an IT technician and moved on to building desktop database apps.",
-        ),
-        timeline = listOf(
-            Milestone(Translated("2011 – 2012", "2011 – 2012"), Translated("IT technik", "IT technician")),
-            Milestone(Translated("2013 – 2015", "2013 – 2015"), Translated("Java vývojář na brigádách", "Java developer during summer jobs")),
-        ),
-        link = "https://www.veba.cz",
     ),
     Project(
         company = "Obchodní akademie Náchod",
@@ -178,8 +161,8 @@ val education = listOf(
         location = Translated("Náchod", "Náchod"),
         tags = listOf("IT"),
         detail = Translated(
-            "Střední škola, kde jsem poprvé pořádně programoval a zjistil, že mě to chytlo.",
-            "High school, where I properly programmed for the first time and found out I was hooked.",
+            "Střední škola, kde jsem poprvé pořádně programoval a zjistil, že mě to baví.",
+            "High school, where I properly programmed for the first time and found out I enjoy it.",
         ),
     ),
 )

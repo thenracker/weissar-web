@@ -50,7 +50,7 @@ fun IntroSection() {
                         ),
                         startDelayMs = 1700,
                         finale = tr("S čím vám mohu pomoci?", "How can I help you?"),
-                        finalePauseMs = 2000,
+                        finalePauseMs = 3000,
                     )
 
                     Div({ classes(AppStyles.fillWidth, AppStyles.introActions) }) {

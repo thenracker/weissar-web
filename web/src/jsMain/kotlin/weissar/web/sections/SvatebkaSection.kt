@@ -32,8 +32,8 @@ fun SvatebkaSection() {
                 Subtitle(tr("Svatební web a aplikace pro hosty", "Wedding website & guest app"), textColor)
                 Body(
                     tr(
-                        "Program, mapa, kontakty, společné fotky i zábava – všechno, co hosté na svatbě potřebují, na jednom místě. Vyzkoušeno na naší vlastní svatbě.",
-                        "Schedule, map, contacts, shared photos and fun – everything wedding guests need, in one place. Battle-tested at our own wedding.",
+                        "Program, mapa, kontakty, společné fotky i zábava – všechno, co hosté na svatbě potřebují, na jednom místě. Více zábavy, více zážitků, méně organizace.",
+                        "Schedule, map, contacts, shared photos and fun – everything wedding guests need, in one place. More fun, more memories, less organizing.",
                     ),
                     textColor,
                     small = true,
@@ -42,7 +42,7 @@ fun SvatebkaSection() {
 
                 Group {
                     Bullet(tr("program, mapa a kontakty na webu bez instalace", "schedule, map & contacts on the web, no install needed"), textColor)
-                    Bullet(tr("galerie fotek a videí od hostů v plné kvalitě", "guests' photos & videos in full quality"), textColor)
+                    Bullet(tr("galerie od hostů v plné kvalitě", "guests' gallery in full quality"), textColor)
                     Bullet(tr("svatební soutěž a kvíz o novomanželích", "wedding challenges & a quiz about the couple"), textColor)
                     Bullet(tr("notifikace hostům v reálném čase", "real-time notifications for guests"), textColor)
                     Bullet(tr("Android, iOS a web · Firebase", "Android, iOS & web · Firebase"), textColor)

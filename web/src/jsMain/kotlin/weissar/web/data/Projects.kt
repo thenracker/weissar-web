@@ -121,7 +121,7 @@ val projects = listOf(
             Translated("článek v CzechCrunch a AppParade", "featured in CzechCrunch and at AppParade"),
         ),
         timeline = listOf(
-            Milestone(Translated("2016", "2016"), Translated("UHK Helper – appka na hledání volných učeben", "UHK Helper – an app for finding free classrooms")),
+            Milestone(Translated("2016", "2016"), Translated("UHK Helper – aplikace na hledání volných učeben", "UHK Helper – an app for finding free classrooms")),
             Milestone(Translated("2019", "2019"), Translated("StagApp – rozšíření na všechny školy s IS/STAG", "StagApp – extended to all IS/STAG universities")),
             Milestone(Translated("2020", "2020"), Translated("otevřená beta Univerzita.app", "Univerzita.app open beta")),
             Milestone(Translated("2021", "2021"), Translated("založení Univision s. r. o.", "Univision s. r. o. founded")),
@@ -216,5 +216,23 @@ val projects = listOf(
             Milestone(Translated("březen 2016", "Mar 2016"), Translated("začátek", "started")),
             Milestone(Translated("září 2016", "Sep 2016"), Translated("konec", "finished")),
         ),
+    ),
+    Project(
+        company = "VEBA",
+        logo = "veba.webp",
+        description = Translated("Desktopové databázové aplikace v Javě", "Desktop database apps in Java"),
+        role = Translated("IT technik, Java vývojář", "IT technician, Java developer"),
+        years = Translated("2011 – 2015", "2011 – 2015"),
+        location = Translated("Broumov", "Broumov"),
+        tags = listOf("Java", "OpenSwing", "SQL"),
+        detail = Translated(
+            "Moje první práce v IT – v textilce, kde jsem začínal jako IT technik a postupně přešel k vývoji desktopových databázových aplikací.",
+            "My first job in IT – at a textile company where I started as an IT technician and moved on to building desktop database apps.",
+        ),
+        timeline = listOf(
+            Milestone(Translated("2011 – 2012", "2011 – 2012"), Translated("IT technik", "IT technician")),
+            Milestone(Translated("2013 – 2015", "2013 – 2015"), Translated("Java vývojář na brigádách", "Java developer during summer jobs")),
+        ),
+        link = "https://www.veba.cz",
     ),
 )

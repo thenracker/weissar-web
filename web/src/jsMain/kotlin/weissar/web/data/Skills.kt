@@ -19,27 +19,27 @@ val skillGroups = listOf(
         label = same("AI & ML"),
         featured = true,
         skills = names("Claude Code", "Claude API", "MCP", "Agent skills") + listOf(
-            Translated("subagenti", "subagents"),
             Translated("agentní workflow", "agentic workflows"),
             same("prompt engineering"),
             same("TensorFlow"),
-            same("TensorFlow Lite"),
             Translated("neuronové sítě", "neural networks"),
             same("ML Kit"),
         ),
+    ),
+    SkillGroup(
+        label = same("Android"),
+        skills = names("Room", "WorkManager", "DataStore", "Navigation", "Koin", "CameraX", "Block Store auth") +
+            Translated("animace", "animations"),
     ),
     SkillGroup(
         label = Translated("Hardware a komunikace", "Hardware & connectivity"),
         skills = listOf(
             Translated("USB komunikace", "USB communication"),
             same("Bluetooth"),
-            same("BLE"),
             Translated("senzory a IMU", "sensors & IMU"),
             Translated("indoor lokalizace", "indoor positioning"),
             Translated("GPS a mapy", "GPS & maps"),
             same("Wear OS"),
-            same("CameraX"),
-            Translated("čárové a QR kódy", "barcodes & QR codes"),
         ),
     ),
     SkillGroup(
@@ -51,7 +51,7 @@ val skillGroups = listOf(
     ),
     SkillGroup(
         label = same("Backend & data"),
-        skills = names("Ktor", "GraphQL", "REST", "Retrofit", "OkHttp", "PostgreSQL", "MSSQL", "H2", "Room", "Docker", "Java Servlets") +
+        skills = names("Ktor", "GraphQL", "REST", "Retrofit", "OkHttp", "PostgreSQL", "MSSQL", "Docker", "Java Servlets") +
             Translated("XML feedy", "XML feeds"),
     ),
     SkillGroup(
@@ -71,18 +71,17 @@ val skillGroups = listOf(
             same("Lottie"),
             same("Material Design"),
             same("Figma"),
-            Translated("animace", "animations"),
         ),
     ),
     SkillGroup(
         label = Translated("Architektura a nástroje", "Architecture & tools"),
         skills = names(
-            "Clean Architecture", "MVVM", "MVI", "MVP", "RxJava", "Koin", "KSP",
+            "Clean Architecture", "MVVM", "MVI", "MVP", "RxJava", "KSP",
             "Gradle", "GitHub Actions", "CI/CD", "Git",
         ) + Translated("unit testy", "unit tests"),
     ),
     SkillGroup(
         label = Translated("Jazyky", "Languages"),
-        skills = names("Kotlin", "Java", "Dart", "Python", "C", "C#", "ASP.NET", "SQL", "JavaScript", "HTML & CSS"),
+        skills = names("Kotlin", "Java", "Dart", "Python", "C#", "ASP.NET", "SQL", "JavaScript", "HTML & CSS"),
     ),
 )

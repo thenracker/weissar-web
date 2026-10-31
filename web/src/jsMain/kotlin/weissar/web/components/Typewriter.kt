@@ -15,14 +15,14 @@ import org.jetbrains.compose.web.dom.Text
 import weissar.web.theme.AppStyles
 import kotlin.random.Random
 
-// ~500 keystrokes per minute
-private const val KEYSTROKE_MS = 120
+// ~600 keystrokes per minute
+private const val KEYSTROKE_MS = 100
 private const val ENTER_MS = 350
 
 /**
  * Types [lines] one by one at the bottom of a fixed box with a blinking cursor,
  * every finished line is pushed up by the next one like in a terminal.
- * After a [finalePauseMs] pause one more [finale] line is typed.
+ * After a [finalePauseMs] pause one more bold [finale] line is typed, with an empty line above.
  * Once typed, a language change just swaps the texts.
  */
 @Composable
@@ -53,7 +53,8 @@ fun Typewriter(lines: List<String>, startDelayMs: Int, finale: String? = null, f
     Div({
         classes(AppStyles.body, AppStyles.typewriter)
         // Room for all the lines, so nothing jumps when the next one comes
-        style { property("height", "${allLines.size * 1.25}em") }
+        val rows = lines.size + if (finale != null) 2 else 0
+        style { property("height", "${rows * 1.25}em") }
         attr("aria-label", allLines.joinToString(", "))
     }) {
         val shown = if (finished) allLines else allLines.take(lineCount)
@@ -61,6 +62,7 @@ fun Typewriter(lines: List<String>, startDelayMs: Int, finale: String? = null, f
             val isLast = index == shown.lastIndex
             P({
                 classes(AppStyles.body, AppStyles.typewriterLine)
+                if (index == lines.size) classes(AppStyles.typewriterFinale)
                 attr("aria-hidden", "true")
             }) {
                 Text(if (isLast && !finished) line.take(charCount) else line)

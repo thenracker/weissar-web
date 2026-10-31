@@ -28,17 +28,17 @@ fun SkillsSection() {
 
                 Group {
                     Subtitle("Android", textColor) { Icon(src = "android.svg", alt = "Android") }
-                    Bullet(tr("nativní appky od 2015, 50+ projektů", "native apps since 2015, 50+ projects"), textColor)
-                    Bullet(tr("Jetpack Compose, Material 3 a animace", "Jetpack Compose, Material 3 & animations"), textColor)
-                    Bullet("MVVM, MVI, Koin, Room, WorkManager", textColor)
-                    Bullet(tr("kamera, ML Kit, mapy, senzory, Wear OS", "camera, ML Kit, maps, sensors, Wear OS"), textColor)
+                    Bullet(tr("nativní aplikace od 2015, 50+ projektů", "native apps since 2015, 50+ projects"), textColor)
+                    Bullet("Jetpack, Compose, Material 3", textColor)
+                    Bullet("MVVM, MVI, Clean Architecture", textColor)
+                    Bullet("Wear OS", textColor)
                 }
 
                 Spacer()
 
                 Group {
                     Subtitle("Kotlin", textColor) { Icon(src = "kotlin.svg", alt = "Kotlin") }
-                    Bullet(tr("denně od 2017 – appky, backend i web", "daily since 2017 – apps, backend & web"), textColor)
+                    Bullet(tr("denně od 2017 – aplikace, backend i web", "daily since 2017 – apps, backend & web"), textColor)
                     Bullet("Coroutines, Flow, Serialization", textColor)
                     Bullet(tr("Ktor server i klient", "Ktor server & client"), textColor)
                     Bullet(tr("Multiplatform – Android, iOS i tenhle web", "Multiplatform – Android, iOS & this website"), textColor)
@@ -53,8 +53,8 @@ fun SkillsSection() {
 
                 Group {
                     Subtitle("AI", textColor) { Icon(src = "ai.svg", alt = "AI") }
-                    Bullet(tr("Claude Code – parťák na každý den", "Claude Code – my daily pair programmer"), textColor)
-                    Bullet(tr("skills, MCP servery a subagenti", "skills, MCP servers & subagents"), textColor)
+                    Bullet(tr("Claude Code při každodenním vývoji", "Claude Code in everyday development"), textColor)
+                    Bullet(tr("vlastní skills a MCP servery", "custom skills & MCP servers"), textColor)
                     Bullet(tr("TensorFlow a neuronové sítě", "TensorFlow & neural networks"), textColor)
                 }
             }

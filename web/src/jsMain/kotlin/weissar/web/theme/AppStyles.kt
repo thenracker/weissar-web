@@ -653,9 +653,41 @@ object AppStyles : StyleSheet() {
         color(Colors.primaryText)
     }
 
+    // New line grows from nothing, so the ones above slide up instead of jumping
+    private val lineExpand by keyframes {
+        from { property("height", "0") }
+        to { property("height", "1.25em") }
+    }
+
+    private val finaleExpand by keyframes {
+        from {
+            property("height", "0")
+            property("margin-top", "0")
+        }
+        to {
+            property("height", "1.25em")
+            property("margin-top", "1.25em")
+        }
+    }
+
     val typewriterLine by style {
         property("line-height", "1.25")
+        property("height", "1.25em")
         property("white-space", "pre")
+        animation(lineExpand) {
+            duration(.22.s)
+            timingFunction(AnimationTimingFunction.EaseOut)
+        }
+    }
+
+    /** Last line of the typewriter, bold with an empty line above. */
+    val typewriterFinale by style {
+        fontWeight(700)
+        property("margin-top", "1.25em")
+        animation(finaleExpand) {
+            duration(.35.s)
+            timingFunction(AnimationTimingFunction.EaseOut)
+        }
     }
 
     val cursor by style {
@@ -750,6 +782,9 @@ object AppStyles : StyleSheet() {
         }
         ".$sectionFull > .$content" style {
             property("height", "auto")
+        }
+        ".$sectionFull .$spacer" style {
+            property("min-height", "48px")
         }
         ".$cardGrid.$cardGridMuted" style {
             property("grid-template-columns", "repeat(auto-fill, minmax(220px, 1fr))")

@@ -33,7 +33,7 @@ fun UniverzitaSection() {
                 Subtitle(tr("Celé studium v jedné aplikaci", "Your whole studies in one app"), textColor)
                 Body(
                     tr(
-                        "Začalo to v roce 2016 appkou na hledání volných učeben na UHK. Dnes má rozvrh, známky, zkoušky i menzu v kapse přes 27 000 studentů z 15+ vysokých škol.",
+                        "Začalo to v roce 2016 aplikací na hledání volných učeben na UHK. Dnes má rozvrh, známky, zkoušky i menzu v kapse přes 27 000 studentů z 15+ vysokých škol.",
                         "It started in 2016 as an app for finding free classrooms at UHK. Today 27,000+ students from 15+ universities carry their timetable, grades, exams and canteen menu in their pocket.",
                     ),
                     textColor,
