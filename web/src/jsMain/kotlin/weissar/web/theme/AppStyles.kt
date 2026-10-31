@@ -383,6 +383,32 @@ object AppStyles : StyleSheet() {
         property("transition", "translate .35s ease, box-shadow .35s ease")
     }
 
+    val cardHeader by style {
+        display(DisplayStyle.Flex)
+        alignItems(AlignItems.Center)
+        gap(14.px)
+        property("margin-bottom", "4px")
+    }
+
+    val companyLogo by style {
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+        property("flex-shrink", "0")
+        width(52.px)
+        height(52.px)
+        padding(9.px)
+        borderRadius(14.px)
+        backgroundColor(Colors.white)
+        property("box-shadow", "inset 0 0 0 1px rgba(0, 0, 0, .08)")
+        property("overflow", "hidden")
+    }
+
+    val companyLogoFill by style {
+        padding(0.px)
+        property("box-shadow", "none")
+    }
+
     val cardTitle by style {
         property("font-size", "clamp(20px, 1.6vw, 32px)")
         fontWeight(600)
@@ -426,6 +452,23 @@ object AppStyles : StyleSheet() {
         ".$card:hover" style {
             property("translate", "0 -4px")
             property("box-shadow", "0 14px 32px rgba(0, 0, 0, .1)")
+        }
+        ".$companyLogo img" style {
+            width(100.percent)
+            height(100.percent)
+            property("object-fit", "contain")
+        }
+        ".$companyLogoFill img" style {
+            property("object-fit", "cover")
+        }
+        // Section logos fit a square, so tall ones aren't bigger than wide ones
+        "img.$logo" style {
+            property("aspect-ratio", "1")
+            property("object-fit", "contain")
+            property("object-position", "left top")
+        }
+        "img.$logo.$end" style {
+            property("object-position", "right top")
         }
         ".$flag img" style {
             display(DisplayStyle.Block)
