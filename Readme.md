@@ -2,7 +2,7 @@
 
 Osobní web postavený na **Kotlinu** – frontend v **Compose HTML** (Kotlin/JS), backend **Ktor** (Netty).
 
-> Aktuálně dostupné na: https://thenracker.github.io/weissar-web/ (stará statická verze z `main`)
+> Aktuálně dostupné na: https://thenracker.github.io/weissar-web/ (automaticky se nasazuje z větve `dev`)
 
 ## Struktura projektu
 
@@ -13,7 +13,9 @@ web/                          # Frontend – Compose HTML, kompiluje se do web.j
     theme/Colors.kt           # barvy
     theme/AppStyles.kt        # CSS styly (layout, tlačítka, …)
     components/               # znovupoužitelné komponenty (Section, Title, Body, Bullet, …)
-    sections/                 # jednotlivé sekce stránky (Intro, Skills, Svatebka)
+    sections/                 # jednotlivé sekce stránky (Intro, Skills, Svatebka, Univerzita, Projects)
+    data/Projects.kt          # karty v sekci „Spolupracoval jsem na“
+    i18n/Localization.kt      # přepínání CZ / EN, texty se píšou jako tr("česky", "anglicky")
   src/jsMain/resources/       # index.html, obrázky, svg, statické html stránky
 server/                       # Ktor server – servíruje zbuildovaný web + /health
 Dockerfile                    # build + běh serveru v kontejneru
@@ -57,6 +59,4 @@ Viz **[docs/DOMENA_A_HOSTING.md](docs/DOMENA_A_HOSTING.md)**.
 
 ## TODO obsah
 - vzdělání
-- Univerzita
-- Ostatní projekty
 - Kontakt

@@ -35,6 +35,26 @@ fun Section(
     }
 }
 
+/** Full-screen section without halves, [content] spans the whole width. */
+@Composable
+fun FullSection(
+    id: String,
+    background: CSSColorValue? = null,
+    content: @Composable () -> Unit,
+) {
+    Div({
+        id(id)
+        classes(AppStyles.section, AppStyles.sectionFull)
+        if (background != null) style { backgroundColor(background) }
+        ref { element ->
+            SectionObserver.observe(element)
+            onDispose { SectionObserver.unobserve(element) }
+        }
+    }) {
+        content()
+    }
+}
+
 /** Padded column filling the whole half, its items are revealed one by one. */
 @Composable
 fun Content(content: @Composable () -> Unit) {

@@ -12,6 +12,7 @@ import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Subtitle
 import weissar.web.components.Title
+import weissar.web.i18n.tr
 import weissar.web.theme.AppStyles
 import weissar.web.theme.Colors
 
@@ -27,15 +28,23 @@ fun SvatebkaSection() {
                 Title("Svatebka", textColor)
 
                 Spacer()
-                Subtitle("Wedding mobile app", textColor)
+                Subtitle(tr("Svatební mobilní aplikace", "Wedding mobile app"), textColor)
                 Spacer()
 
                 Group {
-                    Bullet("wedding organizer", textColor, subItems = listOf("schedule", "contacts", "map"))
-                    Bullet("guest entertainment", textColor, subItems = listOf("challenges/quiz"))
-                    Bullet("photos/videos sharing", textColor)
-                    Bullet("push notifications", textColor)
-                    Bullet("built with Firebase", textColor)
+                    Bullet(
+                        tr("organizace svatby", "wedding organizer"),
+                        textColor,
+                        subItems = listOf(tr("harmonogram", "schedule"), tr("kontakty", "contacts"), tr("mapa", "map")),
+                    )
+                    Bullet(
+                        tr("zábava pro hosty", "guest entertainment"),
+                        textColor,
+                        subItems = listOf(tr("výzvy/kvíz", "challenges/quiz")),
+                    )
+                    Bullet(tr("sdílení fotek a videí", "photos/videos sharing"), textColor)
+                    Bullet(tr("push notifikace", "push notifications"), textColor)
+                    Bullet(tr("postaveno na Firebase", "built with Firebase"), textColor)
                 }
             }
         },
@@ -46,7 +55,7 @@ fun SvatebkaSection() {
                 Spacer()
 
                 A(href = "https://svatebka.app", attrs = { classes(AppStyles.button, AppStyles.end) }) {
-                    Body("Prozkoumat")
+                    Body(tr("Prozkoumat", "Explore"))
                     Icon(src = "arrow-more.svg")
                 }
             }

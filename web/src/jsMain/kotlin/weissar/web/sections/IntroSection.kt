@@ -17,6 +17,7 @@ import weissar.web.components.Overline
 import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Title
+import weissar.web.i18n.tr
 import weissar.web.theme.AppStyles
 
 @Composable
@@ -38,13 +39,13 @@ fun IntroSection() {
                 Spacer()
 
                 Group {
-                    Body("Android senior developer")
-                    Body("Software analyst")
-                    Body("UX/UI consultant")
-                    Body("Lecturer")
+                    Body(tr("Senior Android vývojář", "Android senior developer"))
+                    Body(tr("Softwarový analytik", "Software analyst"))
+                    Body(tr("UX/UI konzultant", "UX/UI consultant"))
+                    Body(tr("Lektor", "Lecturer"))
 
                     Div({ classes(AppStyles.fillWidth) }) {
-                        A(href = "#skills", attrs = { attr("aria-label", "Scroll down") }) {
+                        A(href = "#skills", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
                             Icon(src = "arrow-double-down.svg", bounce = true)
                         }
                     }

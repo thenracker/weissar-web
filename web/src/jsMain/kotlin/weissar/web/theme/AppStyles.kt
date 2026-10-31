@@ -16,6 +16,7 @@ import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.bottom
 import org.jetbrains.compose.web.css.boxSizing
+import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.duration
 import org.jetbrains.compose.web.css.fillMode
@@ -118,6 +119,8 @@ object AppStyles : StyleSheet() {
 
     /** On mobile the right half lies under the left one as a background. */
     val sectionOverlay by style {}
+
+    val sectionFull by style {}
 
     val half by style {
         width(50.percent)
@@ -258,15 +261,115 @@ object AppStyles : StyleSheet() {
         property("transition", "height .45s cubic-bezier(.16, 1, .3, 1), opacity .3s ease")
     }
 
+    val dotsDark by style {}
+
     val dotActive by style {
         height(32.px)
         opacity(1)
     }
 
+    val languageSwitch by style {
+        position(Position.Fixed)
+        top(24.px)
+        right(28.px)
+        display(DisplayStyle.Flex)
+        gap(8.px)
+        property("z-index", "10")
+    }
+
+    val languageSwitchDark by style {}
+
+    val flag by style {
+        display(DisplayStyle.Block)
+        padding(4.px)
+        property("background", "none")
+        property("border", "none")
+        property("cursor", "pointer")
+        opacity(0.45)
+        property("transition", "opacity .3s ease, translate .3s ease")
+    }
+
+    val flagSelected by style {
+        opacity(1)
+    }
+
+    val cardGrid by style {
+        display(DisplayStyle.Grid)
+        property("grid-template-columns", "repeat(auto-fill, minmax(260px, 1fr))")
+        gap(20.px)
+    }
+
+    val card by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(8.px)
+        padding(24.px)
+        borderRadius(20.px)
+        backgroundColor(Colors.white)
+        property("transition", "translate .35s ease, box-shadow .35s ease")
+    }
+
+    val cardTitle by style {
+        property("font-size", "clamp(20px, 1.6vw, 32px)")
+        fontWeight(600)
+        color(Colors.primaryText)
+    }
+
+    val cardText by style {
+        property("font-size", "clamp(15px, 1.1vw, 22px)")
+        color(Colors.primaryText)
+        flexGrow(1)
+    }
+
+    val cardMeta by style {
+        property("font-size", "clamp(13px, .9vw, 18px)")
+        color(Colors.secondaryText)
+    }
+
+    val tags by style {
+        display(DisplayStyle.Flex)
+        property("flex-wrap", "wrap")
+        gap(6.px)
+        property("margin-top", "8px")
+    }
+
+    val tag by style {
+        property("font-size", "clamp(12px, .8vw, 16px)")
+        padding(4.px, 10.px)
+        borderRadius(999.px)
+        backgroundColor(Colors.backgroundLight)
+        color(Colors.primaryText)
+    }
+
     // endregion
 
     init {
+        ".$sectionFull > .$content" style {
+            width(100.percent)
+        }
+
         // Hover effects
+        ".$card:hover" style {
+            property("translate", "0 -4px")
+            property("box-shadow", "0 14px 32px rgba(0, 0, 0, .1)")
+        }
+        ".$flag img" style {
+            display(DisplayStyle.Block)
+            width(30.px)
+            height(20.px)
+            property("filter", "drop-shadow(0 0 3px rgba(0, 0, 0, .35))")
+        }
+        ".$flag:hover" style {
+            opacity(0.85)
+            property("translate", "0 -2px")
+        }
+        ".$languageSwitchDark .$flag img" style {
+            property("filter", "invert(.87)")
+        }
+        ".$dotsDark .$dot" style {
+            backgroundColor(Colors.primaryText)
+            property("box-shadow", "none")
+        }
         ".$button:hover" style {
             property("translate", "0 -4px")
             property("box-shadow", "0 14px 32px rgba(0, 0, 0, .2)")
@@ -392,6 +495,10 @@ object AppStyles : StyleSheet() {
                 gap(10.px)
             }
             ".$dot" style { width(8.px) }
+            ".$languageSwitch" style {
+                top(14.px)
+                right(10.px)
+            }
         }
 
         media(REDUCED_MOTION) {

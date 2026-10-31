@@ -10,6 +10,7 @@ import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Subtitle
 import weissar.web.components.Title
+import weissar.web.i18n.tr
 import weissar.web.theme.Colors
 
 @Composable
@@ -21,24 +22,24 @@ fun SkillsSection() {
         background = Colors.backgroundDark,
         left = {
             Content {
-                Title("Skills", textColor)
+                Title(tr("Dovednosti", "Skills"), textColor)
 
                 Spacer()
 
                 Group {
                     Subtitle("Android", textColor) { Icon(src = "android.svg", alt = "Android") }
-                    Bullet("native apps development since 2015", textColor)
+                    Bullet(tr("vývoj nativních aplikací od roku 2015", "native apps development since 2015"), textColor)
                     Bullet("Jetpack, Compose, Koin, MVVM, MVI", textColor)
-                    Bullet("50+ projects (Java & Kotlin)", textColor)
+                    Bullet(tr("50+ projektů (Java & Kotlin)", "50+ projects (Java & Kotlin)"), textColor)
                 }
 
                 Spacer()
 
                 Group {
                     Subtitle("Kotlin", textColor) { Icon(src = "kotlin.svg", alt = "Kotlin") }
-                    Bullet("experience since 2017", textColor)
+                    Bullet(tr("zkušenosti od roku 2017", "experience since 2017"), textColor)
                     Bullet("Coroutines, Flows, Serialization", textColor)
-                    Bullet("Ktor server & client", textColor)
+                    Bullet(tr("Ktor server & klient", "Ktor server & client"), textColor)
                 }
             }
         },
