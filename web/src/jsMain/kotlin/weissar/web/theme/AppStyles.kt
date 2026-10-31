@@ -751,24 +751,6 @@ object AppStyles : StyleSheet() {
         color(Colors.primaryText)
     }
 
-    val educationHeader by style {
-        display(DisplayStyle.Flex)
-        justifyContent(JustifyContent.SpaceBetween)
-        alignItems(AlignItems.FlexStart)
-        gap(24.px)
-    }
-
-    /** Small tilted photo in the corner of a section. */
-    val cornerPhoto by style {
-        property("width", "clamp(130px, 15vw, 280px)")
-        property("aspect-ratio", "4 / 3")
-        property("object-fit", "cover")
-        borderRadius(16.px)
-        property("rotate", "3deg")
-        property("box-shadow", "0 14px 34px rgba(0, 0, 0, .18)")
-        property("transition", "rotate .5s cubic-bezier(.34, 1.56, .64, 1), scale .5s cubic-bezier(.34, 1.56, .64, 1)")
-    }
-
     // endregion
 
     init {
@@ -797,10 +779,6 @@ object AppStyles : StyleSheet() {
         }
         ".$chip:hover" style {
             property("scale", "1.05")
-        }
-        ".$cornerPhoto:hover" style {
-            property("rotate", "0deg")
-            property("scale", "1.04")
         }
 
         // Hover effects

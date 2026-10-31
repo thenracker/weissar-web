@@ -7,7 +7,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import weissar.web.components.Content
@@ -31,14 +30,7 @@ fun EducationSection() {
 
     FullSection(id = "education", background = Colors.white) {
         Content {
-            Div({ classes(AppStyles.educationHeader) }) {
-                Title(tr("Vzdělání", "Education"))
-                Img(src = "diplomas.webp", alt = tr("Diplomy z UHK", "UHK diplomas")) {
-                    classes(AppStyles.cornerPhoto)
-                    // Stays hidden until the photo is there
-                    attr("onerror", "this.remove()")
-                }
-            }
+            Title(tr("Vzdělání", "Education"))
 
             Spacer()
 

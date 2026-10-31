@@ -57,5 +57,3 @@ get("/api/hello") {
 
 Viz **[docs/DOMENA_A_HOSTING.md](docs/DOMENA_A_HOSTING.md)**.
 
-## TODO obsah
-- fotka diplomů do sekce Vzdělání (`web/src/jsMain/resources/diplomas.webp`)
