@@ -180,9 +180,9 @@ val awards = listOf(
 )
 
 val certificates = listOf(
+    Translated("🧠 člen Mensy ČR", "🧠 Mensa Czech Republic member"),
     Translated("TensorFlow Lite (Coursera)", "TensorFlow Lite (Coursera)"),
     Translated("TensorFlow (Coursera)", "TensorFlow (Coursera)"),
     Translated("Cisco CCNA 1 a 2", "Cisco CCNA 1 & 2"),
-    Translated("Mensa ČR", "Mensa Czech Republic"),
     Translated("angličtina – plně profesionální", "English – full professional"),
 )
