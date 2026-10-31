@@ -4,11 +4,12 @@ import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
+import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import weissar.web.components.AnimatedLogo
 import weissar.web.components.Body
 import weissar.web.components.Content
-import weissar.web.components.Logo
 import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Title
@@ -27,7 +28,6 @@ fun ContactSection() {
         left = {
             Content {
                 Title(tr("Kontakt", "Contact"), textColor)
-                Body(tr("Napiš, zavolej, nebo zajdem na kafe.", "Drop me a line, call me, or let's grab a coffee."), Colors.secondaryTextNight)
 
                 Spacer()
 
@@ -39,17 +39,17 @@ fun ContactSection() {
                 Spacer()
 
                 Div({ classes(AppStyles.group, AppStyles.contactList) }) {
-                    ContactRow("contact-remote.svg", tr("Pracuju remote", "Working remotely"))
                     ContactRow("contact-location.svg", "Pardubice · Hradec Králové · Praha")
                 }
             }
         },
         right = {
             Content {
-                Logo(src = "pw-logo-white.svg", alt = "PW", alignEnd = true)
+                AnimatedLogo(color = "#eee", loop = true, alignEnd = true)
                 Spacer()
                 Div({ classes(AppStyles.end) }) {
                     Body("© 2026 Petr Weissar", Colors.secondaryTextNight, small = true)
+                    P({ classes(AppStyles.footnote) }) { Text("Made with love in Compose Web") }
                 }
             }
         },

@@ -3,6 +3,7 @@ package weissar.web.theme
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.AlignSelf
+import org.jetbrains.compose.web.css.AnimationDirection
 import org.jetbrains.compose.web.css.AnimationFillMode
 import org.jetbrains.compose.web.css.AnimationTimingFunction
 import org.jetbrains.compose.web.css.DisplayStyle
@@ -18,6 +19,7 @@ import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.bottom
 import org.jetbrains.compose.web.css.boxSizing
 import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.css.direction
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.duration
 import org.jetbrains.compose.web.css.fillMode
@@ -62,7 +64,6 @@ object AppStyles : StyleSheet() {
         }
         "html" style {
             property("scroll-behavior", "smooth")
-            property("scroll-snap-type", "y mandatory")
         }
         "a" style {
             textDecoration("none")
@@ -111,6 +112,14 @@ object AppStyles : StyleSheet() {
         }
     }
 
+    // Endless dots <-> logo, holds a moment in both states
+    private val logoPulse by keyframes {
+        each(0.percent) { property("stroke-dasharray", "0 2") }
+        each(15.percent) { property("stroke-dasharray", "0 2") }
+        each(85.percent) { property("stroke-dasharray", "1 2") }
+        each(100.percent) { property("stroke-dasharray", "1 2") }
+    }
+
     private val bounce by keyframes {
         from { property("translate", "0 0") }
         each(50.percent) { property("translate", "0 10px") }
@@ -131,7 +140,6 @@ object AppStyles : StyleSheet() {
         display(DisplayStyle.Flex)
         width(100.percent)
         height(100.vh)
-        property("scroll-snap-align", "start")
     }
 
     /** On mobile the right half lies under the left one as a background. */
@@ -229,9 +237,22 @@ object AppStyles : StyleSheet() {
 
     val logoAnimated by style {}
 
+    /** Animated once when the page loads, the rest of the intro waits for it. */
+    val logoIntro by style {}
+
+    /** Animated back and forth forever. */
+    val logoLoop by style {}
+
     val logoStroke by style {
         opacity(0)
         property("stroke-dasharray", "0 2")
+    }
+
+    val footnote by style {
+        property("font-size", "clamp(12px, .8vw, 15px)")
+        color(Colors.secondaryTextNight)
+        property("text-align", "end")
+        property("margin-top", "6px")
     }
 
     val hideOnMobile by style {}
@@ -485,7 +506,7 @@ object AppStyles : StyleSheet() {
             opacity(1)
             property("animation", "none")
         }
-        ".$visible .$logoStroke" style {
+        ".$visible .$logoIntro .$logoStroke" style {
             opacity(1)
             property("stroke-dasharray", "1 2")
             // 200 ms dots fade in + 500 ms stretch
@@ -497,10 +518,21 @@ object AppStyles : StyleSheet() {
             property("animation-delay", "calc(var(--s) * 30ms)")
         }
         // The rest of the intro waits for the logo
-        ".$section:has(.$logoAnimated) > .$half" style {
+        ".$visible .$logoLoop .$logoStroke" style {
+            opacity(1)
+            animation(logoPulse) {
+                duration(1.6.s)
+                timingFunction(AnimationTimingFunction.cubicBezier(0.65, 0.0, 0.35, 1.0))
+                iterationCount(null)
+                direction(AnimationDirection.Alternate)
+                fillMode(AnimationFillMode.Both)
+            }
+            property("animation-delay", "calc(var(--s) * 60ms)")
+        }
+        ".$section:has(.$logoIntro) > .$half" style {
             property("--base", "380ms")
         }
-        ".$visible:has(.$logoAnimated) .$fullImage.$loaded" style {
+        ".$visible:has(.$logoIntro) .$fullImage.$loaded" style {
             property("animation-delay", "650ms")
         }
         ".$visible .$fullImage.$loaded" style {

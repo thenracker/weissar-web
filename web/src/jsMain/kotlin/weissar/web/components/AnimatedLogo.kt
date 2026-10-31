@@ -16,16 +16,18 @@ private val strokes = listOf(
 /**
  * PW logo drawn as five round strokes – they start as dots in the top left corner
  * and stretch to the bottom right when the section is revealed.
+ * With [loop] they keep shrinking back to dots and stretching again.
  */
 @Composable
-fun AnimatedLogo() {
+fun AnimatedLogo(color: String = "#222", loop: Boolean = false, alignEnd: Boolean = false) {
     Div({
-        classes(AppStyles.logo, AppStyles.logoAnimated)
+        classes(AppStyles.logo, AppStyles.logoAnimated, if (loop) AppStyles.logoLoop else AppStyles.logoIntro)
+        if (alignEnd) classes(AppStyles.end)
         attr("role", "img")
         attr("aria-label", "PW")
         ref { element ->
             element.innerHTML = buildString {
-                append("""<svg viewBox="0 0 220 110" fill="none" stroke="#222" stroke-width="33" stroke-linecap="round">""")
+                append("""<svg viewBox="0 0 220 110" fill="none" stroke="$color" stroke-width="33" stroke-linecap="round">""")
                 strokes.forEachIndexed { index, d ->
                     append("""<path class="${AppStyles.logoStroke}" style="--s: $index" pathLength="1" d="$d"/>""")
                 }
