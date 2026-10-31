@@ -164,6 +164,9 @@ val education = listOf(
             "Střední škola, kde jsem poprvé pořádně programoval a zjistil, že mě to baví.",
             "High school, where I properly programmed for the first time and found out I enjoy it.",
         ),
+        highlights = listOf(
+            Translated("psaní všemi deseti", "touch typing"),
+        ),
     ),
 )
 
