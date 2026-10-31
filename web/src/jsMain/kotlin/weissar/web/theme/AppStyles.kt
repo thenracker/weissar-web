@@ -96,6 +96,18 @@ object AppStyles : StyleSheet() {
         }
     }
 
+    // Phones – the photo just fades in where it is
+    private val photoFade by keyframes {
+        from {
+            opacity(0)
+            property("transform", "scale(1.15)")
+        }
+        to {
+            opacity(1)
+            property("transform", "scale(1)")
+        }
+    }
+
     // Dots appear, then stretch into the logo strokes
     private val logoDots by keyframes {
         from {
@@ -553,6 +565,14 @@ object AppStyles : StyleSheet() {
             }
             ".$section" style {
                 property("scroll-snap-align", "start")
+            }
+            ".$fullImage" style {
+                property("clip-path", "none")
+                opacity(0)
+            }
+            ".$visible .$fullImage.$loaded" style {
+                opacity(1)
+                property("animation-name", photoFade.name)
             }
             ".$hideOnMobile" style {
                 display(DisplayStyle.None)
