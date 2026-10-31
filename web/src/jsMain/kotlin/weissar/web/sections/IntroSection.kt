@@ -9,6 +9,7 @@ import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import weissar.web.components.AnimatedLogo
+import weissar.web.components.Body
 import weissar.web.components.Content
 import weissar.web.components.Group
 import weissar.web.components.Icon
@@ -48,9 +49,12 @@ fun IntroSection() {
                             tr("Lektor", "Lecturer"),
                         ),
                         startDelayMs = 1700,
+                        finale = tr("S čím vám mohu pomoci?", "How can I help you?"),
+                        finalePauseMs = 2000,
                     )
 
-                    Div({ classes(AppStyles.fillWidth) }) {
+                    Div({ classes(AppStyles.fillWidth, AppStyles.introActions) }) {
+                        WriteMeButton(AppStyles.onlyMobile)
                         A(href = "#skills", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
                             Icon(src = "arrow-double-down.svg", bounce = true)
                         }
@@ -60,6 +64,8 @@ fun IntroSection() {
         },
         right = {
             var photoLoaded by remember { mutableStateOf(false) }
+
+            WriteMeButton(AppStyles.photoButton, AppStyles.hideOnMobile)
 
             Div({ classes(AppStyles.photoFrame) }) {
                 Img(src = "weissar.webp", alt = "Petr Weissar") {
@@ -75,4 +81,13 @@ fun IntroSection() {
             }
         },
     )
+}
+
+/** Shortcut to the contacts at the very bottom of the page. */
+@Composable
+private fun WriteMeButton(vararg extraClasses: String) {
+    A(href = "#contact", attrs = { classes(AppStyles.button, *extraClasses) }) {
+        Body(tr("Napište mi", "Get in touch"))
+        Icon(src = "message.svg")
+    }
 }

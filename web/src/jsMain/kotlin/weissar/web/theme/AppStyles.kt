@@ -301,6 +301,24 @@ object AppStyles : StyleSheet() {
         property("transition", "translate .35s ease, box-shadow .35s ease, background-color .35s ease")
     }
 
+    /** "Write me" over the bottom of the intro photo. */
+    val photoButton by style {
+        position(Position.Absolute)
+        bottom(5.vw)
+        property("left", "50%")
+        property("transform", "translateX(-50%)")
+        backgroundColor(Colors.white)
+        property("box-shadow", "0 12px 30px rgba(0, 0, 0, .25)")
+        property("z-index", "1")
+        // Fades in after the photo
+        opacity(0)
+    }
+
+    /** Hidden on desktop, the opposite of [hideOnMobile]. */
+    val onlyMobile by style {}
+
+    val introActions by style {}
+
     val dots by style {
         position(Position.Fixed)
         right(28.px)
@@ -627,12 +645,11 @@ object AppStyles : StyleSheet() {
         to { opacity(0) }
     }
 
-    /** Fixed box for 4 lines, new lines appear at the bottom and push the old ones up. */
+    /** Fixed box for all the lines, new lines appear at the bottom and push the old ones up. */
     val typewriter by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         justifyContent(JustifyContent.FlexEnd)
-        property("height", "calc(4 * 1.25 * 2vw)")
         color(Colors.primaryText)
     }
 
@@ -913,6 +930,15 @@ object AppStyles : StyleSheet() {
         ".$visible:has(.$logoIntro) .$fullImage.$loaded" style {
             property("animation-delay", "650ms")
         }
+        ".$visible .$photoButton" style {
+            animation(fadeIn) {
+                duration(.8.s)
+                timingFunction(easeOutExpo)
+                fillMode(AnimationFillMode.Both)
+            }
+            property("animation-delay", "1.4s")
+            opacity(1)
+        }
         ".$visible .$fullImage.$loaded" style {
             // Same as the last keyframe, so nothing changes when the animation ends
             opacity(1)
@@ -926,6 +952,9 @@ object AppStyles : StyleSheet() {
 
         // Screenshots fanned like cards, spread a bit more on hover
         media(DESKTOP) {
+            ".$onlyMobile" style {
+                display(DisplayStyle.None)
+            }
             ".$screenshot:nth-child(1)" style {
                 property("rotate", "-7deg")
                 property("translate", "28% 4%")
@@ -979,6 +1008,10 @@ object AppStyles : StyleSheet() {
             }
             ".$modalBackdrop" style {
                 padding(16.px)
+            }
+            ".$introActions" style {
+                justifyContent(JustifyContent.SpaceBetween)
+                property("padding", "20px 0")
             }
             ".$hideOnMobile" style {
                 display(DisplayStyle.None)
@@ -1044,7 +1077,6 @@ object AppStyles : StyleSheet() {
             ".$title" style { property("font-size", "clamp(36px, 11vw, 64px)") }
             ".$subtitle" style { property("font-size", "clamp(26px, 7.5vw, 44px)") }
             ".$body" style { property("font-size", "clamp(17px, 4.8vw, 26px)") }
-            ".$typewriter" style { property("height", "calc(4 * 1.25 * clamp(17px, 4.8vw, 26px))") }
             ".$bodySmall" style { property("font-size", "clamp(14px, 4vw, 21px)") }
             ".$overline" style { property("font-size", "clamp(15px, 4.4vw, 24px)") }
             ".$icon" style { width(28.px) }
