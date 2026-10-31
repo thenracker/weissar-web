@@ -6,16 +6,12 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import weissar.web.i18n.Language
 import weissar.web.i18n.Localization
-import weissar.web.scroll.SectionObserver
 import weissar.web.theme.AppStyles
 
-/** Outlined flags in the top right corner, dark on sections from [lightSectionIds]. */
+/** White outlined flags in the top right corner. */
 @Composable
-fun LanguageSwitch(lightSectionIds: Set<String> = emptySet()) {
-    Div({
-        classes(AppStyles.languageSwitch)
-        if (SectionObserver.activeSection in lightSectionIds) classes(AppStyles.languageSwitchDark)
-    }) {
+fun LanguageSwitch() {
+    Div({ classes(AppStyles.languageSwitch) }) {
         Flag(Language.CS, src = "flag-cs.svg", label = "Čeština")
         Flag(Language.EN, src = "flag-en.svg", label = "English")
     }

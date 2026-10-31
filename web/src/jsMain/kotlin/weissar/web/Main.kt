@@ -25,6 +25,6 @@ fun main() {
             sectionIds = listOf("intro", "skills", "svatebka", "univerzita", "projects"),
             lightSectionIds = setOf("projects"),
         )
-        LanguageSwitch(lightSectionIds = setOf("projects"))
+        LanguageSwitch()
     }
 }

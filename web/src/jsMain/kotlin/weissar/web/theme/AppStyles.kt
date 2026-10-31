@@ -277,15 +277,13 @@ object AppStyles : StyleSheet() {
         property("z-index", "10")
     }
 
-    val languageSwitchDark by style {}
-
     val flag by style {
         display(DisplayStyle.Block)
         padding(4.px)
         property("background", "none")
         property("border", "none")
         property("cursor", "pointer")
-        opacity(0.45)
+        opacity(0.5)
         property("transition", "opacity .3s ease, translate .3s ease")
     }
 
@@ -362,9 +360,6 @@ object AppStyles : StyleSheet() {
         ".$flag:hover" style {
             opacity(0.85)
             property("translate", "0 -2px")
-        }
-        ".$languageSwitchDark .$flag img" style {
-            property("filter", "invert(.87)")
         }
         ".$dotsDark .$dot" style {
             backgroundColor(Colors.primaryText)
