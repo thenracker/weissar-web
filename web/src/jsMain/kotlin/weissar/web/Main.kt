@@ -21,10 +21,11 @@ fun main() {
         UniverzitaSection()
         ProjectsSection()
 
+        val lightSectionIds = setOf("projects")
         SectionDots(
             sectionIds = listOf("intro", "skills", "svatebka", "univerzita", "projects"),
-            lightSectionIds = setOf("projects"),
+            lightSectionIds = lightSectionIds,
         )
-        LanguageSwitch()
+        LanguageSwitch(lightSectionIds)
     }
 }

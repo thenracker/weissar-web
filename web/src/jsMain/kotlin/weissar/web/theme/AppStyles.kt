@@ -284,12 +284,14 @@ object AppStyles : StyleSheet() {
         property("border", "none")
         property("cursor", "pointer")
         opacity(0.5)
-        property("transition", "opacity .3s ease, translate .3s ease")
+        property("transition", "opacity .3s ease, scale .3s ease")
     }
 
     val flagSelected by style {
         opacity(1)
     }
+
+    val languageSwitchDark by style {}
 
     val cardGrid by style {
         display(DisplayStyle.Grid)
@@ -356,10 +358,18 @@ object AppStyles : StyleSheet() {
             width(30.px)
             height(20.px)
             property("filter", "drop-shadow(0 0 3px rgba(0, 0, 0, .35))")
+            property("transition", "filter .3s ease")
         }
         ".$flag:hover" style {
             opacity(0.85)
-            property("translate", "0 -2px")
+            property("scale", "1.06")
+        }
+        ".$flagSelected:hover" style {
+            opacity(1)
+        }
+        ".$languageSwitchDark .$flag img" style {
+            // white outline -> #222
+            property("filter", "invert(.87)")
         }
         ".$dotsDark .$dot" style {
             backgroundColor(Colors.primaryText)
