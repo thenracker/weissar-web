@@ -547,6 +547,13 @@ object AppStyles : StyleSheet() {
         }
 
         media(MOBILE) {
+            // Section by section scrolling only on phones
+            "html" style {
+                property("scroll-snap-type", "y mandatory")
+            }
+            ".$section" style {
+                property("scroll-snap-align", "start")
+            }
             ".$hideOnMobile" style {
                 display(DisplayStyle.None)
             }
