@@ -52,7 +52,7 @@ object AppStyles : StyleSheet() {
 
     // Phones and tablets in portrait – halves are stacked under each other
     private const val MOBILE = "(max-width: 800px), (orientation: portrait) and (max-width: 1100px)"
-    private const val REDUCED_MOTION = "(prefers-reduced-motion: reduce)"
+    private const val DESKTOP = "(min-width: 801px) and (orientation: landscape), (min-width: 1101px)"
     private val easeOutExpo = AnimationTimingFunction.cubicBezier(0.16, 1.0, 0.3, 1.0)
 
     init {
@@ -110,6 +110,22 @@ object AppStyles : StyleSheet() {
         to {
             opacity(1)
             property("stroke-dasharray", "1 2")
+        }
+    }
+
+    private val fadeIn by keyframes {
+        from { opacity(0) }
+        to { opacity(1) }
+    }
+
+    private val modalIn by keyframes {
+        from {
+            opacity(0)
+            property("transform", "translateY(24px) scale(.97)")
+        }
+        to {
+            opacity(1)
+            property("transform", "none")
         }
     }
 
@@ -383,6 +399,170 @@ object AppStyles : StyleSheet() {
         property("transition", "translate .35s ease, box-shadow .35s ease")
     }
 
+    val screenshots by style {
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+        property("height", "clamp(220px, 46vh, 460px)")
+    }
+
+    val screenshot by style {
+        height(100.percent)
+        property("width", "auto")
+        borderRadius(18.px)
+        property("box-shadow", "0 18px 44px rgba(0, 0, 0, .28)")
+        property("transition", "translate .6s cubic-bezier(.34, 1.56, .64, 1), rotate .6s cubic-bezier(.34, 1.56, .64, 1)")
+    }
+
+    val stats by style {
+        display(DisplayStyle.Flex)
+        property("gap", "clamp(20px, 3vw, 56px)")
+    }
+
+    val stat by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+    }
+
+    val statValue by style {
+        property("font-size", "clamp(28px, 2.6vw, 52px)")
+        fontWeight(700)
+        property("line-height", "1.1")
+    }
+
+    val statLabel by style {
+        property("font-size", "clamp(13px, 1vw, 20px)")
+        opacity(0.7)
+    }
+
+    /** On the root while a modal is open. */
+    val noScroll by style {
+        property("overflow", "hidden")
+    }
+
+    val modalBackdrop by style {
+        position(Position.Fixed)
+        property("inset", "0")
+        property("z-index", "20")
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+        padding(24.px)
+        backgroundColor(Color("rgba(20, 20, 20, .45)"))
+        property("backdrop-filter", "blur(6px)")
+        animation(fadeIn) {
+            duration(.25.s)
+            fillMode(AnimationFillMode.Both)
+        }
+    }
+
+    val modal by style {
+        position(Position.Relative)
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(12.px)
+        width(100.percent)
+        property("max-width", "620px")
+        property("max-height", "calc(100svh - 48px)")
+        property("overflow-y", "auto")
+        property("overscroll-behavior", "contain")
+        padding(32.px)
+        borderRadius(24.px)
+        backgroundColor(Colors.white)
+        property("box-shadow", "0 30px 80px rgba(0, 0, 0, .3)")
+        animation(modalIn) {
+            duration(.5.s)
+            timingFunction(easeOutExpo)
+            fillMode(AnimationFillMode.Both)
+        }
+    }
+
+    val modalClose by style {
+        position(Position.Absolute)
+        top(16.px)
+        right(16.px)
+        width(36.px)
+        height(36.px)
+        borderRadius(50.percent)
+        property("border", "none")
+        backgroundColor(Colors.backgroundLight)
+        color(Colors.primaryText)
+        property("font-size", "16px")
+        property("cursor", "pointer")
+        property("transition", "scale .3s ease, background-color .3s ease")
+    }
+
+    val modalHeader by style {
+        display(DisplayStyle.Flex)
+        alignItems(AlignItems.Center)
+        gap(16.px)
+        property("padding-right", "40px")
+    }
+
+    val modalTitle by style {
+        property("font-size", "clamp(24px, 2vw, 34px)")
+        fontWeight(700)
+        color(Colors.primaryText)
+    }
+
+    val modalText by style {
+        property("font-size", "clamp(16px, 1.1vw, 20px)")
+        property("line-height", "1.5")
+        color(Colors.primaryText)
+    }
+
+    val modalHeading by style {
+        property("font-size", "clamp(13px, .9vw, 16px)")
+        fontWeight(700)
+        property("text-transform", "uppercase")
+        property("letter-spacing", ".08em")
+        color(Colors.secondaryText)
+        property("margin-top", "8px")
+    }
+
+    val modalList by style {
+        property("padding-left", "20px")
+        property("font-size", "clamp(15px, 1vw, 19px)")
+        property("line-height", "1.6")
+        color(Colors.primaryText)
+    }
+
+    val timeline by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        property("border-left", "2px solid #2222")
+        property("margin-left", "6px")
+    }
+
+    val timelineItem by style {
+        position(Position.Relative)
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        property("padding", "0 0 14px 20px")
+    }
+
+    val timelineDate by style {
+        property("font-size", "clamp(13px, .9vw, 16px)")
+        fontWeight(700)
+        color(Colors.secondaryText)
+    }
+
+    val timelineText by style {
+        property("font-size", "clamp(15px, 1vw, 19px)")
+        color(Colors.primaryText)
+    }
+
+    val modalLink by style {
+        property("margin-top", "8px")
+    }
+
+    val companyLogoLarge by style {
+        width(72.px)
+        height(72.px)
+        borderRadius(18.px)
+        padding(12.px)
+    }
+
     val cardHeader by style {
         display(DisplayStyle.Flex)
         alignItems(AlignItems.Center)
@@ -449,6 +629,37 @@ object AppStyles : StyleSheet() {
         }
 
         // Hover effects
+        ".$card" style {
+            property("cursor", "pointer")
+        }
+        ".$card:focus-visible" style {
+            property("outline", "2px solid #222")
+            property("outline-offset", "3px")
+        }
+        ".$companyLogoLarge.$companyLogoFill" style {
+            padding(0.px)
+        }
+        ".$timelineItem::before" style {
+            property("content", "''")
+            position(Position.Absolute)
+            property("left", "-7px")
+            top(4.px)
+            width(12.px)
+            height(12.px)
+            borderRadius(50.percent)
+            backgroundColor(Colors.primaryText)
+            property("box-shadow", "0 0 0 3px #fff")
+        }
+        ".$timelineItem:last-child" style {
+            property("padding-bottom", "0")
+        }
+        ".$modalClose:hover" style {
+            property("scale", "1.08")
+        }
+        ".$modalLink:hover" style {
+            backgroundColor(Colors.backgroundLight)
+            property("box-shadow", "0 10px 24px rgba(0, 0, 0, .12)")
+        }
         ".$card:hover" style {
             property("translate", "0 -4px")
             property("box-shadow", "0 14px 32px rgba(0, 0, 0, .1)")
@@ -590,6 +801,32 @@ object AppStyles : StyleSheet() {
             }
         }
 
+        // Screenshots fanned like cards, spread a bit more on hover
+        media(DESKTOP) {
+            ".$screenshot:nth-child(1)" style {
+                property("rotate", "-7deg")
+                property("translate", "28% 4%")
+            }
+            ".$screenshot:nth-child(2)" style {
+                property("z-index", "1")
+            }
+            ".$screenshot:nth-child(3)" style {
+                property("rotate", "7deg")
+                property("translate", "-28% 4%")
+            }
+            ".$screenshots:hover .$screenshot:nth-child(1)" style {
+                property("rotate", "-10deg")
+                property("translate", "12% 6%")
+            }
+            ".$screenshots:hover .$screenshot:nth-child(2)" style {
+                property("translate", "0 -3%")
+            }
+            ".$screenshots:hover .$screenshot:nth-child(3)" style {
+                property("rotate", "10deg")
+                property("translate", "-12% 6%")
+            }
+        }
+
         media(MOBILE) {
             // Section by section scrolling only on phones
             "html" style {
@@ -597,6 +834,28 @@ object AppStyles : StyleSheet() {
             }
             ".$section" style {
                 property("scroll-snap-align", "start")
+            }
+            ".$screenshots" style {
+                justifyContent(JustifyContent.FlexStart)
+                property("height", "340px")
+                property("overflow-x", "auto")
+                property("scroll-snap-type", "x mandatory")
+                gap(14.px)
+                property("margin", "0 -24px")
+                property("padding", "8px 24px 24px")
+                property("scrollbar-width", "none")
+            }
+            ".$screenshot" style {
+                property("scroll-snap-align", "center")
+                property("box-shadow", "0 10px 24px rgba(0, 0, 0, .22)")
+            }
+            ".$modal" style {
+                padding(24.px)
+                property("align-self", "flex-end")
+                property("max-height", "calc(100svh - 32px)")
+            }
+            ".$modalBackdrop" style {
+                padding(16.px)
             }
             ".$hideOnMobile" style {
                 display(DisplayStyle.None)
@@ -681,24 +940,6 @@ object AppStyles : StyleSheet() {
             ".$languageSwitch" style {
                 top(14.px)
                 right(10.px)
-            }
-        }
-
-        media(REDUCED_MOTION) {
-            "*" style {
-                property("animation", "none !important")
-                property("transition", "none !important")
-                property("scroll-behavior", "auto !important")
-            }
-            ".$content > *, .$group > *" style {
-                property("opacity", "1 !important")
-            }
-            ".$fullImage" style {
-                opacity(1)
-            }
-            ".$logoStroke" style {
-                opacity(1)
-                property("stroke-dasharray", "1 2")
             }
         }
     }

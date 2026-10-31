@@ -8,6 +8,7 @@ import weissar.web.components.Content
 import weissar.web.components.Group
 import weissar.web.components.Icon
 import weissar.web.components.Logo
+import weissar.web.components.Screenshots
 import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Subtitle
@@ -28,23 +29,23 @@ fun SvatebkaSection() {
                 Title("Svatebka", textColor)
 
                 Spacer()
-                Subtitle(tr("Svatební mobilní aplikace", "Wedding mobile app"), textColor)
+                Subtitle(tr("Svatební web a aplikace pro hosty", "Wedding website & guest app"), textColor)
+                Body(
+                    tr(
+                        "Program, mapa, kontakty, společné fotky i zábava – všechno, co hosté na svatbě potřebují, na jednom místě. Vyzkoušeno na naší vlastní svatbě.",
+                        "Schedule, map, contacts, shared photos and fun – everything wedding guests need, in one place. Battle-tested at our own wedding.",
+                    ),
+                    textColor,
+                    small = true,
+                )
                 Spacer()
 
                 Group {
-                    Bullet(
-                        tr("organizace svatby", "wedding organizer"),
-                        textColor,
-                        subItems = listOf(tr("harmonogram", "schedule"), tr("kontakty", "contacts"), tr("mapa", "map")),
-                    )
-                    Bullet(
-                        tr("zábava pro hosty", "guest entertainment"),
-                        textColor,
-                        subItems = listOf(tr("výzvy/kvíz", "challenges/quiz")),
-                    )
-                    Bullet(tr("sdílení fotek a videí", "photos/videos sharing"), textColor)
-                    Bullet(tr("push notifikace", "push notifications"), textColor)
-                    Bullet(tr("postaveno na Firebase", "built with Firebase"), textColor)
+                    Bullet(tr("program, mapa a kontakty na webu bez instalace", "schedule, map & contacts on the web, no install needed"), textColor)
+                    Bullet(tr("galerie fotek a videí od hostů v plné kvalitě", "guests' photos & videos in full quality"), textColor)
+                    Bullet(tr("svatební soutěž a kvíz o novomanželích", "wedding challenges & a quiz about the couple"), textColor)
+                    Bullet(tr("notifikace hostům v reálném čase", "real-time notifications for guests"), textColor)
+                    Bullet(tr("Android, iOS a web · Firebase", "Android, iOS & web · Firebase"), textColor)
                 }
             }
         },
@@ -52,6 +53,8 @@ fun SvatebkaSection() {
             Content {
                 Logo(src = "svatebka.svg", alt = "Svatebka", alignEnd = true, hideOnMobile = true)
 
+                Spacer()
+                Screenshots(listOf("screens/svatebka-1.webp", "screens/svatebka-2.webp", "screens/svatebka-3.webp"), alt = "Svatebka")
                 Spacer()
 
                 A(href = "https://svatebka.app", attrs = { classes(AppStyles.button, AppStyles.end) }) {

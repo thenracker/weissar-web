@@ -8,7 +8,9 @@ import weissar.web.components.Content
 import weissar.web.components.Group
 import weissar.web.components.Icon
 import weissar.web.components.Logo
+import weissar.web.components.Screenshots
 import weissar.web.components.Section
+import weissar.web.components.Stats
 import weissar.web.components.Spacer
 import weissar.web.components.Subtitle
 import weissar.web.components.Title
@@ -28,30 +30,42 @@ fun UniverzitaSection() {
                 Title("Univerzita", textColor)
 
                 Spacer()
-                Subtitle(tr("Aplikace pro vysokoškoláky", "App for university students"), textColor)
+                Subtitle(tr("Celé studium v jedné aplikaci", "Your whole studies in one app"), textColor)
+                Body(
+                    tr(
+                        "Začalo to v roce 2016 appkou na hledání volných učeben na UHK. Dnes má rozvrh, známky, zkoušky i menzu v kapse přes 27 000 studentů z 15+ vysokých škol.",
+                        "It started in 2016 as an app for finding free classrooms at UHK. Today 27,000+ students from 15+ universities carry their timetable, grades, exams and canteen menu in their pocket.",
+                    ),
+                    textColor,
+                    small = true,
+                )
                 Spacer()
 
                 Group {
-                    Bullet(
-                        tr("rozvrh, známky a zkoušky na jednom místě", "timetable, grades & exams in one place"),
-                        textColor,
-                        subItems = listOf(
-                            tr("seznam, tabulka nebo denní agenda", "list, table or daily agenda"),
-                            tr("widget na ploše", "home screen widget"),
-                            tr("export do kalendáře", "calendar export"),
-                        ),
-                    )
-                    Bullet(tr("notifikace před každou hodinou", "notifications before every lesson"), textColor)
-                    Bullet(tr("vyhledávání studentů, učitelů a předmětů", "search for students, teachers & subjects"), textColor)
-                    Bullet(tr("průběh studia a kredity", "study progress & credits"), textColor)
-                    Bullet(tr("15+ univerzit s IS/STAG a ČVUT", "15+ universities with IS/STAG and ČVUT"), textColor)
+                    Bullet(tr("rozvrh jako seznam, tabulka, agenda i widget", "timetable as a list, table, agenda or widget"), textColor)
+                    Bullet(tr("zápis na zkoušky včetně čekací fronty", "exam sign-ups incl. a waiting queue"), textColor)
+                    Bullet(tr("upozornění na nové známky a termíny", "alerts for new grades and exam dates"), textColor)
+                    Bullet(tr("rozvrhy přátel, menza a volné místnosti", "friends' timetables, canteen menus & free rooms"), textColor)
                 }
+
+                Spacer()
+
+                Stats(
+                    listOf(
+                        "27k+" to tr("studentů", "students"),
+                        "15+" to tr("univerzit", "universities"),
+                        "2016" to tr("první verze", "first version"),
+                    ),
+                    textColor,
+                )
             }
         },
         right = {
             Content {
                 Logo(src = "univerzita.svg", alt = "Univerzita", alignEnd = true, hideOnMobile = true)
 
+                Spacer()
+                Screenshots(listOf("screens/univerzita-1.webp", "screens/univerzita-2.webp", "screens/univerzita-3.webp"), alt = "Univerzita")
                 Spacer()
 
                 A(href = "https://univerzita.app", attrs = { classes(AppStyles.button, AppStyles.end) }) {
