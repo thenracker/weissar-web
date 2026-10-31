@@ -13,7 +13,7 @@ web/                          # Frontend – Compose HTML, kompiluje se do web.j
     theme/Colors.kt           # barvy
     theme/AppStyles.kt        # CSS styly (layout, tlačítka, …)
     components/               # znovupoužitelné komponenty (Section, Title, Body, Bullet, …)
-    sections/                 # jednotlivé sekce stránky (Intro, Skills, Svatebka, Univerzita, Projects)
+    sections/                 # jednotlivé sekce stránky (Intro, Skills, Svatebka, Univerzita, Projects, Contact)
     data/Projects.kt          # karty v sekci „Spolupracoval jsem na“
     i18n/Localization.kt      # přepínání CZ / EN, texty se píšou jako tr("česky", "anglicky")
   src/jsMain/resources/       # index.html, obrázky, svg, statické html stránky
@@ -59,4 +59,3 @@ Viz **[docs/DOMENA_A_HOSTING.md](docs/DOMENA_A_HOSTING.md)**.
 
 ## TODO obsah
 - vzdělání
-- Kontakt

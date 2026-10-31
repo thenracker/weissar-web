@@ -8,11 +8,11 @@ import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
+import weissar.web.components.AnimatedLogo
 import weissar.web.components.Body
 import weissar.web.components.Content
 import weissar.web.components.Group
 import weissar.web.components.Icon
-import weissar.web.components.Logo
 import weissar.web.components.Overline
 import weissar.web.components.Section
 import weissar.web.components.Spacer
@@ -27,7 +27,7 @@ fun IntroSection() {
         overlayOnMobile = true,
         left = {
             Content {
-                Logo(src = "pw-logo.svg", alt = "PW")
+                AnimatedLogo()
 
                 Spacer()
 

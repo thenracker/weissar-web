@@ -1,6 +1,7 @@
 package weissar.web.theme
 
 import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.AlignSelf
 import org.jetbrains.compose.web.css.AnimationFillMode
 import org.jetbrains.compose.web.css.AnimationTimingFunction
@@ -57,7 +58,7 @@ object AppStyles : StyleSheet() {
             margin(0.px)
             padding(0.px)
             boxSizing("border-box")
-            fontFamily("Lexend", "sans-serif")
+            fontFamily("Nunito", "sans-serif")
         }
         "html" style {
             property("scroll-behavior", "smooth")
@@ -91,6 +92,22 @@ object AppStyles : StyleSheet() {
         to {
             property("clip-path", "inset(0 0 0 0)")
             property("transform", "scale(1)")
+        }
+    }
+
+    // Dots appear, then stretch into the logo strokes
+    private val logoDots by keyframes {
+        from {
+            opacity(0)
+            property("stroke-dasharray", "0 2")
+        }
+        each(30.percent) {
+            opacity(1)
+            property("stroke-dasharray", "0 2")
+        }
+        to {
+            opacity(1)
+            property("stroke-dasharray", "1 2")
         }
     }
 
@@ -210,6 +227,13 @@ object AppStyles : StyleSheet() {
         width(33.percent)
     }
 
+    val logoAnimated by style {}
+
+    val logoStroke by style {
+        opacity(0)
+        property("stroke-dasharray", "0 2")
+    }
+
     val hideOnMobile by style {}
 
     val icon by style {
@@ -293,6 +317,34 @@ object AppStyles : StyleSheet() {
 
     val languageSwitchDark by style {}
 
+    val contactList by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(14.px)
+    }
+
+    val contactRow by style {
+        display(DisplayStyle.Flex)
+        alignItems(AlignItems.Center)
+        gap(18.px)
+        property("width", "fit-content")
+        color(Colors.white)
+    }
+
+    val contactLink by style {}
+
+    val contactIcon by style {
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+        property("flex-shrink", "0")
+        width(48.px)
+        height(48.px)
+        borderRadius(50.percent)
+        backgroundColor(Color("rgba(255, 255, 255, .08)"))
+        property("transition", "background-color .3s ease, scale .3s ease")
+    }
+
     val cardGrid by style {
         display(DisplayStyle.Grid)
         property("grid-template-columns", "repeat(auto-fill, minmax(260px, 1fr))")
@@ -371,6 +423,14 @@ object AppStyles : StyleSheet() {
             // white outline -> #222
             property("filter", "invert(.87)")
         }
+        ".$contactIcon img" style {
+            width(22.px)
+            height(22.px)
+        }
+        ".$contactLink:hover .$contactIcon" style {
+            backgroundColor(Color("rgba(255, 255, 255, .18)"))
+            property("scale", "1.08")
+        }
         ".$dotsDark .$dot" style {
             backgroundColor(Colors.primaryText)
             property("box-shadow", "none")
@@ -415,6 +475,33 @@ object AppStyles : StyleSheet() {
                 fillMode(AnimationFillMode.Both)
             }
             property("animation-delay", "var(--delay)")
+        }
+        ".$logoAnimated svg" style {
+            display(DisplayStyle.Block)
+            width(100.percent)
+            property("height", "auto")
+        }
+        ".$visible .$content > .$logoAnimated" style {
+            opacity(1)
+            property("animation", "none")
+        }
+        ".$visible .$logoStroke" style {
+            opacity(1)
+            property("stroke-dasharray", "1 2")
+            // 200 ms dots fade in + 500 ms stretch
+            animation(logoDots) {
+                duration(.7.s)
+                timingFunction(AnimationTimingFunction.cubicBezier(0.65, 0.0, 0.35, 1.0))
+                fillMode(AnimationFillMode.Both)
+            }
+            property("animation-delay", "calc(var(--s) * 30ms)")
+        }
+        // The rest of the intro waits for the logo
+        ".$section:has(.$logoAnimated) > .$half" style {
+            property("--base", "380ms")
+        }
+        ".$visible:has(.$logoAnimated) .$fullImage.$loaded" style {
+            property("animation-delay", "650ms")
         }
         ".$visible .$fullImage.$loaded" style {
             // Same as the last keyframe, so nothing changes when the animation ends
@@ -495,6 +582,14 @@ object AppStyles : StyleSheet() {
             ".$bodySmall" style { property("font-size", "clamp(14px, 4vw, 21px)") }
             ".$overline" style { property("font-size", "clamp(15px, 4.4vw, 24px)") }
             ".$icon" style { width(28.px) }
+            ".$contactIcon" style {
+                width(40.px)
+                height(40.px)
+            }
+            ".$contactIcon img" style {
+                width(19.px)
+                height(19.px)
+            }
             ".$dots" style {
                 right(10.px)
                 gap(10.px)
@@ -517,6 +612,10 @@ object AppStyles : StyleSheet() {
             }
             ".$fullImage" style {
                 property("clip-path", "none")
+            }
+            ".$logoStroke" style {
+                opacity(1)
+                property("stroke-dasharray", "1 2")
             }
         }
     }

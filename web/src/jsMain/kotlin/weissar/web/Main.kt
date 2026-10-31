@@ -4,6 +4,7 @@ import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 import weissar.web.components.LanguageSwitch
 import weissar.web.components.SectionDots
+import weissar.web.sections.ContactSection
 import weissar.web.sections.IntroSection
 import weissar.web.sections.ProjectsSection
 import weissar.web.sections.SkillsSection
@@ -20,10 +21,11 @@ fun main() {
         SvatebkaSection()
         UniverzitaSection()
         ProjectsSection()
+        ContactSection()
 
         val lightSectionIds = setOf("projects")
         SectionDots(
-            sectionIds = listOf("intro", "skills", "svatebka", "univerzita", "projects"),
+            sectionIds = listOf("intro", "skills", "svatebka", "univerzita", "projects", "contact"),
             lightSectionIds = lightSectionIds,
         )
         LanguageSwitch(lightSectionIds)

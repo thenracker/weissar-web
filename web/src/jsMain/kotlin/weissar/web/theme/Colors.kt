@@ -15,6 +15,7 @@ object Colors {
 
     val backgroundLight = Color("#eee")
     val backgroundDark = Color("#222")
+    val backgroundBlack = Color("#000")
     val backgroundSvatebka = Color("#BE7F7F")
     val backgroundUniverzita = Color("#8C1E50")
 }
