@@ -85,18 +85,7 @@ object AppStyles : StyleSheet() {
         }
     }
 
-    private val photoReveal by keyframes {
-        from {
-            property("clip-path", "inset(0 0 0 100%)")
-            property("transform", "scale(1.15)")
-        }
-        to {
-            property("clip-path", "inset(0 0 0 0)")
-            property("transform", "scale(1)")
-        }
-    }
-
-    // Phones – the photo just fades in where it is
+    // The photo fades in where it is, zooming out a bit
     private val photoFade by keyframes {
         from {
             opacity(0)
@@ -186,9 +175,9 @@ object AppStyles : StyleSheet() {
 
     val fullImage by style {
         // Hidden until the photo is loaded and its section is on screen
-        property("clip-path", "inset(0 0 0 100%)")
+        opacity(0)
         // Keeps the photo on its own GPU layer, otherwise it's repainted (blinks) when the reveal ends
-        property("will-change", "transform, clip-path")
+        property("will-change", "transform, opacity")
         property("backface-visibility", "hidden")
         width(100.percent)
         height(100.percent)
@@ -549,9 +538,9 @@ object AppStyles : StyleSheet() {
         }
         ".$visible .$fullImage.$loaded" style {
             // Same as the last keyframe, so nothing changes when the animation ends
-            property("clip-path", "inset(0 0 0 0)")
+            opacity(1)
             property("transform", "scale(1)")
-            animation(photoReveal) {
+            animation(photoFade) {
                 duration(1.6.s)
                 timingFunction(easeOutExpo)
                 fillMode(AnimationFillMode.Both)
@@ -565,14 +554,6 @@ object AppStyles : StyleSheet() {
             }
             ".$section" style {
                 property("scroll-snap-align", "start")
-            }
-            ".$fullImage" style {
-                property("clip-path", "none")
-                opacity(0)
-            }
-            ".$visible .$fullImage.$loaded" style {
-                opacity(1)
-                property("animation-name", photoFade.name)
             }
             ".$hideOnMobile" style {
                 display(DisplayStyle.None)
@@ -670,7 +651,7 @@ object AppStyles : StyleSheet() {
                 property("opacity", "1 !important")
             }
             ".$fullImage" style {
-                property("clip-path", "none")
+                opacity(1)
             }
             ".$logoStroke" style {
                 opacity(1)
