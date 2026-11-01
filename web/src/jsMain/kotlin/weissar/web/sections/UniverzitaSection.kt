@@ -30,11 +30,11 @@ fun UniverzitaSection() {
                 Title("Univerzita", textColor)
 
                 Spacer()
-                Subtitle(tr("Celé studium v jedné aplikaci", "Your whole studies in one app"), textColor)
+                Subtitle(tr("Celé studium v jedné aplikaci", "Your entire degree in one app"), textColor)
                 Body(
                     tr(
                         "Začalo to v roce 2016 aplikací na hledání volných učeben na UHK. Dnes má rozvrh, známky, zkoušky i menzu v kapse přes 27 000 studentů z 15+ vysokých škol.",
-                        "It started in 2016 as an app for finding free classrooms at UHK. Today 27,000+ students from 15+ universities carry their timetable, grades, exams and canteen menu in their pocket.",
+                        "It started in 2016 as an app for finding free classrooms at UHK. Today 27,000+ students from 15+ universities carry their timetable, marks, exams and canteen menu in their pocket.",
                     ),
                     textColor,
                     small = true,
@@ -43,8 +43,8 @@ fun UniverzitaSection() {
 
                 Group {
                     Bullet(tr("rozvrh jako seznam, tabulka, agenda i widget", "timetable as a list, table, agenda or widget"), textColor)
-                    Bullet(tr("zápis na zkoušky včetně čekací fronty", "exam sign-ups incl. a waiting queue"), textColor)
-                    Bullet(tr("upozornění na nové známky a termíny", "alerts for new grades and exam dates"), textColor)
+                    Bullet(tr("zápis na zkoušky včetně čekací fronty", "exam sign-ups incl. a waiting list"), textColor)
+                    Bullet(tr("upozornění na nové známky a termíny", "alerts for new marks and exam dates"), textColor)
                     Bullet(tr("rozvrhy přátel, menza a volné místnosti", "friends' timetables, canteen menus & free rooms"), textColor)
                 }
 

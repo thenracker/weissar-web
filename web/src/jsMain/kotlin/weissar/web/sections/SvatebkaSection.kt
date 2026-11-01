@@ -33,7 +33,7 @@ fun SvatebkaSection() {
                 Body(
                     tr(
                         "Program, mapa, kontakty, společné fotky i zábava – všechno, co hosté na svatbě potřebují, na jednom místě. Více zábavy, více zážitků, méně organizace.",
-                        "Schedule, map, contacts, shared photos and fun – everything wedding guests need, in one place. More fun, more memories, less organizing.",
+                        "Programme, map, contacts, shared photos and fun – everything wedding guests need, in one place. More fun, more memories, less organising.",
                     ),
                     textColor,
                     small = true,
@@ -41,7 +41,7 @@ fun SvatebkaSection() {
                 Spacer()
 
                 Group {
-                    Bullet(tr("program, mapa a kontakty na webu bez instalace", "schedule, map & contacts on the web, no install needed"), textColor)
+                    Bullet(tr("program, mapa a kontakty na webu bez instalace", "programme, map & contacts on the web, no install needed"), textColor)
                     Bullet(tr("galerie od hostů v plné kvalitě", "guests' gallery in full quality"), textColor)
                     Bullet(tr("svatební soutěž a kvíz o novomanželích", "wedding challenges & a quiz about the couple"), textColor)
                     Bullet(tr("notifikace hostům v reálném čase", "real-time notifications for guests"), textColor)

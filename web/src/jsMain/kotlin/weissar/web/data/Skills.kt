@@ -37,6 +37,7 @@ val skillGroups = listOf(
         skills = listOf(
             Translated("USB komunikace", "USB communication"),
             same("Bluetooth"),
+            same("Ethernet"),
             Translated("senzory a IMU", "sensors & IMU"),
             Translated("indoor lokalizace", "indoor positioning"),
             Translated("GPS a mapy", "GPS & maps"),

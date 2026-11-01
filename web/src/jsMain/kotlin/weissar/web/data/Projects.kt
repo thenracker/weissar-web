@@ -78,19 +78,25 @@ val projects = listOf(
         company = "DAMI development",
         logo = "dami.webp",
         logoFills = true,
-        description = Translated("Pokladní systém, sociální síť a skladová aplikace", "POS system, social network and warehouse apps"),
+        description = Translated("Pokladní systém, sklad, sociální sítě, správa domů i logistika", "Point of sale, warehouse, social networks, property management and logistics"),
         role = Translated("Android lead", "Android lead"),
         years = Translated("2019 – 2023", "2019 – 2023"),
         location = Translated("Hradec Králové", "Hradec Králové"),
-        tags = listOf("Android", "Flutter", "Ktor"),
+        tags = listOf("Android", "Flutter", "Ktor", "Bluetooth", "USB"),
         detail = Translated(
-            "Jako Android lead jsem vedl vývoj zakázkových aplikací pro klienty agentury – od návrhu architektury až po vydání.",
-            "As the Android lead I drove client projects of the agency – from architecture design to release.",
+            "Jako Android lead jsem vedl tým tří vývojářů a zakázkové aplikace pro klienty agentury – od návrhu architektury až po vydání.",
+            "As the Android lead I led a team of three developers building the agency's client apps – from architecture design to release.",
         ),
         highlights = listOf(
-            Translated("pokladní (POS) systém", "point of sale (POS) system"),
-            Translated("aplikace pro sociální síť", "social network apps"),
-            Translated("správa skladu se čtečkou čárových kódů", "warehouse management with a barcode scanner"),
+            Translated("vedení Android týmu (3 vývojáři)", "leading the Android team (3 developers)"),
+            Translated(
+                "pokladní systém komunikující s širokou škálou hardwaru přes Bluetooth, USB i Ethernet",
+                "point of sale system talking to a wide range of hardware over Bluetooth, USB and Ethernet",
+            ),
+            Translated("skladový systém pro čtečky čárových kódů", "warehouse system for barcode scanners"),
+            Translated("mobilní aplikace sociálních sítí", "social network apps"),
+            Translated("aplikace pro správu bytových domů", "apps for managing blocks of flats"),
+            Translated("logistika pro dopravce", "logistics for hauliers"),
             Translated("Android, Flutter i Kotlin backend", "Android, Flutter and Kotlin backend"),
             Translated("MVVM a MVI architektura, Jetpack, Compose", "MVVM and MVI architecture, Jetpack, Compose"),
         ),
@@ -111,12 +117,12 @@ val projects = listOf(
         detail = Translated(
             "Univision jsme založili, abychom mohli Univerzitu rozvíjet na plný úvazek – aplikaci, která studentům dává rozvrh, známky, zkoušky " +
                 "i menzu do kapsy. Kromě vývoje Android aplikace jsem měl na starosti obchod a marketing.",
-            "We founded Univision to fully launch Univerzita – the app that puts timetables, grades, exams and canteen menus " +
+            "We founded Univision to fully launch Univerzita – the app that puts timetables, marks, exams and canteen menus " +
                 "into students' pockets. Besides building the Android app I was in charge of sales and marketing.",
         ),
         highlights = listOf(
             Translated("27 000+ přihlášených studentů", "27,000+ signed up students"),
-            Translated("až 20 000 aktivních uživatelů na začátku semestru", "up to 20,000 active users at the start of a semester"),
+            Translated("až 20 000 aktivních uživatelů na začátku semestru", "up to 20,000 active users at the start of a term"),
             Translated("B2B model – pro studenty zdarma", "B2B model – free for students"),
             Translated("článek v CzechCrunch a AppParade", "featured in CzechCrunch and at AppParade"),
         ),
@@ -140,7 +146,7 @@ val projects = listOf(
         tags = listOf("Jetpack", "Kotlin"),
         detail = Translated(
             "Japonská fintech firma, pro kterou jsem na dálku modernizoval existující Android aplikaci.",
-            "A Japanese fintech company – I modernized their existing Android app remotely.",
+            "A Japanese fintech company – I modernised their existing Android app remotely.",
         ),
         highlights = listOf(
             Translated("nová architektura aplikace", "new app architecture"),
@@ -156,7 +162,7 @@ val projects = listOf(
         company = "MobileSoft",
         logo = "mobilesoft.webp",
         logoFills = true,
-        description = Translated("AppBlock, aplikace pro realitní makléře, chat, pivovary i lékovník", "AppBlock, apps for real estate agents, chat, breweries and a medicine cabinet"),
+        description = Translated("AppBlock, aplikace pro realitní makléře, chat, pivovary i lékovník", "AppBlock, apps for estate agents, chat, breweries and a home medicine cabinet"),
         role = Translated("Android vývojář", "Android developer"),
         years = Translated("2016 – 2019", "2016 – 2019"),
         location = Translated("Hradec Králové", "Hradec Králové"),
@@ -164,15 +170,15 @@ val projects = listOf(
         detail = Translated(
             "Tři roky vývoje Android aplikací pro klienty mobilní agentury – od nástroje pro realitní makléře přes chat " +
                 "až po AppBlock, který pomáhá blokovat rušivé aplikace a weby.",
-            "Three years of building Android apps for clients of a mobile agency – from a tool for real estate agents and a chat " +
+            "Three years of building Android apps for clients of a mobile agency – from a tool for estate agents and a chat " +
                 "to AppBlock, which helps block distracting apps and websites.",
         ),
         highlights = listOf(
             Translated("AppBlock – blokování rušivých aplikací a webů", "AppBlock – blocking distracting apps and websites"),
-            Translated("aplikace pro realitní makléře", "an app for real estate agents"),
+            Translated("aplikace pro realitní makléře", "an app for estate agents"),
             Translated("chatovací aplikace", "a chat app"),
             Translated("aplikace pro pivovary", "apps for breweries"),
-            Translated("lékovník", "a medicine cabinet app"),
+            Translated("lékovník", "a home medicine cabinet app"),
             Translated("přechod z Javy na Kotlin, RxJava, MVVM", "moving from Java to Kotlin, RxJava, MVVM"),
         ),
         timeline = listOf(

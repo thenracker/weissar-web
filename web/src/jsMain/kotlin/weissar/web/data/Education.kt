@@ -50,7 +50,7 @@ val education = listOf(
         ),
         highlights = listOf(
             Translated("cvičení z programování mobilních aplikací", "mobile app development classes"),
-            Translated("počítačová grafika – rasterizace, 3D, Bézierovy plochy", "computer graphics – rasterization, 3D, Bézier surfaces"),
+            Translated("počítačová grafika – rasterizace, 3D, Bézierovy plochy", "computer graphics – rasterisation, 3D, Bézier surfaces"),
             Translated("výzkum indoor lokalizace a senzorů", "research on indoor positioning and sensors"),
             Translated("1. místo na hackathonu HackFIT", "1st place at the HackFIT hackathon"),
         ),
