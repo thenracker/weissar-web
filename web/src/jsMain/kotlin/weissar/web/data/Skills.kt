@@ -2,7 +2,7 @@ package weissar.web.data
 
 import weissar.web.i18n.Translated
 
-/** Group of chips in the "And more…" section, [featured] chips are highlighted. */
+/** Group of chips in the "Tech stack" section, [featured] chips are highlighted. */
 class SkillGroup(
     val label: Translated,
     val skills: List<Translated>,

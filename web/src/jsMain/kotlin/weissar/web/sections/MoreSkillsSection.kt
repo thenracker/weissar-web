@@ -14,12 +14,12 @@ import weissar.web.i18n.tr
 import weissar.web.theme.AppStyles
 import weissar.web.theme.Colors
 
-/** Continuation of the skills – everything else as chips. */
+/** Continuation of the skills – the whole tech stack as chips. */
 @Composable
 fun MoreSkillsSection() {
     FullSection(id = "more", background = Colors.backgroundDark) {
         Content {
-            Title(tr("A další…", "And more…"), Colors.primaryTextNight)
+            Title(tr("Technologický stack", "Tech stack"), Colors.primaryTextNight)
 
             Spacer()
 
