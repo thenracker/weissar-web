@@ -29,8 +29,10 @@ val skillGroups = listOf(
     ),
     SkillGroup(
         label = same("Android"),
-        skills = names("Room", "WorkManager", "DataStore", "Navigation", "Koin", "CameraX", "Block Store auth") +
-            Translated("animace", "animations"),
+        skills = names(
+            "Room", "WorkManager", "DataStore", "Navigation", "Koin", "Dagger",
+            "CameraX", "Block Store auth", "Material Design", "Lottie",
+        ),
     ),
     SkillGroup(
         label = Translated("Hardware a komunikace", "Hardware & connectivity"),
@@ -63,25 +65,14 @@ val skillGroups = listOf(
         ),
     ),
     SkillGroup(
-        label = Translated("Grafika a UI", "Graphics & UI"),
-        skills = listOf(
-            same("OpenGL"),
-            Translated("3D grafika", "3D graphics"),
-            Translated("Bézierovy křivky", "Bézier curves"),
-            same("Lottie"),
-            same("Material Design"),
-            same("Figma"),
-        ),
-    ),
-    SkillGroup(
         label = Translated("Architektura a nástroje", "Architecture & tools"),
         skills = names(
             "Clean Architecture", "MVVM", "MVI", "RxJava", "KSP",
-            "Gradle", "GitHub Actions", "CI/CD", "Git",
-        ) + Translated("unit testy", "unit tests"),
+            "Gradle", "GitHub Actions", "CI/CD", "Git", "Figma",
+        ),
     ),
     SkillGroup(
         label = Translated("Jazyky", "Languages"),
-        skills = names("Kotlin", "Java", "Dart", "Python", "C#", "SQL", "JavaScript", "HTML & CSS"),
+        skills = names("Kotlin", "Java", "Dart", "Python", "C#", "SQL"),
     ),
 )
