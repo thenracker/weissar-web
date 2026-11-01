@@ -36,7 +36,7 @@ val projects = listOf(
         location = Translated("Praha", "Prague"),
         tags = listOf("Kotlin", "Compose", "MVI", "Coroutines"),
         detail = Translated(
-            "Spolupracuju na vývoji MyAir, mobilního bankovnictví Air Bank. " +
+            "Spolupracuji na vývoji MyAir, mobilního bankovnictví Air Bank. " +
                 "Kromě nových funkcí jsem do aplikace pomáhal zavést moderní Android stack.",
             "I'm working on MyAir, the mobile banking app of Air Bank. " +
                 "Besides new features I helped bring a modern Android stack into the app.",
@@ -60,7 +60,7 @@ val projects = listOf(
         years = Translated("2022 – 2023", "2022 – 2023"),
         tags = listOf("Ktor", "Kotlin"),
         detail = Translated(
-            "Backendová odbočka z mobilního světa – serverové aplikace v Kotlinu a Ktoru pro Tesco.",
+            "Odbočka z mobilního světa k backendu – serverové aplikace v Kotlinu a Ktoru pro Tesco.",
             "A backend detour from the mobile world – server apps in Kotlin and Ktor for Tesco.",
         ),
         highlights = listOf(
@@ -109,7 +109,7 @@ val projects = listOf(
         years = Translated("2021 – 2023", "2021 – 2023"),
         tags = listOf("Android", "Kotlin", "Startup"),
         detail = Translated(
-            "Univision jsme založili, abychom mohli naplno rozjet Univerzitu – aplikaci, která studentům dává rozvrh, známky, zkoušky " +
+            "Univision jsme založili, abychom mohli Univerzitu rozvíjet na plný úvazek – aplikaci, která studentům dává rozvrh, známky, zkoušky " +
                 "i menzu do kapsy. Kromě vývoje Android aplikace jsem měl na starosti obchod a marketing.",
             "We founded Univision to fully launch Univerzita – the app that puts timetables, grades, exams and canteen menus " +
                 "into students' pockets. Besides building the Android app I was in charge of sales and marketing.",
@@ -156,19 +156,24 @@ val projects = listOf(
         company = "MobileSoft",
         logo = "mobilesoft.webp",
         logoFills = true,
-        description = Translated("Android aplikace s moderními technologiemi", "Android apps built with modern technologies"),
+        description = Translated("AppBlock, aplikace pro realitní makléře, chat, pivovary i lékovník", "AppBlock, apps for real estate agents, chat, breweries and a medicine cabinet"),
         role = Translated("Android vývojář", "Android developer"),
         years = Translated("2016 – 2019", "2016 – 2019"),
         location = Translated("Hradec Králové", "Hradec Králové"),
         tags = listOf("Java", "Kotlin", "RxJava", "MVVM"),
         detail = Translated(
-            "Tři roky vývoje Android aplikací pro klienty mobilní agentury s důrazem na moderní technologie.",
-            "Three years of building Android apps for clients of a mobile agency, with a focus on modern technologies.",
+            "Tři roky vývoje Android aplikací pro klienty mobilní agentury – od nástroje pro realitní makléře přes chat " +
+                "až po AppBlock, který pomáhá blokovat rušivé aplikace a weby.",
+            "Three years of building Android apps for clients of a mobile agency – from a tool for real estate agents and a chat " +
+                "to AppBlock, which helps block distracting apps and websites.",
         ),
         highlights = listOf(
-            Translated("Java a Kotlin", "Java and Kotlin"),
-            Translated("RxJava a material design", "RxJava and material design"),
-            Translated("MVP a MVVM architektura", "MVP and MVVM architecture"),
+            Translated("AppBlock – blokování rušivých aplikací a webů", "AppBlock – blocking distracting apps and websites"),
+            Translated("aplikace pro realitní makléře", "an app for real estate agents"),
+            Translated("chatovací aplikace", "a chat app"),
+            Translated("aplikace pro pivovary", "apps for breweries"),
+            Translated("lékovník", "a medicine cabinet app"),
+            Translated("přechod z Javy na Kotlin, RxJava, MVVM", "moving from Java to Kotlin, RxJava, MVVM"),
         ),
         timeline = listOf(
             Milestone(Translated("říjen 2016", "Oct 2016"), Translated("nástup jako Android vývojář", "joined as Android developer")),
@@ -179,38 +184,39 @@ val projects = listOf(
     Project(
         company = "IHMC Robotics",
         logo = "ihmc.webp",
-        description = Translated("Vývoj pro Android, výzkumná stáž na Floridě", "Android development, research exchange in Florida"),
-        role = Translated("Výzkumník", "Researcher"),
+        description = Translated("Sběr senzorických dat a streaming po LAN", "Sensor data collection & LAN streaming"),
+        role = Translated("Výzkumná stáž", "Research intern"),
         years = Translated("2016", "2016"),
         location = Translated("Pensacola, Florida", "Pensacola, Florida"),
-        tags = listOf("Android", "Research"),
+        tags = listOf("Android", "Sensors", "Networking"),
         detail = Translated(
             "Výzkumná stáž v Institute for Human & Machine Cognition – institutu, který se věnuje robotice a spolupráci lidí se stroji.",
-            "Research exchange at the Institute for Human & Machine Cognition, known for robotics and human-machine teamwork.",
+            "Research internship at the Institute for Human & Machine Cognition, known for robotics and human-machine teamwork.",
         ),
         highlights = listOf(
-            Translated("Android vývoj pro výzkumné projekty", "Android development for research projects"),
+            Translated("sběr dat ze senzorů telefonu v Android aplikaci", "collecting phone sensor data in an Android app"),
+            Translated("streamování naměřených dat po lokální síti (LAN) v reálném čase", "real-time streaming of the measured data over LAN"),
         ),
         timeline = listOf(
             Milestone(Translated("listopad 2016", "Nov 2016"), Translated("odlet na Floridu", "flew to Florida")),
-            Milestone(Translated("prosinec 2016", "Dec 2016"), Translated("konec stáže", "exchange finished")),
+            Milestone(Translated("prosinec 2016", "Dec 2016"), Translated("konec stáže", "internship finished")),
         ),
         link = "https://www.ihmc.us",
     ),
     Project(
         company = "ASAP-apps",
         description = Translated("Webové informační systémy", "Web information systems"),
-        role = Translated("ASP.NET vývojář", "ASP.NET developer"),
+        role = Translated("Webový vývojář", "Web developer"),
         years = Translated("2016", "2016"),
         location = Translated("Trutnov", "Trutnov"),
-        tags = listOf("ASP.NET", "MSSQL"),
+        tags = listOf("C#", "SQL"),
         detail = Translated(
             "Vývoj webových informačních systémů – od návrhu až po aplikační logiku v databázi.",
             "Building web information systems – from the design to the application logic in the database.",
         ),
         highlights = listOf(
             Translated("design informačních systémů", "information systems design"),
-            Translated("aplikační logika v MSSQL databázi", "application logic in an MSSQL database"),
+            Translated("aplikační logika v SQL databázi", "application logic in an SQL database"),
         ),
         timeline = listOf(
             Milestone(Translated("březen 2016", "Mar 2016"), Translated("začátek", "started")),
@@ -224,7 +230,7 @@ val projects = listOf(
         role = Translated("IT technik, Java vývojář", "IT technician, Java developer"),
         years = Translated("2011 – 2015", "2011 – 2015"),
         location = Translated("Broumov", "Broumov"),
-        tags = listOf("Java", "OpenSwing", "SQL"),
+        tags = listOf("Java", "SQL"),
         detail = Translated(
             "Moje první práce v IT – začínal jsem jako IT technik a postupně přešel k vývoji desktopových databázových aplikací.",
             "My first job in IT – I started as an IT technician and moved on to building desktop database apps.",

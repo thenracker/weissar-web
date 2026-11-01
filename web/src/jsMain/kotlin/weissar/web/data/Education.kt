@@ -15,7 +15,7 @@ val education = listOf(
         tags = listOf("Data Science", "Python", "TensorFlow"),
         detail = Translated(
             "Druhý inženýrský titul, tentokrát z datové vědy – při plné práci a vlastní firmě. " +
-                "V diplomce jsem učil neuronovou síť poznat z dat telefonu, jak se jeho majitel pohybuje.",
+                "V diplomové práci jsem učil neuronovou síť rozpoznat z dat telefonu, jak se jeho majitel pohybuje.",
             "A second engineering degree, this time in data science – next to a full-time job and my own company. " +
                 "In the thesis I trained a neural network to tell from phone data how its owner moves.",
         ),
@@ -29,7 +29,7 @@ val education = listOf(
         ),
         timeline = listOf(
             Milestone(Translated("2021", "2021"), Translated("nástup do navazujícího studia", "started the master's programme")),
-            Milestone(Translated("2023", "2023"), Translated("státnice s vyznamenáním", "graduated with honors")),
+            Milestone(Translated("2023", "2023"), Translated("absolvování s vyznamenáním", "graduated with honors")),
         ),
         link = "https://theses.cz/id/iupmxo/",
     ),
@@ -101,8 +101,8 @@ val education = listOf(
         location = Translated("Hradec Králové", "Hradec Králové"),
         tags = listOf("Android", "Indoor positioning"),
         detail = Translated(
-            "Inženýrské studium, při kterém jsem už naplno vyvíjel Android aplikace v MobileSoftu. " +
-                "Diplomka spojila obojí – lokalizaci uvnitř budov pomocí senzorů telefonu.",
+            "Inženýrské studium, při kterém jsem už na plný úvazek vyvíjel Android aplikace v MobileSoftu. " +
+                "Diplomová práce spojila obojí – lokalizaci uvnitř budov pomocí senzorů telefonu.",
             "Engineering studies while already building Android apps full time at MobileSoft. " +
                 "The thesis combined both – indoor positioning using phone sensors.",
         ),
@@ -111,7 +111,7 @@ val education = listOf(
                 "diplomová práce: Indoor lokalizace v systému pro podporu výuky",
                 "thesis: Indoor positioning in a system supporting education",
             ),
-            Translated("výzkumná stáž v IHMC na Floridě", "research exchange at IHMC in Florida"),
+            Translated("výzkumná stáž v IHMC na Floridě", "research internship at IHMC in Florida"),
             Translated("1. místo na Škoda Auto Hackathonu", "1st place at the Škoda Auto Hackathon"),
         ),
         link = "https://theses.cz/id/sts2mw/",
@@ -143,7 +143,7 @@ val education = listOf(
         location = Translated("Hradec Králové", "Hradec Králové"),
         tags = listOf("Android", "Java"),
         detail = Translated(
-            "Tady to celé začalo – první Android aplikace, první hackathony a UHK Helper, ze kterého později vyrostla Univerzita.",
+            "Zde to celé začalo – první Android aplikace, první hackathony a UHK Helper, ze kterého později vyrostla Univerzita.",
             "This is where it all started – first Android apps, first hackathons and UHK Helper, which later grew into Univerzita.",
         ),
         highlights = listOf(
@@ -167,6 +167,6 @@ val certificates = listOf(
     Translated("🧠 člen Mensy ČR", "🧠 Mensa Czech Republic member"),
     Translated("TensorFlow Lite (Coursera)", "TensorFlow Lite (Coursera)"),
     Translated("TensorFlow (Coursera)", "TensorFlow (Coursera)"),
-    Translated("Cisco CCNA 1 a 2", "Cisco CCNA 1 & 2"),
-    Translated("angličtina – plně profesionální", "English – full professional"),
+    Translated("Cisco Networking Academy (CCNA 1–2)", "Cisco Networking Academy (CCNA 1–2)"),
+    Translated("angličtina C1, plynně", "English C1, fluent"),
 )

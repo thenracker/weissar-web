@@ -18,9 +18,10 @@ val skillGroups = listOf(
     SkillGroup(
         label = same("AI & ML"),
         featured = true,
-        skills = names("Claude Code", "Claude API", "MCP", "Agent skills") + listOf(
-            Translated("agentní workflow", "agentic workflows"),
-            same("prompt engineering"),
+        skills = listOf(
+            same("Claude Code"),
+            same("Claude API"),
+            Translated("MCP servery", "MCP servers"),
             same("TensorFlow"),
             Translated("neuronové sítě", "neural networks"),
             same("ML Kit"),
@@ -39,7 +40,6 @@ val skillGroups = listOf(
             Translated("senzory a IMU", "sensors & IMU"),
             Translated("indoor lokalizace", "indoor positioning"),
             Translated("GPS a mapy", "GPS & maps"),
-            same("Wear OS"),
         ),
     ),
     SkillGroup(
@@ -51,7 +51,7 @@ val skillGroups = listOf(
     ),
     SkillGroup(
         label = same("Backend & data"),
-        skills = names("Ktor", "GraphQL", "REST", "Retrofit", "OkHttp", "PostgreSQL", "MSSQL", "Docker", "Java Servlets") +
+        skills = names("Ktor", "GraphQL", "REST", "Retrofit", "OkHttp", "PostgreSQL", "Docker") +
             Translated("XML feedy", "XML feeds"),
     ),
     SkillGroup(
@@ -67,7 +67,6 @@ val skillGroups = listOf(
             same("OpenGL"),
             Translated("3D grafika", "3D graphics"),
             Translated("Bézierovy křivky", "Bézier curves"),
-            same("custom views"),
             same("Lottie"),
             same("Material Design"),
             same("Figma"),
@@ -76,12 +75,12 @@ val skillGroups = listOf(
     SkillGroup(
         label = Translated("Architektura a nástroje", "Architecture & tools"),
         skills = names(
-            "Clean Architecture", "MVVM", "MVI", "MVP", "RxJava", "KSP",
+            "Clean Architecture", "MVVM", "MVI", "RxJava", "KSP",
             "Gradle", "GitHub Actions", "CI/CD", "Git",
         ) + Translated("unit testy", "unit tests"),
     ),
     SkillGroup(
         label = Translated("Jazyky", "Languages"),
-        skills = names("Kotlin", "Java", "Dart", "Python", "C#", "ASP.NET", "SQL", "JavaScript", "HTML & CSS"),
+        skills = names("Kotlin", "Java", "Dart", "Python", "C#", "SQL", "JavaScript", "HTML & CSS"),
     ),
 )
