@@ -8,7 +8,7 @@
 | Doména | **weissar.dev**, koupená v **Cloudflare Registrar** (auto-renew zapnutý) |
 | DNS | Cloudflare (záznamy jen jako „DNS only“, šedý mráček) |
 | HTTPS | certifikát vystavuje GitHub Pages sám, HTTPS je vynucené |
-| Deploy | GitHub Action `.github/workflows/pages.yml` po každém pushi do `dev` |
+| Deploy | GitHub Action `.github/workflows/pages.yml` po každém pushi do `main` |
 
 Web je čistě statický (Compose HTML → `web.js` + soubory z `resources`), takže server ani Cloud Run nepotřebuje.
 Ktor server v `:server` slouží jen pro lokální vývoj.
@@ -27,7 +27,7 @@ na `https://weissar.dev/university-delete-account-request.html`.
 | TXT | `_github-pages-challenge-thenracker` | ověřovací kód z GitHubu (Settings → Pages → Verified domains) |
 
 Vlastní doména je nastavená v repu (Settings → Pages → Custom domain). U deploye přes Actions se soubor `CNAME` nepoužívá.
-Po změně domény je potřeba spustit nový deploy (`gh workflow run pages.yml --ref dev`), jinak web vrací 404.
+Po změně domény je potřeba spustit nový deploy (`gh workflow run pages.yml --ref main`), jinak web vrací 404.
 
 ## Pozor na .dev
 

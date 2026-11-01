@@ -2,7 +2,7 @@
 
 Osobní web postavený na **Kotlinu** – frontend v **Compose HTML** (Kotlin/JS), backend **Ktor** (Netty).
 
-> Běží na **https://weissar.dev** (GitHub Pages, automaticky se nasazuje z větve `dev`)
+> Běží na **https://weissar.dev** (GitHub Pages, automaticky se nasazuje z větve `main`)
 
 ## Struktura projektu
 
@@ -19,7 +19,6 @@ web/                          # Frontend – Compose HTML, kompiluje se do web.j
   src/jsMain/resources/       # index.html, obrázky, svg, statické html stránky
 server/                       # Ktor server – servíruje zbuildovaný web + /health
 Dockerfile                    # build + běh serveru v kontejneru
-firebase.json                 # nepoužívá se – původní plán s Firebase Hosting a Cloud Run
 ```
 
 ## Vývoj
