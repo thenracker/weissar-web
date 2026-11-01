@@ -53,8 +53,7 @@ fun SkillsSection() {
 
                 Group {
                     Subtitle("AI", textColor) { Icon(src = "ai.svg", alt = "AI") }
-                    Bullet(tr("AI nástroje mi zrychlují vývoj", "AI tools speed up my development"), textColor)
-                    Bullet(tr("kód kontroluji a odpovídám za něj sám", "I review the code and take responsibility for it"), textColor)
+                    Bullet(tr("AI nástroje pro akceleraci vývoje", "AI tools to accelerate development"), textColor)
                     Bullet("Claude Code, Claude API, MCP", textColor)
                     Bullet(tr("TensorFlow a neuronové sítě", "TensorFlow & neural networks"), textColor)
                 }

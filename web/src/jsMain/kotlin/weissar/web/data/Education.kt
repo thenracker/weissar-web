@@ -90,6 +90,10 @@ val education = listOf(
             "Letní program na univerzitě v Tainanu – výuka v angličtině, studenti z celého světa a spousta Asie okolo.",
             "A summer programme at a university in Tainan – classes in English, students from all over the world and lots of Asia around.",
         ),
+        highlights = listOf(
+            Translated("programování v Processingu", "programming in Processing"),
+            Translated("kurz managementu", "management course"),
+        ),
         timeline = listOf(
             Milestone(Translated("červen 2017", "Jun 2017"), Translated("odlet na Tchaj-wan", "flew to Taiwan")),
             Milestone(Translated("červenec 2017", "Jul 2017"), Translated("konec letní školy", "summer school finished")),
@@ -131,6 +135,9 @@ val education = listOf(
         detail = Translated(
             "Léto v Hongkongu, kde jsem vyvíjel Android aplikace – mimo jiné navigaci a průvodce po kampusu.",
             "A summer in Hong Kong building Android apps – among others a campus navigation and guide.",
+        ),
+        highlights = listOf(
+            Translated("vývoj Android aplikací pro City University", "Android app development for City University"),
         ),
         timeline = listOf(
             Milestone(Translated("červenec 2016", "Jul 2016"), Translated("odlet do Hongkongu", "flew to Hong Kong")),
