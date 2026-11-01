@@ -35,8 +35,8 @@ object Localization {
         document.querySelector("meta[name=description]")?.setAttribute(
             "content",
             tr(
-                "Petr Weissar – Senior Android vývojář, softwarový analytik, UX/UI konzultant",
-                "Petr Weissar – Senior Android developer, software analyst, UX/UI consultant",
+                "Senior Android vývojář, softwarový analytik, UX/UI konzultant",
+                "Senior Android developer, software analyst, UX/UI consultant",
             ),
         )
     }
