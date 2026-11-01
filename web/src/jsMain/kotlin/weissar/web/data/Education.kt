@@ -77,18 +77,18 @@ val education = listOf(
         company = "Chang Jung Christian University",
         logo = "cjcu.webp",
         logoFills = true,
-        description = Translated("Letní studijní pobyt na Tchaj-wanu", "Summer exchange in Taiwan"),
+        description = Translated("Letní škola na Tchaj-wanu", "Summer school in Taiwan"),
         role = Translated("Letní škola", "Summer school"),
         years = Translated("2017", "2017"),
         location = Translated("Tainan, Tchaj-wan", "Tainan, Taiwan"),
-        tags = listOf("Exchange"),
+        tags = listOf("Summer school"),
         detail = Translated(
             "Letní program na univerzitě v Tainanu – výuka v angličtině, studenti z celého světa a spousta Asie okolo.",
             "A summer programme at a university in Tainan – classes in English, students from all over the world and lots of Asia around.",
         ),
         timeline = listOf(
             Milestone(Translated("červen 2017", "Jun 2017"), Translated("odlet na Tchaj-wan", "flew to Taiwan")),
-            Milestone(Translated("červenec 2017", "Jul 2017"), Translated("konec pobytu", "exchange finished")),
+            Milestone(Translated("červenec 2017", "Jul 2017"), Translated("konec letní školy", "summer school finished")),
         ),
     ),
     Project(
@@ -119,7 +119,7 @@ val education = listOf(
     Project(
         company = "City University of Hong Kong",
         logo = "cityu.webp",
-        description = Translated("Letní stáž – vývoj pro Android", "Summer exchange – Android development"),
+        description = Translated("Vývoj pro Android v Hongkongu", "Android development in Hong Kong"),
         role = Translated("Letní škola", "Summer school"),
         years = Translated("2016", "2016"),
         location = Translated("Kowloon, Hongkong", "Kowloon, Hong Kong"),
@@ -130,7 +130,7 @@ val education = listOf(
         ),
         timeline = listOf(
             Milestone(Translated("červenec 2016", "Jul 2016"), Translated("odlet do Hongkongu", "flew to Hong Kong")),
-            Milestone(Translated("srpen 2016", "Aug 2016"), Translated("konec stáže", "exchange finished")),
+            Milestone(Translated("srpen 2016", "Aug 2016"), Translated("konec letní školy", "summer school finished")),
         ),
     ),
     Project(
