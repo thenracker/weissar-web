@@ -2,7 +2,7 @@
 
 Osobní web postavený na **Kotlinu** – frontend v **Compose HTML** (Kotlin/JS), backend **Ktor** (Netty).
 
-> Aktuálně dostupné na: https://thenracker.github.io/weissar-web/ (automaticky se nasazuje z větve `dev`)
+> Běží na **https://weissar.dev** (GitHub Pages, automaticky se nasazuje z větve `dev`)
 
 ## Struktura projektu
 
@@ -19,7 +19,7 @@ web/                          # Frontend – Compose HTML, kompiluje se do web.j
   src/jsMain/resources/       # index.html, obrázky, svg, statické html stránky
 server/                       # Ktor server – servíruje zbuildovaný web + /health
 Dockerfile                    # build + běh serveru v kontejneru
-firebase.json                 # Firebase Hosting -> Cloud Run (viz docs/DOMENA_A_HOSTING.md)
+firebase.json                 # nepoužívá se – původní plán s Firebase Hosting a Cloud Run
 ```
 
 ## Vývoj
