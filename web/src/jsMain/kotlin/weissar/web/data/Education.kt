@@ -69,6 +69,10 @@ val education = listOf(
             "Huawei's programme for selected students from around the world – a month in Beijing and Shenzhen, " +
                 "lectures on networking and telecommunications, lab visits and Chinese culture.",
         ),
+        highlights = listOf(
+            Translated("konfigurace routerů Huawei", "Huawei router configuration"),
+            Translated("výuka čínštiny", "Chinese lessons"),
+        ),
         timeline = listOf(
             Milestone(Translated("říjen 2017", "Oct 2017"), Translated("měsíc v Číně", "a month in China")),
         ),

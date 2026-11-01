@@ -112,7 +112,7 @@ val projects = listOf(
         logoFills = true,
         description = Translated("Firma za aplikací Univerzita.app", "The company behind Univerzita.app"),
         role = Translated("Jednatel a vývojář", "Managing director & engineer"),
-        years = Translated("2021 – 2023", "2021 – 2023"),
+        years = Translated("2021 – nyní", "2021 – now"),
         tags = listOf("Android", "Kotlin", "Startup"),
         detail = Translated(
             "Univision jsme založili, abychom mohli Univerzitu rozvíjet na plný úvazek – aplikaci, která studentům dává rozvrh, známky, zkoušky " +
@@ -132,6 +132,7 @@ val projects = listOf(
             Milestone(Translated("2020", "2020"), Translated("otevřená beta Univerzita.app", "Univerzita.app open beta")),
             Milestone(Translated("2021", "2021"), Translated("založení Univision s. r. o.", "Univision s. r. o. founded")),
             Milestone(Translated("2022", "2022"), Translated("27 000 studentů a článek v CzechCrunch", "27,000 students and a CzechCrunch article")),
+            Milestone(Translated("nyní", "now"), Translated("dál jako jednatel", "still managing director")),
         ),
         link = "https://cc.cz/zalozili-aplikaci-ktera-zlepsuje-zivot-desitkam-tisic-studentu-brzdi-je-ale-neochota-univerzit/",
     ),
