@@ -152,22 +152,6 @@ val education = listOf(
         ),
         link = "https://theses.cz/id/qaha4q/",
     ),
-    Project(
-        company = "Obchodní akademie Náchod",
-        logo = "school.svg",
-        description = Translated("Maturita", "High school diploma"),
-        role = Translated("s vyznamenáním", "with honors"),
-        years = Translated("2009 – 2013", "2009 – 2013"),
-        location = Translated("Náchod", "Náchod"),
-        tags = listOf("IT"),
-        detail = Translated(
-            "Střední škola, kde jsem poprvé pořádně programoval a zjistil, že mě to baví.",
-            "High school, where I properly programmed for the first time and found out I enjoy it.",
-        ),
-        highlights = listOf(
-            Translated("psaní všemi deseti", "touch typing"),
-        ),
-    ),
 )
 
 /** Shown as chips under the education cards. */

@@ -43,7 +43,7 @@ fun IntroSection() {
                     // Starts typing once the name and the photo are in
                     Typewriter(
                         lines = listOf(
-                            tr("Senior Android vývojář", "Android senior developer"),
+                            tr("Senior Android vývojář", "Senior Android developer"),
                             tr("Softwarový analytik", "Software analyst"),
                             tr("UX/UI konzultant", "UX/UI consultant"),
                         ),

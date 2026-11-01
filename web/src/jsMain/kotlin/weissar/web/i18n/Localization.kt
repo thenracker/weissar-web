@@ -20,13 +20,25 @@ object Localization {
         private set
 
     init {
-        document.documentElement?.setAttribute("lang", language.code)
+        applyToDocument()
     }
 
     fun select(language: Language) {
         this.language = language
-        document.documentElement?.setAttribute("lang", language.code)
+        applyToDocument()
         runCatching { localStorage.setItem(STORAGE_KEY, language.code) }
+    }
+
+    /** index.html has the Czech description, it's swapped for the selected language. */
+    private fun applyToDocument() {
+        document.documentElement?.setAttribute("lang", language.code)
+        document.querySelector("meta[name=description]")?.setAttribute(
+            "content",
+            tr(
+                "Petr Weissar – Senior Android vývojář, softwarový analytik, UX/UI konzultant",
+                "Petr Weissar – Senior Android developer, software analyst, UX/UI consultant",
+            ),
+        )
     }
 
     private fun loadLanguage(): Language {
