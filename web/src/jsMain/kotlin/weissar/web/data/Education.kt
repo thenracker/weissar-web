@@ -91,7 +91,7 @@ val education = listOf(
             "A summer programme at a university in Tainan – classes in English, students from all over the world and lots of Asia around.",
         ),
         highlights = listOf(
-            Translated("programování v Processingu", "programming in Processing"),
+            Translated("programování grafiky v jazyce Processing", "graphics programming in Processing"),
             Translated("kurz managementu", "management course"),
         ),
         timeline = listOf(
