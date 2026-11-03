@@ -28,7 +28,7 @@ import kotlin.js.json
  * Web3Forms access key – messages are delivered to the e-mail it was created for, so the address isn't in the page.
  * The key is public by design, it only allows sending to that one address.
  */
-private const val WEB3FORMS_ACCESS_KEY = "YOUR-WEB3FORMS-ACCESS-KEY"
+private const val WEB3FORMS_ACCESS_KEY = "cb21986e-161f-47d0-8a28-918d475587ee"
 private const val WEB3FORMS_URL = "https://api.web3forms.com/submit"
 
 private enum class SendState { Idle, Sending, Sent, Failed }
