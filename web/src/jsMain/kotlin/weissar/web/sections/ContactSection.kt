@@ -1,7 +1,12 @@
 package weissar.web.sections
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
@@ -9,6 +14,7 @@ import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import weissar.web.components.AnimatedLogo
 import weissar.web.components.Body
+import weissar.web.components.ContactModal
 import weissar.web.components.Content
 import weissar.web.components.Section
 import weissar.web.components.Spacer
@@ -21,6 +27,7 @@ import weissar.web.theme.Colors
 @Composable
 fun ContactSection() {
     val textColor = Colors.white
+    var formOpen by remember { mutableStateOf(false) }
 
     Section(
         id = "contact",
@@ -32,6 +39,7 @@ fun ContactSection() {
                 Spacer()
 
                 Div({ classes(AppStyles.group, AppStyles.contactList) }) {
+                    ContactRow("contact-mail.svg", tr("Napsat zprávu", "Send a message"), onClick = { formOpen = true })
                     ContactRow("contact-linkedin.svg", "LinkedIn", href = "https://www.linkedin.com/in/weissar-petr/")
                     ContactRow("contact-instagram.svg", "Instagram", href = "https://www.instagram.com/petr.weissar/")
                 }
@@ -54,17 +62,24 @@ fun ContactSection() {
             }
         },
     )
+
+    if (formOpen) ContactModal(onClose = { formOpen = false })
 }
 
-/** Icon in a round bubble followed by a text, clickable when [href] is set. */
+/** Icon in a round bubble followed by a text, clickable when [href] or [onClick] is set. */
 @Composable
-private fun ContactRow(icon: String, text: String, href: String? = null) {
+private fun ContactRow(icon: String, text: String, href: String? = null, onClick: (() -> Unit)? = null) {
     val content: @Composable () -> Unit = {
         Span({ classes(AppStyles.contactIcon) }) { Img(src = icon, alt = "") }
         Span({ classes(AppStyles.body) }) { Text(text) }
     }
 
-    if (href == null) {
+    if (onClick != null) {
+        Button({
+            classes(AppStyles.contactRow, AppStyles.contactLink, AppStyles.contactButton)
+            onClick { onClick() }
+        }) { content() }
+    } else if (href == null) {
         Div({ classes(AppStyles.contactRow) }) { content() }
     } else {
         A(href = href, attrs = {

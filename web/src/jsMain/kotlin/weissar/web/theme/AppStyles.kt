@@ -574,6 +574,62 @@ object AppStyles : StyleSheet() {
         property("margin-top", "8px")
     }
 
+    /** Contact row that opens the form instead of a link. */
+    val contactButton by style {
+        property("border", "none")
+        property("background", "none")
+        padding(0.px)
+        property("font", "inherit")
+        property("cursor", "pointer")
+    }
+
+    val form by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(8.px)
+    }
+
+    val formLabel by style {
+        property("font-size", "clamp(13px, .9vw, 16px)")
+        fontWeight(700)
+        property("text-transform", "uppercase")
+        property("letter-spacing", ".08em")
+        color(Colors.secondaryText)
+        property("margin-top", "8px")
+    }
+
+    val formInput by style {
+        width(100.percent)
+        boxSizing("border-box")
+        padding(12.px, 16.px)
+        borderRadius(14.px)
+        property("border", "2px solid transparent")
+        backgroundColor(Colors.backgroundLight)
+        color(Colors.primaryText)
+        property("font", "inherit")
+        property("font-size", "clamp(16px, 1.1vw, 20px)")
+        property("outline", "none")
+        property("transition", "border-color .3s ease, background-color .3s ease")
+    }
+
+    val formTextArea by style {
+        property("min-height", "160px")
+        property("resize", "vertical")
+        property("line-height", "1.5")
+    }
+
+    val formError by style {
+        property("font-size", "clamp(14px, 1vw, 18px)")
+        color(Color("#B3261E"))
+    }
+
+    val formSubmit by style {
+        property("margin-top", "12px")
+        property("border", "none")
+        property("font", "inherit")
+        property("cursor", "pointer")
+    }
+
     val companyLogoLarge by style {
         width(72.px)
         height(72.px)
@@ -808,6 +864,19 @@ object AppStyles : StyleSheet() {
         }
         ".$modalClose:hover" style {
             property("scale", "1.08")
+        }
+        ".$formInput:focus" style {
+            property("border-color", "#222")
+            backgroundColor(Colors.white)
+        }
+        ".$formInput::placeholder" style {
+            color(Colors.secondaryText)
+        }
+        ".$button.$formSubmit:disabled" style {
+            opacity(0.5)
+            property("cursor", "default")
+            property("translate", "none")
+            property("box-shadow", "none")
         }
         ".$modalLink:hover" style {
             backgroundColor(Colors.backgroundLight)
