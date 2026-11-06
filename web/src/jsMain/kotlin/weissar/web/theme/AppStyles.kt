@@ -265,13 +265,6 @@ object AppStyles : StyleSheet() {
         property("stroke-dasharray", "0 2")
     }
 
-    val footnote by style {
-        property("font-size", "clamp(12px, .8vw, 15px)")
-        color(Colors.secondaryTextNight)
-        property("text-align", "end")
-        property("margin-top", "6px")
-    }
-
     val hideOnMobile by style {}
 
     val icon by style {
@@ -399,6 +392,19 @@ object AppStyles : StyleSheet() {
         borderRadius(50.percent)
         backgroundColor(Color("rgba(255, 255, 255, .08)"))
         property("transition", "background-color .3s ease, scale .3s ease")
+    }
+
+    val serviceColumns by style {
+        display(DisplayStyle.Grid)
+        property("grid-template-columns", "repeat(3, 1fr)")
+        gap(4.vw)
+        alignItems(AlignItems.Start)
+    }
+
+    val serviceColumn by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        gap(16.px)
     }
 
     val cardGrid by style {
@@ -1090,6 +1096,10 @@ object AppStyles : StyleSheet() {
             }
             ".$modalBackdrop" style {
                 padding(16.px)
+            }
+            ".$serviceColumns" style {
+                property("grid-template-columns", "1fr")
+                gap(40.px)
             }
             ".$introActions" style {
                 justifyContent(JustifyContent.SpaceBetween)

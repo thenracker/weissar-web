@@ -55,7 +55,7 @@ fun Body(text: String, color: CSSColorValue = Colors.primaryText, small: Boolean
 
 /** Bullet point with optional indented sub items. */
 @Composable
-fun Bullet(text: String, color: CSSColorValue, subItems: List<String> = emptyList()) {
-    Body("• $text", color)
+fun Bullet(text: String, color: CSSColorValue, subItems: List<String> = emptyList(), small: Boolean = false) {
+    Body("• $text", color, small)
     subItems.forEach { Body("    - $it", color, small = true) }
 }

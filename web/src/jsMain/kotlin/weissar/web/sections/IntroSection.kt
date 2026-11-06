@@ -54,7 +54,7 @@ fun IntroSection() {
 
                     Div({ classes(AppStyles.fillWidth, AppStyles.introActions) }) {
                         WriteMeButton(AppStyles.onlyMobile)
-                        A(href = "#skills", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
+                        A(href = "#services", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
                             Icon(src = "arrow-double-down.svg", bounce = true)
                         }
                     }
@@ -82,7 +82,7 @@ fun IntroSection() {
     )
 }
 
-/** Shortcut to the contacts at the very bottom of the page. */
+/** Shortcut to the contacts slide. */
 @Composable
 private fun WriteMeButton(vararg extraClasses: String) {
     A(href = "#contact", attrs = { classes(AppStyles.button, *extraClasses) }) {

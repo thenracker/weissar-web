@@ -9,13 +9,13 @@ import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
-import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import weissar.web.components.AnimatedLogo
 import weissar.web.components.Body
 import weissar.web.components.ContactModal
 import weissar.web.components.Content
+import weissar.web.components.Icon
 import weissar.web.components.Section
 import weissar.web.components.Spacer
 import weissar.web.components.Title
@@ -23,7 +23,7 @@ import weissar.web.i18n.tr
 import weissar.web.theme.AppStyles
 import weissar.web.theme.Colors
 
-/** Last slide – footer with contacts. */
+/** Contacts after the portfolio, more about me follows. */
 @Composable
 fun ContactSection() {
     val textColor = Colors.white
@@ -55,9 +55,9 @@ fun ContactSection() {
             Content {
                 AnimatedLogo(color = "#eee", loop = true, alignEnd = true)
                 Spacer()
-                Div({ classes(AppStyles.end) }) {
-                    Body("© 2026 Petr Weissar", Colors.secondaryTextNight, small = true)
-                    P({ classes(AppStyles.footnote) }) { Text("Made with love in Compose Web") }
+                A(href = "#skills", attrs = { classes(AppStyles.button, AppStyles.end) }) {
+                    Body(tr("Více o mně", "More about me"))
+                    Icon(src = "arrow-more.svg")
                 }
             }
         },
