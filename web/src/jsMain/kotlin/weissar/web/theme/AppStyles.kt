@@ -265,6 +265,19 @@ object AppStyles : StyleSheet() {
         property("stroke-dasharray", "0 2")
     }
 
+    val footer by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Column)
+        alignItems(AlignItems.Center)
+        gap(6.px)
+    }
+
+    val footnote by style {
+        property("font-size", "clamp(12px, .8vw, 15px)")
+        color(Colors.secondaryText)
+        property("text-align", "center")
+    }
+
     val hideOnMobile by style {}
 
     val icon by style {

@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
+import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import weissar.web.components.Content
@@ -43,6 +44,13 @@ fun EducationSection() {
             Div({ classes(AppStyles.group, AppStyles.chipGroups) }) {
                 ChipList(tr("Ocenění", "Awards"), awards)
                 ChipList(tr("Certifikáty a další", "Certificates & more"), certificates)
+            }
+
+            Spacer()
+
+            Div({ classes(AppStyles.footer) }) {
+                P({ classes(AppStyles.footnote) }) { Text("© 2026 Petr Weissar") }
+                P({ classes(AppStyles.footnote) }) { Text("Made with love in Compose Web") }
             }
         }
 
