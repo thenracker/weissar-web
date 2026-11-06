@@ -55,7 +55,7 @@ fun ContactSection() {
             Content {
                 AnimatedLogo(color = "#eee", loop = true, alignEnd = true)
                 Spacer()
-                A(href = "#skills", attrs = { classes(AppStyles.button, AppStyles.end) }) {
+                A(href = "#more", attrs = { classes(AppStyles.button, AppStyles.end) }) {
                     Body(tr("Více o mně", "More about me"))
                     Icon(src = "arrow-more.svg")
                 }

@@ -10,7 +10,6 @@ import weissar.web.sections.IntroSection
 import weissar.web.sections.MoreSkillsSection
 import weissar.web.sections.ProjectsSection
 import weissar.web.sections.ServicesSection
-import weissar.web.sections.SkillsSection
 import weissar.web.sections.SvatebkaSection
 import weissar.web.sections.UniverzitaSection
 import weissar.web.theme.AppStyles
@@ -25,13 +24,12 @@ fun main() {
         UniverzitaSection()
         ProjectsSection()
         ContactSection()
-        SkillsSection()
         MoreSkillsSection()
         EducationSection()
 
         val lightSectionIds = setOf("services", "projects", "education")
         SectionDots(
-            sectionIds = listOf("intro", "services", "svatebka", "univerzita", "projects", "contact", "skills", "more", "education"),
+            sectionIds = listOf("intro", "services", "svatebka", "univerzita", "projects", "contact", "more", "education"),
             lightSectionIds = lightSectionIds,
         )
         LanguageSwitch(lightSectionIds)
