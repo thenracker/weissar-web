@@ -1,6 +1,7 @@
 package weissar.web.concept.sections
 
 import androidx.compose.runtime.Composable
+import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
@@ -14,6 +15,7 @@ import weissar.web.concept.components.Phones
 import weissar.web.concept.components.Reveal
 import weissar.web.concept.components.SectionHeading
 import weissar.web.concept.theme.AppStyles
+import weissar.web.concept.theme.Colors
 import weissar.web.i18n.tr
 
 @Composable
@@ -45,6 +47,7 @@ fun ProductsSection() {
             chips = listOf("Android", "iOS", "Web", "Firebase"),
             screens = listOf("/screens/svatebka-1.webp", "/screens/svatebka-2.webp", "/screens/svatebka-3.webp"),
             link = "https://svatebka.app",
+            brand = Brand(Colors.svatebka, Colors.svatebkaLight, Colors.onSvatebka),
         )
         Product(
             id = "univerzita",
@@ -63,10 +66,14 @@ fun ProductsSection() {
             chips = listOf("Kotlin", "Android", tr("Rozvrhy", "Timetables"), tr("Notifikace", "Notifications")),
             screens = listOf("/screens/univerzita-1.webp", "/screens/univerzita-2.webp", "/screens/univerzita-3.webp"),
             link = "https://univerzita.app",
+            brand = Brand(Colors.univerzita, Colors.univerzitaLight, Colors.onUniverzita),
             mirrored = true,
         )
     }
 }
+
+/** App's brand [color] for the chips, [light] variant readable as text on the dark card. */
+private class Brand(val color: CSSColorValue, val light: CSSColorValue, val onColor: CSSColorValue)
 
 @Composable
 private fun Product(
@@ -79,12 +86,18 @@ private fun Product(
     chips: List<String>,
     screens: List<String>,
     link: String,
+    brand: Brand,
     mirrored: Boolean = false,
 ) {
     Observed(id = id, className = AppStyles.card) {
         Div({
             classes(AppStyles.product)
             if (mirrored) classes(AppStyles.productMirrored)
+            style {
+                property("--brand", "${brand.color}")
+                property("--brand-light", "${brand.light}")
+                property("--on-brand", "${brand.onColor}")
+            }
         }) {
             Div({ classes(AppStyles.productText) }) {
                 Reveal(0) {

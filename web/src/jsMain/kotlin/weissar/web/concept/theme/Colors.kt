@@ -21,4 +21,12 @@ object Colors {
     val gold = Color("#F6D483")
     val chipText = Color("#F9E3AF")
     val onCookie = Color("#4A251F")
+
+    // Brand colors of the apps (backgrounds of their sections on the old page), titles lightened for the dark card
+    val svatebka = Color("#BE7F7F")
+    val svatebkaLight = Color("#E3A9A7")
+    val onSvatebka = Color("#2E1616")
+    val univerzita = Color("#8C1E50")
+    val univerzitaLight = Color("#E8739F")
+    val onUniverzita = Color("#FBE4EE")
 }

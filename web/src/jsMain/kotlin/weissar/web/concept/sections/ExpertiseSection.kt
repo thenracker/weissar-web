@@ -18,10 +18,6 @@ fun ExpertiseSection() {
                 eyebrow = tr("Co dělám", "What I do"),
                 first = tr("Android, backend", "Android, backend"),
                 second = tr("a UX/UI konzultace.", "and UX/UI consulting."),
-                note = tr(
-                    "Hlavně nativní Android v Kotlinu. K tomu backend, sdílený kód pro iOS a UX/UI konzultace – ať stavíte novou aplikaci, nebo potřebujete dát do pořádku tu stávající.",
-                    "Mostly native Android in Kotlin. Plus backend, shared code for iOS and UX/UI consulting – whether you're building a new app or need to fix up the one you have.",
-                ),
             )
             Columns(expertise)
         }

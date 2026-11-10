@@ -330,9 +330,15 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("transition", "transform .6s cubic-bezier(.34, 1.56, .64, 1)")
     }
 
-    val column by style {}
+    /** Text grows, so the chips of all columns in a row sit on one bottom line. */
+    val column by style {
+        property("display", "flex")
+        property("flex-direction", "column")
+        property("align-items", "flex-start")
+    }
 
     init {
+        ".$column > .$note" style { property("flex-grow", "1") }
         ".$column:hover .$cookie" style { property("transform", "rotate(45deg) scale(1.06)") }
         ".$column:hover .$cookie .$icon" style { property("transform", "rotate(-45deg)") }
         ".$cookie .$icon" style { property("transition", "transform .6s cubic-bezier(.34, 1.56, .64, 1)") }
@@ -628,8 +634,16 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("font-family", SERIF)
         property("font-weight", "700")
         property("font-size", "clamp(32px, 3.2vw, 46px)")
-        color(Colors.gold)
+        property("color", "var(--brand-light)")
         property("margin-top", "-8px")
+    }
+
+    init {
+        // Chips in the app's own color
+        ".$product .$chip" style {
+            property("background-color", "var(--brand)")
+            property("color", "var(--on-brand)")
+        }
     }
 
     val productMeta by style {
