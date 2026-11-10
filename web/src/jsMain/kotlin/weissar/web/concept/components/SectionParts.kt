@@ -15,7 +15,7 @@ fun SectionHeading(
     eyebrow: String,
     first: String,
     second: String,
-    note: String,
+    note: String? = null,
     accentFirst: Boolean = false,
 ) {
     Div({ classes(AppStyles.heading) }) {
@@ -23,7 +23,7 @@ fun SectionHeading(
             Reveal(0) { Eyebrow(number, eyebrow) }
             Reveal(1) { DisplayTitle(first, second, accentFirst) }
         }
-        Reveal(2) { P({ classes(AppStyles.note) }) { Text(note) } }
+        if (note != null) Reveal(2) { P({ classes(AppStyles.note) }) { Text(note) } }
     }
 }
 

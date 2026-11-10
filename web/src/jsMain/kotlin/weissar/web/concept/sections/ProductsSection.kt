@@ -25,10 +25,6 @@ fun ProductsSection() {
                 eyebrow = tr("Vlastní projekty", "My own projects"),
                 first = tr("Moje aplikace,", "My apps,"),
                 second = tr("od nápadu po tisíce uživatelů.", "from an idea to thousands of users."),
-                note = tr(
-                    "Na obou dělám všechno – návrh obrazovek, aplikace, backend i podporu uživatelů.",
-                    "I do everything on both – screen design, the apps, the backend and user support.",
-                ),
             )
         }
 
