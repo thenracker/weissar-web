@@ -51,7 +51,11 @@ fun ContactSection(onContact: () -> Unit) {
         }
         Div({ classes(AppStyles.footer) }) {
             Span { Text("Pardubice · Hradec Králové · Praha") }
-            Span { Text("Made with love in Compose Web") }
+            Span({ attr("aria-label", "Made with love in Compose Web") }) {
+                Text("Made with ")
+                MaterialIcon("favorite", AppStyles.heart)
+                Text(" in Compose Web")
+            }
         }
     }
 }

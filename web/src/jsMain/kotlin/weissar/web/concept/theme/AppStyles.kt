@@ -492,6 +492,23 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("animation", "${pulseRing.name} 1.8s cubic-bezier(.4, 0, .6, 1) infinite")
     }
 
+    // Two quick beats, then a pause
+    private val heartbeat by keyframes {
+        each(0.percent) { property("transform", "scale(1)") }
+        each(10.percent) { property("transform", "scale(1.15)") }
+        each(20.percent) { property("transform", "scale(1)") }
+        each(30.percent) { property("transform", "scale(1.12)") }
+        each(42.percent) { property("transform", "scale(1)") }
+    }
+
+    val heart by style {
+        property("width", "1.05em")
+        property("height", "1.05em")
+        property("vertical-align", "-.18em")
+        color(Colors.text)
+        property("animation", "${heartbeat.name} 1.6s ease-in-out infinite")
+    }
+
     private val caretBlink by keyframes {
         each(0.percent) { property("opacity", "1") }
         each(50.percent) { property("opacity", "0") }
