@@ -19,11 +19,11 @@ import weissar.web.i18n.tr
 fun EducationSection() {
     Observed(id = "vzdelani", className = AppStyles.card) {
         Div({ classes(AppStyles.cardContent) }) {
-            Reveal(0) { Eyebrow("05", tr("Vzdělání", "Education")) }
+            Reveal(0) { Eyebrow("05", tr("Vzdělávání a mezinárodní spolupráce", "Education & international cooperation")) }
             Reveal(1) {
                 DisplayTitle(
                     tr("Dva inženýrské tituly", "Two engineering degrees"),
-                    tr("a pár měsíců v Asii.", "and a few months in Asia."),
+                    tr("a stáže od Floridy po Asii.", "and internships from Florida to Asia."),
                     accentFirst = true,
                 )
             }
@@ -31,8 +31,8 @@ fun EducationSection() {
                 P({ classes(AppStyles.lead) }) {
                     Text(
                         tr(
-                            "Aplikovaná informatika a datová věda na Univerzitě Hradec Králové, k tomu stáže a letní školy v Hongkongu, na Tchaj-wanu a v Číně.",
-                            "Applied informatics and data science at the University of Hradec Králové, plus internships and summer schools in Hong Kong, Taiwan and China.",
+                            "Aplikovaná informatika a datová věda na Univerzitě Hradec Králové, k tomu Android vývoj na Floridě a stáže a letní školy v Hongkongu, na Tchaj-wanu a v Číně.",
+                            "Applied informatics and data science at the University of Hradec Králové, plus Android development in Florida and internships and summer schools in Hong Kong, Taiwan and China.",
                         ),
                     )
                 }

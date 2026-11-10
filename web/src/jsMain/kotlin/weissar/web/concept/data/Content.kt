@@ -109,6 +109,7 @@ val educationRows = listOf(
     EducationRow("2018 — 2019", "Univerzita Hradec Králové", Translated("Doktorské studium a výuka", "Doctoral studies & teaching")),
     EducationRow("2017", "Huawei Seeds for the Future", Translated("Stáž v laboratořích Huawei v Číně", "Trainee in Huawei labs in China")),
     EducationRow("2017", "Chang Jung Christian University", Translated("Letní škola na Tchaj-wanu", "Summer school in Taiwan")),
+    EducationRow("2016", "IHMC Robotics", Translated("Vývoj pro Android na Floridě", "Android development in Florida")),
     EducationRow("2016", "City University of Hong Kong", Translated("Vývoj pro Android v Hongkongu", "Android development in Hong Kong")),
     EducationRow("2013 — 2018", "Univerzita Hradec Králové", Translated("Bc. a Ing. — Aplikovaná informatika, s vyznamenáním", "Bc. & Ing. — Applied informatics, with honors")),
 )
