@@ -36,7 +36,8 @@ fun Header(onContact: () -> Unit) {
             classes(AppStyles.navEnd, AppStyles.reveal)
             style { property("--d", "1") }
         }) {
-            LanguageSwitch()
+            // flag-icons (MIT), grayscale in the stylesheet
+            LanguageSwitch(csFlag = "/concept/flags/cz.svg", enFlag = "/concept/flags/gb.svg")
             Button({
                 classes(AppStyles.button)
                 onClick { onContact() }

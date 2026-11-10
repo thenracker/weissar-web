@@ -58,7 +58,7 @@ fun ProjectModal(project: Project, onClose: () -> Unit) {
                 attr("rel", "noopener")
             }) {
                 Span({ classes(AppStyles.cardText) }) { Text(tr("Více informací", "Learn more")) }
-                Icon(src = "arrow-more.svg")
+                Icon(src = "/arrow-more.svg")
             }
         }
     }

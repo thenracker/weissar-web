@@ -33,9 +33,9 @@ fun Page() {
     val openContact = { contactOpen = true }
 
     Div({ classes(AppStyles.page) }) {
-        // Header and intro fill the first screen exactly
+        Header(openContact)
+        // Together with the header the intro fills the first screen exactly
         Div({ classes(AppStyles.hero) }) {
-            Header(openContact)
             IntroSection(openContact)
         }
         Main {

@@ -41,6 +41,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     val page by style {
         property("--pad", "clamp(20px, 5vw, 64px)")
         property("--inset", "clamp(10px, 2.8vw, 36px)")
+        property("--nav-h", "88px")
         property("min-height", "100vh")
         // Wider than a 15" laptop, the whole page stays centered with the background around
         property("padding-left", "max(0px, calc((100% - ${MAX_WIDTH}) / 2))")
@@ -89,7 +90,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
 
     val block by style {
         property("padding", "clamp(64px, 9vw, 120px) 0")
-        property("scroll-margin-top", "24px")
+        property("scroll-margin-top", "var(--nav-h)")
     }
 
     /** Rounded surface almost edge to edge. */
@@ -99,7 +100,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("border-radius", "clamp(18px, 2vw, 26px)")
         backgroundColor(Colors.surface)
         property("overflow", "hidden")
-        property("scroll-margin-top", "24px")
+        property("scroll-margin-top", "calc(var(--nav-h) + 16px)")
     }
 
     init {
@@ -188,12 +189,19 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
 
     // region Navigation
 
+    /** Sticks to the top, the page scrolls under it blurred. */
     val nav by style {
+        property("position", "sticky")
+        property("top", "0")
+        property("z-index", "20")
+        property("height", "var(--nav-h)")
+        property("box-sizing", "border-box")
         property("display", "grid")
         property("grid-template-columns", "1fr auto 1fr")
         property("align-items", "center")
-        property("padding-top", "clamp(16px, 2vw, 26px)")
-        property("padding-bottom", "clamp(16px, 2vw, 26px)")
+        property("background", "color-mix(in srgb, ${Colors.background} 82%, transparent)")
+        property("backdrop-filter", "blur(14px)")
+        property("-webkit-backdrop-filter", "blur(14px)")
         property("padding-left", "var(--inset)")
         property("padding-right", "var(--inset)")
     }
@@ -231,10 +239,19 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     init {
         // Fixed in the corner on the old page, here part of the header
         ".$navEnd .${LegacyStyles.languageSwitch}" style { property("position", "static") }
+        ".$navEnd .${LegacyStyles.flag} img" style {
+            property("display", "block")
+            property("width", "28px")
+            property("height", "21px")
+            property("border-radius", "4px")
+            property("object-fit", "cover")
+            property("filter", "grayscale(1)")
+        }
         media(PHONE) {
+            ".$page" style { property("--nav-h", "72px") }
             ".$navEnd .${LegacyStyles.flag} img" style {
                 property("width", "24px")
-                property("height", "16px")
+                property("height", "18px")
             }
         }
     }
@@ -415,7 +432,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     val hero by style {
         property("display", "flex")
         property("flex-direction", "column")
-        property("min-height", "100svh")
+        property("min-height", "calc(100svh - var(--nav-h))")
     }
 
     init {
@@ -490,18 +507,18 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("animation", "${caretBlink.name} 1s step-end infinite")
     }
 
+    /** As high as the texts next to it, the photo itself doesn't stretch the row. */
     val visual by style {
-        property("position", "relative")
-        // Shrinks on low screens so the intro still fits in one
-        property("width", "min(100%, 500px, calc(100svh - 300px))")
-        property("min-width", "min(100%, 280px)")
-        property("justify-self", "center")
-        property("padding", "24px 0")
+        property("align-self", "stretch")
+        property("container-type", "size")
+        property("display", "grid")
+        property("place-items", "center")
     }
 
     val frame by style {
         property("position", "relative")
-        property("aspect-ratio", "1")
+        property("width", "min(100cqw, 100cqh)")
+        property("height", "min(100cqw, 100cqh)")
     }
 
     val morphingPhoto by style {
@@ -527,6 +544,17 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         media(TABLET) {
             ".$intro" style { property("grid-template-columns", "1fr") }
             ".$introText" style { property("padding-left", "0") }
+            // Under the texts, nothing to match
+            ".$visual" style {
+                property("container-type", "normal")
+                property("width", "min(80%, 400px)")
+                property("justify-self", "center")
+            }
+            ".$frame" style {
+                property("width", "100%")
+                property("height", "auto")
+                property("aspect-ratio", "1")
+            }
         }
     }
 

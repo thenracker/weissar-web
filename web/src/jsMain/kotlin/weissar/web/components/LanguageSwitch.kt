@@ -14,13 +14,17 @@ import weissar.web.theme.AppStyles
  * Flags turn dark on sections from [lightSectionIds].
  */
 @Composable
-fun LanguageSwitch(lightSectionIds: Set<String> = emptySet()) {
+fun LanguageSwitch(
+    lightSectionIds: Set<String> = emptySet(),
+    csFlag: String = "/flag-cs.svg",
+    enFlag: String = "/flag-en.svg",
+) {
     Div({
         classes(AppStyles.languageSwitch)
         if (SectionObserver.activeSection in lightSectionIds) classes(AppStyles.languageSwitchDark)
     }) {
-        Flag(Language.CS, src = "/flag-cs.svg", label = "Čeština")
-        Flag(Language.EN, src = "/flag-en.svg", label = "English")
+        Flag(Language.CS, src = csFlag, label = "Čeština")
+        Flag(Language.EN, src = enFlag, label = "English")
     }
 }
 

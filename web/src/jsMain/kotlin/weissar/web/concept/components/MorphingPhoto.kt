@@ -7,11 +7,14 @@ import org.jetbrains.compose.web.dom.Div
 import org.w3c.dom.Element
 import weissar.web.concept.theme.AppStyles
 import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.floor
 import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sin
+import kotlin.math.sqrt
 
 /**
  * Photo clipped by Material 3 Expressive shapes (MaterialShapes), morphing to the next one every second,
@@ -31,9 +34,9 @@ fun MorphingPhoto(src: String, alt: String) {
 private const val POINTS = 180
 private const val SVG_NS = "http://www.w3.org/2000/svg"
 
-private const val HOLD_MS = 1000.0
-private const val MORPH_MS = 700.0
-private const val SPIN_DEG_PER_MS = 360.0 / 24_000
+private const val HOLD_MS = 800.0
+private const val MORPH_MS = 560.0
+private const val SPIN_DEG_PER_MS = 360.0 / 20_000
 private const val KICK_DEG = 40.0
 private const val SHRINK = .07
 
@@ -44,14 +47,21 @@ private val shapes = listOf(
     lobes("Cookie4Sided", 4, depth = .12, sharpness = 1.0),
     lobes("Clover4Leaf", 4, depth = .32, sharpness = .45),
     rounded("Pentagon", polygon(5), smoothing = 14),
+    lobes("Boom", 15, depth = .24, sharpness = 3.5),
+    stretched("Oval", ellipse(.7)),
     lobes("Cookie7Sided", 7, depth = .1, sharpness = 1.0),
+    rounded("Triangle", polygon(3), smoothing = 22),
     lobes("SoftBurst", 10, depth = .14, sharpness = 2.2),
-    lobes("Flower", 8, depth = .2, sharpness = .6),
-    rounded("Square", polygon(4), smoothing = 22),
+    rounded("Gem", polygon(6), smoothing = 12),
+    lobes("VerySunny", 8, depth = .2, sharpness = 3.0),
+    stretched("Pill", rounded("", rectangle(.6), smoothing = 20).radii),
     lobes("Cookie9Sided", 9, depth = .08, sharpness = 1.0),
+    rounded("Square", polygon(4), smoothing = 22),
+    lobes("Burst", 12, depth = .2, sharpness = 3.0),
     lobes("Sunny", 8, depth = .1, sharpness = 2.6),
     lobes("Clover8Leaf", 8, depth = .18, sharpness = .45),
     lobes("Cookie6Sided", 6, depth = .1, sharpness = 1.0),
+    lobes("SoftBoom", 16, depth = .12, sharpness = 1.6),
     lobes("Puffy", 6, depth = .16, sharpness = .35),
     lobes("Cookie12Sided", 12, depth = .06, sharpness = 1.0),
     lobes("Circle", 1, depth = .0, sharpness = 1.0),
@@ -72,6 +82,20 @@ private fun polygon(sides: Int) = DoubleArray(POINTS) { i ->
     val local = angle(i) - sector * floor(angle(i) / sector) - sector / 2
     cos(sector / 2) / cos(local)
 }
+
+/** Ellipse [ratio] times as wide as tall. */
+private fun ellipse(ratio: Double) = DoubleArray(POINTS) { i ->
+    val a = angle(i)
+    1 / sqrt((sin(a) / ratio).pow(2) + cos(a).pow(2))
+}
+
+/** Rectangle [ratio] times as wide as tall. */
+private fun rectangle(ratio: Double) = DoubleArray(POINTS) { i ->
+    val a = angle(i)
+    min(ratio / abs(sin(a)), 1 / abs(cos(a)))
+}
+
+private fun stretched(name: String, radii: DoubleArray) = MaterialShape(name, normalized(radii))
 
 /** Rounds the corners by averaging neighbouring radii. */
 private fun rounded(name: String, radii: DoubleArray, smoothing: Int) = MaterialShape(

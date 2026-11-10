@@ -105,7 +105,7 @@ fun ContactModal(onClose: () -> Unit) {
                 Span({ classes(AppStyles.cardText) }) {
                     Text(if (state == SendState.Sending) tr("Odesílám…", "Sending…") else tr("Odeslat", "Send"))
                 }
-                Icon(src = "arrow-more.svg")
+                Icon(src = "/arrow-more.svg")
             }
         }
     }
