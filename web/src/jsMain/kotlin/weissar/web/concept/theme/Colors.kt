@@ -27,6 +27,7 @@ object Colors {
     val svatebkaLight = Color("#E3A9A7")
     val onSvatebka = Color("#2E1616")
     val univerzita = Color("#8C1E50")
-    val univerzitaLight = Color("#E8739F")
+    // Lectures in the app's timetable
+    val univerzitaLight = Color("#CF9C87")
     val onUniverzita = Color("#FBE4EE")
 }
