@@ -94,7 +94,7 @@ val experience = listOf(
         chips = listOf(Translated("2016", "2016")),
     ),
     Column(
-        icon = "logo_veba",
+        icon = "logo_veba_wide",
         title = Translated("VEBA", "VEBA"),
         text = Translated(
             "Moje první práce v IT – začínal jsem jako technik a postupně přešel k desktopovým databázovým aplikacím v Javě.",
