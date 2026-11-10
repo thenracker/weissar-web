@@ -16,19 +16,19 @@ import weissar.web.i18n.tr
 fun ApproachSection() {
     Observed(id = "pristup", className = AppStyles.card) {
         Div({ classes(AppStyles.cardContent) }) {
-            Reveal(0) { Eyebrow("01", tr("Můj přístup", "My approach")) }
+            Reveal(0) { Eyebrow("01", tr("Jak pracuji", "How I work")) }
             Reveal(1) {
                 DisplayTitle(
-                    tr("Nepíšu jenom kód,", "I don't just write code,"),
-                    tr("hledám ten správný problém", "I look for the right problem"),
+                    tr("Vývojář, analytik", "Developer, analyst"),
+                    tr("i konzultant v jednom.", "and consultant in one."),
                 )
             }
             Reveal(2) {
                 P({ classes(AppStyles.lead) }) {
                     Text(
                         tr(
-                            "Do každého projektu vždy vstupuju jako vývojář, analytik i konzultant. Pomáhám přenést nejasný záměr do srozumitelného produktu. A to od architektury, datových toků až po poslední detail v uživatelském prostředí.",
-                            "I join every project as a developer, analyst and consultant. I help turn a vague intention into a clear product – from architecture and data flows to the last detail of the user interface.",
+                            "Na projektech většinou nedělám jen jednu roli. Projdu s vámi zadání, navrhnu obrazovky, napíšu aplikaci i server, se kterým komunikuje – a když je potřeba, převezmu i projekt rozjetý po někom jiném.",
+                            "On most projects I don't stick to a single role. I go through the brief with you, design the screens, write the app and the server it talks to – and if needed, take over a project someone else started.",
                         ),
                     )
                 }

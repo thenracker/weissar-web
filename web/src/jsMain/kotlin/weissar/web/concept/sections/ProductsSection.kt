@@ -22,12 +22,12 @@ fun ProductsSection() {
         Div({ classes(AppStyles.container) }) {
             SectionHeading(
                 number = "02",
-                eyebrow = tr("Vybrané projekty", "Selected projects"),
-                first = tr("Produkty,", "Products"),
-                second = tr("které žijí v reálném světě", "living in the real world"),
+                eyebrow = tr("Vlastní projekty", "My own projects"),
+                first = tr("Moje aplikace,", "My apps,"),
+                second = tr("od nápadu po tisíce uživatelů.", "from an idea to thousands of users."),
                 note = tr(
-                    "Dva dlouhodobé produkty ukazují šíři práce: od multiplatformní služby pro svatební hosty po univerzitní aplikaci pro desítky tisíc studentů.",
-                    "Two long-running products show the range of my work: from a multiplatform service for wedding guests to a university app for tens of thousands of students.",
+                    "Na obou dělám všechno – návrh obrazovek, aplikace, backend i podporu uživatelů.",
+                    "I do everything on both – screen design, the apps, the backend and user support.",
                 ),
             )
         }
@@ -38,13 +38,13 @@ fun ProductsSection() {
             since = null,
             title = "Svatebka",
             description = tr(
-                "Digitální místo pro všechny informace a společné momenty svatebních hostů.",
-                "A digital place for all the information and shared moments of wedding guests.",
+                "Svatební web a aplikace pro hosty. Všechno, co hosté potřebují vědět, a fotky z celého dne na jednom místě.",
+                "Wedding website & guest app. Everything the guests need to know and photos from the whole day in one place.",
             ),
             points = listOf(
-                tr("Program, mapa a kontakty bez instalace", "Programme, map & contacts with no install"),
+                tr("Program, mapa a kontakty na webu bez instalace", "Programme, map & contacts on the web, no install needed"),
                 tr("Galerie od hostů v plné kvalitě", "Guests' gallery in full quality"),
-                tr("Soutěže, kvízy a notifikace v reálném čase", "Challenges, quizzes & real-time notifications"),
+                tr("Svatební soutěž a kvíz o novomanželích", "Wedding challenges & a quiz about the couple"),
             ),
             chips = listOf("Android", "iOS", "Web", "Firebase"),
             screens = listOf("/screens/svatebka-1.webp", "/screens/svatebka-2.webp", "/screens/svatebka-3.webp"),
@@ -56,12 +56,13 @@ fun ProductsSection() {
             since = tr("od roku 2016", "since 2016"),
             title = "Univerzita",
             description = tr(
-                "Celé studium v jedné aplikaci — rozvrh, zkoušky, známky, menza i volné učebny.",
-                "All of your studies in one app — timetable, exams, grades, canteen and free classrooms.",
+                "Celé studium v jedné aplikaci. Začalo to hledáním volných učeben na UHK, dnes ji používá přes 27 000 studentů z 15+ vysokých škol.",
+                "Your entire degree in one app. It started as a way to find free classrooms at UHK, today 27,000+ students from 15+ universities use it.",
             ),
             points = listOf(
-                tr("Přes 27 tisíc studentů", "Over 27 thousand students"),
-                tr("Více než 15 univerzit", "More than 15 universities"),
+                tr("Rozvrh jako seznam, tabulka, agenda i widget", "Timetable as a list, table, agenda or widget"),
+                tr("Zápis na zkoušky včetně čekací fronty", "Exam sign-ups incl. a waiting list"),
+                tr("Upozornění na nové známky a termíny", "Alerts for new marks and exam dates"),
             ),
             chips = listOf("Kotlin", "Android", tr("Rozvrhy", "Timetables"), tr("Notifikace", "Notifications")),
             screens = listOf("/screens/univerzita-1.webp", "/screens/univerzita-2.webp", "/screens/univerzita-3.webp"),

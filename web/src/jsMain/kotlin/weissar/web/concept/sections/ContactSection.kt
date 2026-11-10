@@ -1,7 +1,6 @@
 package weissar.web.concept.sections
 
 import androidx.compose.runtime.Composable
-import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
@@ -19,7 +18,7 @@ fun ContactSection(onContact: () -> Unit) {
         Div({ classes(AppStyles.contact) }) {
             Div {
                 Reveal(0) {
-                    H2({ classes(AppStyles.display) }) { Text(tr("Máte složitý produktový problém?", "Got a tricky product problem?")) }
+                    H2({ classes(AppStyles.display) }) { Text(tr("S čím vám mohu pomoci?", "How can I help you?")) }
                 }
                 Reveal(1) {
                     Div({ classes(AppStyles.actions) }) {
@@ -27,7 +26,7 @@ fun ContactSection(onContact: () -> Unit) {
                             classes(AppStyles.button)
                             onClick { onContact() }
                         }) {
-                            Text(tr("Pojďme ho rozmotat", "Let's untangle it"))
+                            Text(tr("Napište mi", "Get in touch"))
                             MaterialIcon("arrow_forward", AppStyles.buttonIcon)
                         }
                     }
@@ -39,8 +38,10 @@ fun ContactSection(onContact: () -> Unit) {
             })
         }
         Div({ classes(AppStyles.footer) }) {
-            A(href = "mailto:weissar.petr@gmail.com", attrs = { classes(AppStyles.footerLink) }) { Text("weissar.petr@gmail.com") }
-            A(href = "tel:+420725791445", attrs = { classes(AppStyles.footerLink) }) { Text("+420 725 791 445") }
+            Button({
+                classes(AppStyles.footerLink)
+                onClick { onContact() }
+            }) { Text(tr("Napsat zprávu", "Send a message")) }
             Span({ classes(AppStyles.footerLink) }) { Text("Pardubice · Hradec Králové · Praha") }
         }
     }

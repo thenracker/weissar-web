@@ -4,6 +4,7 @@ import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.media
+import org.jetbrains.compose.web.css.percent
 import weissar.web.theme.AppStyles as LegacyStyles
 
 /**
@@ -62,8 +63,13 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     init {
         ".${LegacyStyles.visible} .$reveal, .${LegacyStyles.visible}.$reveal" style {
             property("animation", "${revealUp.name} .9s cubic-bezier(.16, 1, .3, 1) both")
-            property("animation-delay", "calc(var(--d, 0) * 90ms)")
+            property("animation-delay", "calc(var(--base, 0ms) + var(--d, 0) * 90ms)")
         }
+    }
+
+    /** Header and intro come in once the logo has drawn itself (≈ 700 ms). */
+    val afterLogo by style {
+        property("--base", "650ms")
     }
 
     // endregion
@@ -183,8 +189,13 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     }
 
     val navLogo by style {
-        property("width", "46px")
         property("display", "block")
+        property("width", "56px")
+    }
+
+    init {
+        // Old logo is a third of its column wide
+        ".$navLogo .${LegacyStyles.logo}" style { property("width", "100%") }
     }
 
     val navLinks by style {
@@ -259,7 +270,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     init {
         ".$button:hover" style {
             property("transform", "translateY(-2px)")
-            property("box-shadow", "0 10px 28px rgba(200, 244, 61, .25)")
+            property("box-shadow", "0 10px 28px rgba(240, 133, 122, .25)")
         }
         ".$button:hover .$buttonIcon, .$textButton:hover .$buttonIcon" style {
             property("transform", "translateX(4px)")
@@ -414,11 +425,37 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         backgroundColor(Colors.accent)
     }
 
+    private val pulseRing by keyframes {
+        from { property("box-shadow", "0 0 0 0 ${Colors.accent}99") }
+        each(70.percent) { property("box-shadow", "0 0 0 9px ${Colors.accent}00") }
+        to { property("box-shadow", "0 0 0 0 ${Colors.accent}00") }
+    }
+
+    /** Ring spreading out of the dot, like a "live" indicator. */
+    val pulse by style {
+        property("animation", "${pulseRing.name} 1.8s cubic-bezier(.4, 0, .6, 1) infinite")
+    }
+
+    private val caretBlink by keyframes {
+        each(0.percent) { property("opacity", "1") }
+        each(50.percent) { property("opacity", "0") }
+    }
+
+    val caret by style {
+        property("display", "inline-block")
+        property("width", "2px")
+        property("height", "1.1em")
+        property("margin-left", "2px")
+        property("vertical-align", "-.18em")
+        backgroundColor(Colors.accent)
+        property("animation", "${caretBlink.name} 1s step-end infinite")
+    }
+
     val visual by style {
         property("position", "relative")
         property("width", "min(100%, 500px)")
         property("justify-self", "center")
-        property("padding", "34px 0")
+        property("padding", "24px 0")
     }
 
     val frame by style {
@@ -426,18 +463,9 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("aspect-ratio", "1")
     }
 
-    val frameLines by style {
-        property("position", "absolute")
-        property("inset", "0")
-        property("width", "100%")
-        property("height", "100%")
-        property("overflow", "visible")
-    }
-
-    /** Inset so the shape stays inside the dashed circle. */
     val morphingPhoto by style {
         property("position", "absolute")
-        property("inset", "4.5%")
+        property("inset", "0")
     }
 
     val photoOutline by style {
@@ -452,40 +480,6 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
             property("height", "100%")
             property("overflow", "visible")
         }
-    }
-
-    val frameLabel by style {
-        property("position", "absolute")
-        property("font-size", "11px")
-        property("font-weight", "700")
-        property("letter-spacing", ".12em")
-        property("text-transform", "uppercase")
-        color(Colors.textSecondary)
-    }
-
-    /** Name of the current shape, kept in camelCase like in code. */
-    val frameLabelAccent by style {
-        color(Colors.accent)
-        property("text-transform", "none")
-        property("letter-spacing", ".04em")
-        property("font-family", "ui-monospace, 'SF Mono', Menlo, monospace")
-    }
-
-    val photoBadge by style {
-        property("position", "absolute")
-        property("top", "calc(34px + 3%)")
-        property("right", "13%")
-        property("display", "inline-flex")
-        property("align-items", "center")
-        property("gap", "8px")
-        property("padding", "7px 14px")
-        property("border", "1.5px solid ${Colors.accent}")
-        property("border-radius", "999px")
-        backgroundColor(Colors.background)
-        property("font-size", "12px")
-        property("font-weight", "600")
-        property("text-transform", "uppercase")
-        property("white-space", "nowrap")
     }
 
     init {
@@ -704,14 +698,20 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     }
 
     val footer by style {
-        property("display", "grid")
-        property("grid-template-columns", "repeat(3, 1fr)")
+        property("display", "flex")
+        property("flex-wrap", "wrap")
+        property("justify-content", "space-between")
         property("gap", "12px 24px")
         property("padding", "0 clamp(0px, 2.5vw, 44px) clamp(48px, 6vw, 96px)")
         property("font-size", "15px")
     }
 
     val footerLink by style {
+        property("padding", "0")
+        property("border", "none")
+        property("background", "none")
+        property("font-size", "inherit")
+        property("cursor", "pointer")
         color(Colors.textSecondary)
         property("transition", "color .2s ease")
     }
@@ -724,7 +724,7 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
             ".$watermark" style { property("display", "none") }
         }
         media(PHONE) {
-            ".$footer" style { property("grid-template-columns", "1fr") }
+            ".$footer" style { property("flex-direction", "column") }
         }
     }
 

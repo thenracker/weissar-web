@@ -16,14 +16,13 @@ import kotlin.math.sin
 /**
  * Photo clipped by Material 3 Expressive shapes (MaterialShapes), morphing to the next one every second,
  * shrinking a bit during the morph and rotating clockwise. The photo itself stays upright.
- * [onShape] gets the name of the shape the photo morphs into.
  */
 @Composable
-fun MorphingPhoto(src: String, alt: String, onShape: (String) -> Unit) {
+fun MorphingPhoto(src: String, alt: String) {
     Div({
         classes(AppStyles.morphingPhoto)
         ref { element ->
-            val morph = PhotoMorph(element, src, alt, onShape)
+            val morph = PhotoMorph(element, src, alt)
             onDispose { morph.stop() }
         }
     })
@@ -102,7 +101,6 @@ private class PhotoMorph(
     container: Element,
     src: String,
     alt: String,
-    private val onShape: (String) -> Unit,
 ) {
     private val clipPath = svg("path")
     private val outline = svg("path")
@@ -142,7 +140,6 @@ private class PhotoMorph(
         root.appendChild(outline)
         container.appendChild(root)
 
-        onShape(shapes[index].name)
         if (reducedMotion) draw(shapes[index].radii, shapes[index].radii, 1.0, 1.0, 0.0) else frame = window.requestAnimationFrame(::tick)
     }
 
@@ -160,7 +157,6 @@ private class PhotoMorph(
             index = (index + 1) % shapes.size
             cycleStart = now
             kick += KICK_DEG
-            onShape(shapes[index].name)
         }
 
         // Holds the shape for a second, then morphs into the next one

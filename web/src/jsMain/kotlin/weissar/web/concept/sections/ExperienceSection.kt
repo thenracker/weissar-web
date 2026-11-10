@@ -16,12 +16,12 @@ fun ExperienceSection() {
             SectionHeading(
                 number = "04",
                 eyebrow = tr("Zkušenosti", "Experience"),
-                first = tr("Kontexty se mění.", "Contexts change."),
-                second = tr("Nároky na kvalitu ne", "The bar for quality doesn't"),
+                first = tr("Banka, retail", "Banking, retail"),
+                second = tr("i agenturní zakázky.", "and agency work."),
                 accentFirst = true,
                 note = tr(
-                    "Bankovnictví, retail, výzkum i vlastní produkty. Vybrané spolupráce od prvních Java aplikací po vedení Android vývoje.",
-                    "Banking, retail, research and my own products. Selected work from the first Java apps to leading Android development.",
+                    "V IT od roku 2011 – začínal jsem desktopovými aplikacemi v Javě, pak přišly tři roky v mobilní agentuře, vedení Android týmu a dnes mobilní bankovnictví.",
+                    "In IT since 2011 – I started with desktop apps in Java, then three years at a mobile agency, leading an Android team and now mobile banking.",
                 ),
             )
             Columns(experience)

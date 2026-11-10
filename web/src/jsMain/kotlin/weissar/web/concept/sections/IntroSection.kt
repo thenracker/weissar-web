@@ -1,15 +1,10 @@
 package weissar.web.concept.sections
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -17,35 +12,42 @@ import weissar.web.concept.components.MaterialIcon
 import weissar.web.concept.components.MorphingPhoto
 import weissar.web.concept.components.Observed
 import weissar.web.concept.components.Reveal
+import weissar.web.concept.components.TypedTitles
 import weissar.web.concept.theme.AppStyles
 import weissar.web.i18n.tr
 
 @Composable
 fun IntroSection(onContact: () -> Unit) {
     Observed(id = "intro", className = AppStyles.container) {
-        Div({ classes(AppStyles.intro) }) {
+        Div({ classes(AppStyles.intro, AppStyles.afterLogo) }) {
             Div({ classes(AppStyles.introText) }) {
                 Reveal(0) {
                     P({ classes(AppStyles.badge) }) {
-                        Span({ classes(AppStyles.badgeDot) }) { Span({ classes(AppStyles.dot) }) }
-                        Span({ classes(AppStyles.badgeStrong) }) { Text(tr("Senior Android vývojář", "Senior Android developer")) }
-                        Span { Text("·") }
-                        Text(tr("Kotlin · Compose · Česko", "Kotlin · Compose · Czechia"))
+                        Span({ classes(AppStyles.badgeDot) }) { Span({ classes(AppStyles.dot, AppStyles.pulse) }) }
+                        TypedTitles(
+                            titles = listOf(
+                                tr("Senior Android vývojář", "Senior Android developer"),
+                                tr("Softwarový analytik", "Software analyst"),
+                                tr("UX/UI konzultant", "UX/UI consultant"),
+                            ),
+                            // After the logo and the intro reveal
+                            startDelayMs = 1600,
+                        )
                     }
                 }
                 Reveal(1) {
                     H1({ classes(AppStyles.display) }) {
-                        Span({ classes(AppStyles.line) }) { Text(tr("Komplexní aplikace.", "Complex apps.")) }
+                        Span({ classes(AppStyles.line) }) { Text(tr("Navrhnu, naprogramuji", "I design, build")) }
                         Text(" ")
-                        Span({ classes(AppStyles.accent) }) { Text(tr("Jasně postavené.", "Clearly built.")) }
+                        Span({ classes(AppStyles.accent) }) { Text(tr("a vydám vaši aplikaci.", "and ship your app.")) }
                     }
                 }
                 Reveal(2) {
                     P({ classes(AppStyles.lead) }) {
                         Text(
                             tr(
-                                "Propojuji vývoj, produktové myšlení a design do mobilních řešení, která dávají smysl uživatelům i týmům.",
-                                "I connect development, product thinking and design into mobile solutions that make sense to users and teams.",
+                                "Jsem Petr, Android vývojář od roku 2015. Kromě aplikací píšu i backend v Kotlinu a pomáhám s UX/UI – od prvního nápadu až po vydání na Google Play.",
+                                "I'm Petr, an Android developer since 2015. Besides apps I write Kotlin backends and help with UX/UI – from the first idea all the way to Google Play.",
                             ),
                         )
                     }
@@ -59,7 +61,7 @@ fun IntroSection(onContact: () -> Unit) {
                             classes(AppStyles.textButton)
                             onClick { onContact() }
                         }) {
-                            Text(tr("Probrat spolupráci", "Talk about working together"))
+                            Text(tr("Napište mi", "Get in touch"))
                             MaterialIcon("arrow_forward", AppStyles.buttonIcon)
                         }
                     }
@@ -71,44 +73,10 @@ fun IntroSection(onContact: () -> Unit) {
     }
 }
 
-/** Photo morphing through Material shapes, framed like a canvas in Android Studio preview. */
-
+/** Photo morphing through Material 3 Expressive shapes. */
 @Composable
 private fun IntroVisual() {
-    var shape by remember { mutableStateOf("") }
-
-    Span({
-        classes(AppStyles.frameLabel, AppStyles.frameLabelAccent)
-        style {
-            property("top", "0")
-            property("left", "2%")
-        }
-    }) { Text("MaterialShapes.$shape") }
-
     Div({ classes(AppStyles.frame) }) {
-        Img(src = "/concept/hero-frame.svg", alt = "") {
-            classes(AppStyles.frameLines)
-            attr("aria-hidden", "true")
-        }
-        MorphingPhoto(src = "/weissar.webp", alt = "Petr Weissar") { shape = it }
+        MorphingPhoto(src = "/weissar.webp", alt = "Petr Weissar")
     }
-
-    Span({ classes(AppStyles.photoBadge) }) {
-        Span({ classes(AppStyles.dot) })
-        Text(tr("Android · od 2015", "Android · since 2015"))
-    }
-    Span({
-        classes(AppStyles.frameLabel)
-        style {
-            property("bottom", "0")
-            property("left", "3%")
-        }
-    }) { Text("Kotlin") }
-    Span({
-        classes(AppStyles.frameLabel)
-        style {
-            property("bottom", "0")
-            property("right", "3%")
-        }
-    }) { Text("Material 3") }
 }

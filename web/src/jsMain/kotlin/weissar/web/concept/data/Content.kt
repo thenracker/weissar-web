@@ -22,28 +22,28 @@ val expertise = listOf(
         icon = "android",
         title = Translated("Android", "Android"),
         text = Translated(
-            "Nativní aplikace od roku 2015. Jetpack Compose, Material 3, Wear OS a řešení postavená pro dlouhodobý rozvoj.",
-            "Native apps since 2015. Jetpack Compose, Material 3, Wear OS and solutions built to grow for years.",
+            "Nativní aplikace na míru – od návrhu až po vydání na Google Play. Převezmu i rozjetou aplikaci a dám ji do pořádku.",
+            "Custom native apps – from design all the way to Google Play. I'll also take over an existing app and get it back in shape.",
         ),
-        chips = listOf(Translated("Kotlin", "Kotlin"), Translated("Compose", "Compose"), Translated("Wear OS", "Wear OS")),
+        chips = listOf(Translated("Jetpack Compose", "Jetpack Compose"), Translated("Wear OS", "Wear OS"), Translated("MVVM / MVI", "MVVM / MVI")),
     ),
     Column(
-        icon = "account_tree",
-        title = Translated("Architektura", "Architecture"),
+        icon = "dns",
+        title = Translated("Backend", "Backend"),
         text = Translated(
-            "Čitelné datové toky, oddělené odpovědnosti a správná míra abstrakce pro tým i konkrétní produkt.",
-            "Readable data flows, separated responsibilities and the right level of abstraction for the team and the product.",
+            "API a servery v Ktoru, sdílená logika pro Android i iOS a napojení aplikace na AI přes Claude API.",
+            "APIs and servers in Ktor, shared logic for Android & iOS and connecting the app to AI through the Claude API.",
         ),
-        chips = listOf(Translated("MVVM", "MVVM"), Translated("MVI", "MVI"), Translated("Clean", "Clean")),
+        chips = listOf(Translated("Ktor", "Ktor"), Translated("Multiplatform", "Multiplatform"), Translated("PostgreSQL", "PostgreSQL")),
     ),
     Column(
         icon = "design_services",
-        title = Translated("Produkt & UX/UI", "Product & UX/UI"),
+        title = Translated("UX/UI konzultace", "UX/UI consulting"),
         text = Translated(
-            "Analýza zadání, struktura funkcí, prototypování a rozhraní, které pomáhá uživatelům bez vysvětlování.",
-            "Requirements analysis, feature structure, prototyping and interfaces that help users without explaining.",
+            "Projdu s vámi zadání, navrhnu obrazovky ve Figmě a udělám klikací prototyp. Nebo se podívám na hotovou aplikaci a ukážu, kde uživatelé zbytečně tápou.",
+            "We go through the brief together, I design the screens in Figma and build a clickable prototype. Or I review your app and show where users get lost.",
         ),
-        chips = listOf(Translated("Analýza", "Analysis"), Translated("Figma", "Figma"), Translated("Material 3", "Material 3")),
+        chips = listOf(Translated("Analýza", "Analysis"), Translated("Figma", "Figma"), Translated("Prototyp", "Prototype")),
     ),
 )
 
@@ -51,21 +51,27 @@ val experience = listOf(
     Column(
         icon = "account_balance",
         title = Translated("Air Bank", "Air Bank"),
-        text = Translated("Android vývoj pro mobilní bankovnictví MyAir.", "Android development of the MyAir mobile banking."),
+        text = Translated(
+            "Spolupracuji na vývoji MyAir, mobilního bankovnictví Air Bank.",
+            "I'm working on MyAir, the mobile banking app of Air Bank.",
+        ),
         chips = listOf(Translated("2023 — nyní", "2023 — now")),
     ),
     Column(
         icon = "shopping_cart",
         title = Translated("Tesco", "Tesco"),
-        text = Translated("Integrace s Delivery Hero a XML feedy produktů.", "Delivery Hero integration and XML product feeds."),
+        text = Translated(
+            "Odbočka k backendu – servery v Kotlinu a Ktoru, integrace s Delivery Hero a XML feedy produktů.",
+            "A backend detour – servers in Kotlin and Ktor, Delivery Hero integration and product XML feeds.",
+        ),
         chips = listOf(Translated("2022 — 2023", "2022 — 2023")),
     ),
     Column(
         icon = "point_of_sale",
         title = Translated("DAMI development", "DAMI development"),
         text = Translated(
-            "Android lead pro pokladní systém, sklad, sociální sítě a logistiku.",
-            "Android lead for a point of sale system, warehouse, social networks and logistics.",
+            "Jako Android lead jsem vedl tým tří vývojářů – pokladní systém, sklad, správa domů i logistika.",
+            "As the Android lead I ran a team of three developers – point of sale, warehouse, property management and logistics.",
         ),
         chips = listOf(Translated("2019 — 2023", "2019 — 2023")),
     ),

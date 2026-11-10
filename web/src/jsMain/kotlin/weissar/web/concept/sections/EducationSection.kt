@@ -22,8 +22,8 @@ fun EducationSection() {
             Reveal(0) { Eyebrow("05", tr("Vzdělání", "Education")) }
             Reveal(1) {
                 DisplayTitle(
-                    tr("Technický základ.", "Technical foundation."),
-                    tr("Mezinárodní přesah.", "International reach."),
+                    tr("Dva inženýrské tituly", "Two engineering degrees"),
+                    tr("a pár měsíců v Asii.", "and a few months in Asia."),
                     accentFirst = true,
                 )
             }
@@ -31,8 +31,8 @@ fun EducationSection() {
                 P({ classes(AppStyles.lead) }) {
                     Text(
                         tr(
-                            "Aplikovaná informatika, datová věda a zkušenosti z vývoje i studia v Asii.",
-                            "Applied informatics, data science and experience from development and studies in Asia.",
+                            "Aplikovaná informatika a datová věda na Univerzitě Hradec Králové, k tomu stáže a letní školy v Hongkongu, na Tchaj-wanu a v Číně.",
+                            "Applied informatics and data science at the University of Hradec Králové, plus internships and summer schools in Hong Kong, Taiwan and China.",
                         ),
                     )
                 }
