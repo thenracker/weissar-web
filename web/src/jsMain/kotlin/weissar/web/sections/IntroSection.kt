@@ -55,7 +55,7 @@ fun IntroSection() {
                     Div({ classes(AppStyles.fillWidth, AppStyles.introActions) }) {
                         WriteMeButton(AppStyles.onlyMobile)
                         A(href = "#services", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
-                            Icon(src = "arrow-double-down.svg", bounce = true)
+                            Icon(src = "/arrow-double-down.svg", bounce = true)
                         }
                     }
                 }
@@ -67,7 +67,7 @@ fun IntroSection() {
             WriteMeButton(AppStyles.photoButton, AppStyles.hideOnMobile)
 
             Div({ classes(AppStyles.photoFrame) }) {
-                Img(src = "weissar.webp", alt = "Petr Weissar") {
+                Img(src = "/weissar.webp", alt = "Petr Weissar") {
                     classes(AppStyles.fullImage)
                     if (photoLoaded) classes(AppStyles.loaded)
                     addEventListener("load") { photoLoaded = true }
@@ -87,6 +87,6 @@ fun IntroSection() {
 private fun WriteMeButton(vararg extraClasses: String) {
     A(href = "#contact", attrs = { classes(AppStyles.button, *extraClasses) }) {
         Body(tr("Napište mi", "Get in touch"))
-        Icon(src = "message.svg")
+        Icon(src = "/message.svg")
     }
 }

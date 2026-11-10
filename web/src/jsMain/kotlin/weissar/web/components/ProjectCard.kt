@@ -47,9 +47,9 @@ fun CompanyLogo(project: Project, large: Boolean = false) {
         if (large) classes(AppStyles.companyLogoLarge)
     }) {
         if (project.logo != null) {
-            Img(src = "companies/${project.logo}", alt = project.company)
+            Img(src = "/companies/${project.logo}", alt = project.company)
         } else {
-            Img(src = "companies/placeholder.svg", alt = "")
+            Img(src = "/companies/placeholder.svg", alt = "")
         }
     }
 }

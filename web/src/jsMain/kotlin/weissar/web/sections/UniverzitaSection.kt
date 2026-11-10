@@ -62,15 +62,15 @@ fun UniverzitaSection() {
         },
         right = {
             Content {
-                Logo(src = "univerzita.svg", alt = "Univerzita", alignEnd = true, hideOnMobile = true)
+                Logo(src = "/univerzita.svg", alt = "Univerzita", alignEnd = true, hideOnMobile = true)
 
                 Spacer()
-                Screenshots(listOf("screens/univerzita-1.webp", "screens/univerzita-2.webp", "screens/univerzita-3.webp"), alt = "Univerzita")
+                Screenshots(listOf("/screens/univerzita-1.webp", "/screens/univerzita-2.webp", "/screens/univerzita-3.webp"), alt = "Univerzita")
                 Spacer()
 
                 A(href = "https://univerzita.app", attrs = { classes(AppStyles.button, AppStyles.end) }) {
                     Body(tr("Prozkoumat", "Explore"))
-                    Icon(src = "arrow-more.svg")
+                    Icon(src = "/arrow-more.svg")
                 }
             }
         },

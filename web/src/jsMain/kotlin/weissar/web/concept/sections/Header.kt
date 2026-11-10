@@ -18,7 +18,7 @@ import weissar.web.theme.AppStyles as LegacyStyles
 fun Header(onContact: () -> Unit) {
     // Always visible, so the logo draws itself right away and the rest waits for it
     Nav({ classes(AppStyles.nav, LegacyStyles.visible, AppStyles.afterLogo) }) {
-        A(href = "/concept/", attrs = {
+        A(href = "/", attrs = {
             classes(AppStyles.navLogo)
             attr("aria-label", "Petr Weissar")
         }) {

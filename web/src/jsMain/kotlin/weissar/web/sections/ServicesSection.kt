@@ -27,7 +27,7 @@ fun ServicesSection() {
             Div({ classes(AppStyles.group, AppStyles.serviceColumns) }) {
                 ServiceColumn(
                     title = "Android",
-                    icon = "android.svg",
+                    icon = "/android.svg",
                     description = tr(
                         "Nativní aplikace na míru – od návrhu až po vydání na Google Play.",
                         "Custom native apps – from design all the way to Google Play.",
@@ -40,7 +40,7 @@ fun ServicesSection() {
                 )
                 ServiceColumn(
                     title = "Kotlin",
-                    icon = "kotlin.svg",
+                    icon = "/kotlin.svg",
                     description = tr(
                         "Backend, sdílený kód pro Android i iOS a weby jako tento.",
                         "Backend, shared code for Android & iOS and websites like this one.",
@@ -53,7 +53,7 @@ fun ServicesSection() {
                 )
                 ServiceColumn(
                     title = "AI",
-                    icon = "ai.svg",
+                    icon = "/ai.svg",
                     description = tr(
                         "AI, která šetří čas – ve vaší aplikaci i ve firemních procesech.",
                         "AI that saves time – in your app and in your company processes.",
@@ -70,7 +70,7 @@ fun ServicesSection() {
 
             Div({ classes(AppStyles.fillWidth) }) {
                 A(href = "#svatebka", attrs = { attr("aria-label", tr("Posunout dolů", "Scroll down")) }) {
-                    Icon(src = "arrow-double-down.svg", bounce = true)
+                    Icon(src = "/arrow-double-down.svg", bounce = true)
                 }
             }
         }

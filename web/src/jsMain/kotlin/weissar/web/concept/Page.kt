@@ -23,7 +23,7 @@ import weissar.web.concept.sections.ProductsSection
 import weissar.web.concept.theme.AppStyles
 import weissar.web.theme.AppStyles as LegacyStyles
 
-/** New design on weissar.dev/concept, one long page instead of full-screen sections. */
+/** weissar.dev, one long page instead of full-screen sections. */
 @Composable
 fun Page() {
     // AppStyles for the shared contact modal

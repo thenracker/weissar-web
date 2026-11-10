@@ -51,15 +51,15 @@ fun SvatebkaSection() {
         },
         right = {
             Content {
-                Logo(src = "svatebka.svg", alt = "Svatebka", alignEnd = true, hideOnMobile = true)
+                Logo(src = "/svatebka.svg", alt = "Svatebka", alignEnd = true, hideOnMobile = true)
 
                 Spacer()
-                Screenshots(listOf("screens/svatebka-1.webp", "screens/svatebka-2.webp", "screens/svatebka-3.webp"), alt = "Svatebka")
+                Screenshots(listOf("/screens/svatebka-1.webp", "/screens/svatebka-2.webp", "/screens/svatebka-3.webp"), alt = "Svatebka")
                 Spacer()
 
                 A(href = "https://svatebka.app", attrs = { classes(AppStyles.button, AppStyles.end) }) {
                     Body(tr("Prozkoumat", "Explore"))
-                    Icon(src = "arrow-more.svg")
+                    Icon(src = "/arrow-more.svg")
                 }
             }
         },

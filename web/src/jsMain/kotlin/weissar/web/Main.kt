@@ -17,8 +17,8 @@ import weissar.web.sections.UniverzitaSection
 import weissar.web.theme.AppStyles
 
 fun main() {
-    // New design in progress, served from resources/concept/index.html
-    if (window.location.pathname.trimEnd('/') == "/concept") {
+    // Previous design, kept on /v1
+    if (window.location.pathname.trimEnd('/') != "/v1") {
         renderComposable(rootElementId = "root") { Page() }
         return
     }

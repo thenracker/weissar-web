@@ -39,15 +39,15 @@ fun ContactSection() {
                 Spacer()
 
                 Div({ classes(AppStyles.group, AppStyles.contactList) }) {
-                    ContactRow("contact-mail.svg", tr("Napsat zprávu", "Send a message"), onClick = { formOpen = true })
-                    ContactRow("contact-linkedin.svg", "LinkedIn", href = "https://www.linkedin.com/in/weissar-petr/")
-                    ContactRow("contact-instagram.svg", "Instagram", href = "https://www.instagram.com/petr.weissar/")
+                    ContactRow("/contact-mail.svg", tr("Napsat zprávu", "Send a message"), onClick = { formOpen = true })
+                    ContactRow("/contact-linkedin.svg", "LinkedIn", href = "https://www.linkedin.com/in/weissar-petr/")
+                    ContactRow("/contact-instagram.svg", "Instagram", href = "https://www.instagram.com/petr.weissar/")
                 }
 
                 Spacer()
 
                 Div({ classes(AppStyles.group, AppStyles.contactList) }) {
-                    ContactRow("contact-location.svg", "Pardubice · Hradec Králové · Praha")
+                    ContactRow("/contact-location.svg", "Pardubice · Hradec Králové · Praha")
                 }
             }
         },
@@ -57,7 +57,7 @@ fun ContactSection() {
                 Spacer()
                 A(href = "#more", attrs = { classes(AppStyles.button, AppStyles.end) }) {
                     Body(tr("Více o mně", "More about me"))
-                    Icon(src = "arrow-more.svg")
+                    Icon(src = "/arrow-more.svg")
                 }
             }
         },
