@@ -58,7 +58,7 @@ val experience = listOf(
         chips = listOf(Translated("2023 — nyní", "2023 — now")),
     ),
     Column(
-        icon = "logo_tesco",
+        icon = "logo_tesco_wide",
         title = Translated("Tesco", "Tesco"),
         text = Translated(
             "Odbočka k backendu – servery v Kotlinu a Ktoru, integrace s Delivery Hero a XML feedy produktů.",

@@ -103,6 +103,7 @@ fun Cookie(icon: String) {
         classes(AppStyles.cookie)
         // Company logos have more detail than Material icons
         if (icon.startsWith("logo_")) classes(AppStyles.cookieLogo)
+        if (icon.endsWith("_wide")) classes(AppStyles.cookieWide)
     }) { MaterialIcon(icon) }
 }
 

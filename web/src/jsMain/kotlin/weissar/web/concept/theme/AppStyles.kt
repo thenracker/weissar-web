@@ -351,6 +351,13 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("font-size", "28px")
     }
 
+    /** Wordmark, almost as wide as the cookie. */
+    val cookieWide by style {}
+
+    init {
+        ".$cookieWide .$icon" style { property("width", "40px") }
+    }
+
     /** Text grows, so the chips of all columns in a row sit on one bottom line. */
     val column by style {
         property("display", "flex")
