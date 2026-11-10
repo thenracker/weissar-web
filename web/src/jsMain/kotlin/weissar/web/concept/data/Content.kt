@@ -15,7 +15,7 @@ class EducationRow(
     val detail: Translated,
 )
 
-val technologies = listOf("Jetpack Compose", "Kotlin Multiplatform", "Github Actions", "Room", "Material 3", "Kotlin", "Firebase")
+val technologies = listOf("Jetpack Compose", "Kotlin Multiplatform", "GitHub Actions", "Room", "Material 3", "Kotlin", "Firebase")
 
 val expertise = listOf(
     Column(
@@ -49,16 +49,16 @@ val expertise = listOf(
 
 val experience = listOf(
     Column(
-        icon = "account_balance",
+        icon = "logo_airbank",
         title = Translated("Air Bank", "Air Bank"),
         text = Translated(
             "Spolupracuji na vývoji MyAir, mobilního bankovnictví Air Bank.",
-            "I'm working on MyAir, the mobile banking app of Air Bank.",
+            "I'm working on MyAir, Air Bank's mobile banking app.",
         ),
         chips = listOf(Translated("2023 — nyní", "2023 — now")),
     ),
     Column(
-        icon = "shopping_cart",
+        icon = "logo_tesco",
         title = Translated("Tesco", "Tesco"),
         text = Translated(
             "Odbočka k backendu – servery v Kotlinu a Ktoru, integrace s Delivery Hero a XML feedy produktů.",
@@ -67,7 +67,7 @@ val experience = listOf(
         chips = listOf(Translated("2022 — 2023", "2022 — 2023")),
     ),
     Column(
-        icon = "point_of_sale",
+        icon = "logo_dami",
         title = Translated("DAMI development", "DAMI development"),
         text = Translated(
             "Jako Android lead jsem vedl tým tří vývojářů – pokladní systém, sklad, správa domů i logistika.",
@@ -76,16 +76,16 @@ val experience = listOf(
         chips = listOf(Translated("2019 — 2023", "2019 — 2023")),
     ),
     Column(
-        icon = "smartphone",
+        icon = "logo_mobilesoft",
         title = Translated("MobileSoft", "MobileSoft"),
         text = Translated(
             "Tři roky Android aplikací pro klienty mobilní agentury – AppBlock, aplikace pro realitní makléře, chat i pivovary.",
-            "Three years of Android apps for a mobile agency's clients – AppBlock, an app for estate agents, a chat and breweries.",
+            "Three years of Android apps for a mobile agency's clients – AppBlock, an app for estate agents, a chat app and breweries.",
         ),
         chips = listOf(Translated("2016 — 2019", "2016 — 2019")),
     ),
     Column(
-        icon = "precision_manufacturing",
+        icon = "logo_ihmc",
         title = Translated("IHMC Robotics", "IHMC Robotics"),
         text = Translated(
             "Výzkumná stáž na Floridě – Android aplikace na sběr dat ze senzorů telefonu a jejich streaming po LAN.",
@@ -94,7 +94,7 @@ val experience = listOf(
         chips = listOf(Translated("2016", "2016")),
     ),
     Column(
-        icon = "desktop_windows",
+        icon = "logo_veba",
         title = Translated("VEBA", "VEBA"),
         text = Translated(
             "Moje první práce v IT – začínal jsem jako technik a postupně přešel k desktopovým databázovým aplikacím v Javě.",
@@ -105,11 +105,11 @@ val experience = listOf(
 )
 
 val educationRows = listOf(
-    EducationRow("2021 — 2023", "Univerzita Hradec Králové", Translated("Ing. et Ing. — Data Science, s vyznamenáním", "Ing. et Ing. — Data Science, with honors")),
+    EducationRow("2021 — 2023", "Univerzita Hradec Králové", Translated("Ing. et Ing. — Data Science, s vyznamenáním", "Ing. et Ing. — Data Science, with honours")),
     EducationRow("2018 — 2019", "Univerzita Hradec Králové", Translated("Doktorské studium a výuka", "Doctoral studies & teaching")),
-    EducationRow("2017", "Huawei Seeds for the Future", Translated("Stáž v laboratořích Huawei v Číně", "Trainee in Huawei labs in China")),
+    EducationRow("2017", "Huawei Seeds for the Future", Translated("Stáž v laboratořích Huawei v Číně", "Internship at Huawei labs in China")),
     EducationRow("2017", "Chang Jung Christian University", Translated("Letní škola na Tchaj-wanu", "Summer school in Taiwan")),
     EducationRow("2016", "IHMC Robotics", Translated("Vývoj pro Android na Floridě", "Android development in Florida")),
     EducationRow("2016", "City University of Hong Kong", Translated("Vývoj pro Android v Hongkongu", "Android development in Hong Kong")),
-    EducationRow("2013 — 2018", "Univerzita Hradec Králové", Translated("Bc. a Ing. — Aplikovaná informatika, s vyznamenáním", "Bc. & Ing. — Applied informatics, with honors")),
+    EducationRow("2013 — 2018", "Univerzita Hradec Králové", Translated("Bc. a Ing. — Aplikovaná informatika, s vyznamenáním", "Bc. & Ing. — Applied Informatics, with honours")),
 )

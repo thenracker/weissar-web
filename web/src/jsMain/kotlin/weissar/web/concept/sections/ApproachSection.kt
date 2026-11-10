@@ -20,14 +20,14 @@ fun ApproachSection() {
             Reveal(1) {
                 DisplayTitle(
                     tr("Vývojář, analytik", "Developer, analyst"),
-                    tr("i konzultant v jednom.", "and consultant in one."),
+                    tr("i konzultant v jednom.", "and consultant, all in one."),
                 )
             }
             Reveal(2) {
                 P({ classes(AppStyles.lead) }) {
                     Text(
                         tr(
-                            "Na projektech většinou nedělám jen jednu roli. Projdu s vámi zadání, navrhnu obrazovky, napíšu aplikaci i server, se kterým komunikuje – a když je potřeba, převezmu i projekt rozjetý po někom jiném.",
+                            "Na projektech většinou nemám jen jednu roli. Projdu s vámi zadání, navrhnu obrazovky, napíšu aplikaci i server, se kterým komunikuje – a když je potřeba, převezmu i projekt, který rozjel někdo jiný.",
                             "On most projects I don't stick to a single role. I go through the brief with you, design the screens, write the app and the server it talks to – and if needed, take over a project someone else started.",
                         ),
                     )

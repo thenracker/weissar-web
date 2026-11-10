@@ -31,7 +31,7 @@ fun EducationSection() {
                 P({ classes(AppStyles.lead) }) {
                     Text(
                         tr(
-                            "Aplikovaná informatika a datová věda na Univerzitě Hradec Králové, k tomu Android vývoj na Floridě a stáže a letní školy v Hongkongu, na Tchaj-wanu a v Číně.",
+                            "Aplikovaná informatika a datová věda na Univerzitě Hradec Králové, k tomu vývoj pro Android na Floridě a stáže a letní školy v Hongkongu, na Tchaj-wanu a v Číně.",
                             "Applied informatics and data science at the University of Hradec Králové, plus Android development in Florida and internships and summer schools in Hong Kong, Taiwan and China.",
                         ),
                     )

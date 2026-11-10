@@ -26,7 +26,7 @@ fun ProductsSection() {
                 number = "02",
                 eyebrow = tr("Vlastní projekty", "My own projects"),
                 first = tr("Moje aplikace,", "My apps,"),
-                second = tr("od nápadu po tisíce uživatelů.", "from an idea to thousands of users."),
+                second = tr("od nápadu po tisíce uživatelů.", "from idea to thousands of users."),
             )
         }
 
@@ -37,11 +37,11 @@ fun ProductsSection() {
             title = "Svatebka",
             description = tr(
                 "Svatební web a aplikace pro hosty. Všechno, co hosté potřebují vědět, a fotky z celého dne na jednom místě.",
-                "Wedding website & guest app. Everything the guests need to know and photos from the whole day in one place.",
+                "Wedding website & guest app. Everything guests need to know and photos from the whole day in one place.",
             ),
             points = listOf(
                 tr("Program, mapa a kontakty na webu bez instalace", "Programme, map & contacts on the web, no install needed"),
-                tr("Galerie od hostů v plné kvalitě", "Guests' gallery in full quality"),
+                tr("Galerie od hostů v plné kvalitě", "Guest photo gallery in full quality"),
                 tr("Svatební soutěž a kvíz o novomanželích", "Wedding challenges & a quiz about the couple"),
             ),
             chips = listOf("Android", "iOS", "Web", "Firebase"),
@@ -55,12 +55,12 @@ fun ProductsSection() {
             since = tr("od roku 2016", "since 2016"),
             title = "Univerzita",
             description = tr(
-                "Celé studium v jedné aplikaci. Začalo to hledáním volných učeben na UHK, dnes ji používá přes 27 000 studentů z 15+ vysokých škol.",
-                "Your entire degree in one app. It started as a way to find free classrooms at UHK, today 27,000+ students from 15+ universities use it.",
+                "Celé studium v jedné aplikaci. Začalo to hledáním volných učeben na UHK, dnes ji používá přes 27 000 studentů z více než 15 vysokých škol.",
+                "Your entire degree in one app. It started as a way to find free classrooms at UHK; today 27,000+ students from 15+ universities use it.",
             ),
             points = listOf(
                 tr("Rozvrh jako seznam, tabulka, agenda i widget", "Timetable as a list, table, agenda or widget"),
-                tr("Zápis na zkoušky včetně čekací fronty", "Exam sign-ups incl. a waiting list"),
+                tr("Zápis na zkoušky včetně čekací fronty", "Exam sign-ups, including a waiting list"),
                 tr("Upozornění na nové známky a termíny", "Alerts for new marks and exam dates"),
             ),
             chips = listOf("Kotlin", "Android", tr("Rozvrhy", "Timetables"), tr("Notifikace", "Notifications")),

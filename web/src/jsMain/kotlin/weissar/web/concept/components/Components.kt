@@ -99,7 +99,11 @@ fun ArrowList(items: List<String>) {
 /** Material 3 cookie with an icon, used above the columns. */
 @Composable
 fun Cookie(icon: String) {
-    Div({ classes(AppStyles.cookie) }) { MaterialIcon(icon) }
+    Div({
+        classes(AppStyles.cookie)
+        // Company logos have more detail than Material icons
+        if (icon.startsWith("logo_")) classes(AppStyles.cookieLogo)
+    }) { MaterialIcon(icon) }
 }
 
 /** Tech names scrolling sideways forever, rendered twice so the loop has no seam. */

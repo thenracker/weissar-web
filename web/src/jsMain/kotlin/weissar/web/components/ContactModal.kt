@@ -80,7 +80,7 @@ fun ContactModal(onClose: () -> Unit) {
             })
 
             Label(forId = "contact-email", attrs = { classes(AppStyles.formLabel) }) {
-                Text(tr("Váš e-mail (nepovinné)", "Your e-mail (optional)"))
+                Text(tr("Váš e-mail (nepovinné)", "Your email (optional)"))
             }
             Input(InputType.Email, attrs = {
                 id("contact-email")

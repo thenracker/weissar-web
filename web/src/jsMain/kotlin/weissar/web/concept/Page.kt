@@ -9,6 +9,7 @@ import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Main
 import weissar.web.components.ContactModal
+import weissar.web.concept.components.LanguageTransition
 import weissar.web.concept.components.Marquee
 import weissar.web.concept.data.technologies
 import weissar.web.concept.sections.ApproachSection
@@ -28,6 +29,8 @@ fun Page() {
     // AppStyles for the shared contact modal
     Style(LegacyStyles)
     Style(AppStyles)
+
+    LanguageTransition()
 
     var contactOpen by remember { mutableStateOf(false) }
     val openContact = { contactOpen = true }

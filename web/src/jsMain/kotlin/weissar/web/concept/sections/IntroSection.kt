@@ -55,7 +55,7 @@ fun IntroSection(onContact: () -> Unit) {
                 Reveal(3) {
                     Div({ classes(AppStyles.actions) }) {
                         A(href = "#projekty", attrs = { classes(AppStyles.button) }) {
-                            Text(tr("Prohlédnout projekty", "See the projects"))
+                            Text(tr("Prohlédnout projekty", "See my projects"))
                         }
                         Button({
                             classes(AppStyles.textButton)

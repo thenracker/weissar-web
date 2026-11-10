@@ -347,6 +347,10 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("transition", "transform .6s cubic-bezier(.34, 1.56, .64, 1)")
     }
 
+    val cookieLogo by style {
+        property("font-size", "28px")
+    }
+
     /** Text grows, so the chips of all columns in a row sit on one bottom line. */
     val column by style {
         property("display", "flex")
