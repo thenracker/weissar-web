@@ -1,9 +1,11 @@
 package weissar.web
 
+import kotlinx.browser.window
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
 import weissar.web.components.LanguageSwitch
 import weissar.web.components.SectionDots
+import weissar.web.concept.Page
 import weissar.web.sections.ContactSection
 import weissar.web.sections.EducationSection
 import weissar.web.sections.IntroSection
@@ -15,6 +17,12 @@ import weissar.web.sections.UniverzitaSection
 import weissar.web.theme.AppStyles
 
 fun main() {
+    // New design in progress, served from resources/concept/index.html
+    if (window.location.pathname.trimEnd('/') == "/concept") {
+        renderComposable(rootElementId = "root") { Page() }
+        return
+    }
+
     renderComposable(rootElementId = "root") {
         Style(AppStyles)
 

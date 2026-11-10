@@ -16,7 +16,9 @@ web/                          # Frontend – Compose HTML, kompiluje se do web.j
     sections/                 # jednotlivé sekce stránky (Intro, Skills, MoreSkills, Svatebka, Univerzita, Projects, Education, Contact)
     data/Projects.kt          # karty v sekci „Spolupracoval jsem na“
     i18n/Localization.kt      # přepínání CZ / EN, texty se píšou jako tr("česky", "anglicky")
+    concept/                  # nový design na /concept – stejná struktura (theme, components, sections, data)
   src/jsMain/resources/       # index.html, obrázky, svg, statické html stránky
+    concept/                  # index.html konceptu, Material Symbols ikony, dekorace
 server/                       # Ktor server – servíruje zbuildovaný web + /health
 Dockerfile                    # build + běh serveru v kontejneru
 ```
