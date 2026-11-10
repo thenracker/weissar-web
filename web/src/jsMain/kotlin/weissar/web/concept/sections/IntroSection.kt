@@ -23,7 +23,7 @@ fun IntroSection(onContact: () -> Unit) {
             Div({ classes(AppStyles.introText) }) {
                 Reveal(0) {
                     P({ classes(AppStyles.badge) }) {
-                        Span({ classes(AppStyles.badgeDot) }) { Span({ classes(AppStyles.dot, AppStyles.pulse) }) }
+                        Span({ classes(AppStyles.dot, AppStyles.pulse) })
                         TypedTitles(
                             titles = listOf(
                                 tr("Senior Android vývojář", "Senior Android developer"),

@@ -1,11 +1,13 @@
 package weissar.web.concept.sections
 
 import androidx.compose.runtime.Composable
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import weissar.web.components.AnimatedLogo
 import weissar.web.concept.components.MaterialIcon
 import weissar.web.concept.components.Observed
 import weissar.web.concept.components.Reveal
@@ -29,20 +31,27 @@ fun ContactSection(onContact: () -> Unit) {
                             Text(tr("Napište mi", "Get in touch"))
                             MaterialIcon("arrow_forward", AppStyles.buttonIcon)
                         }
+                        A(href = "https://www.linkedin.com/in/weissar-petr/", attrs = {
+                            classes(AppStyles.textButton)
+                            attr("target", "_blank")
+                            attr("rel", "noopener")
+                        }) {
+                            Text("LinkedIn")
+                            MaterialIcon("arrow_forward", AppStyles.buttonIcon)
+                        }
                     }
                 }
             }
             Div({
                 classes(AppStyles.watermark)
                 attr("aria-hidden", "true")
-            })
+            }) {
+                AnimatedLogo(color = "currentColor", loop = true)
+            }
         }
         Div({ classes(AppStyles.footer) }) {
-            Button({
-                classes(AppStyles.footerLink)
-                onClick { onContact() }
-            }) { Text(tr("Napsat zprávu", "Send a message")) }
-            Span({ classes(AppStyles.footerLink) }) { Text("Pardubice · Hradec Králové · Praha") }
+            Span { Text("Pardubice · Hradec Králové · Praha") }
+            Span { Text("Made with love in Compose Web") }
         }
     }
 }

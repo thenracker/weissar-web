@@ -33,9 +33,12 @@ fun Page() {
     val openContact = { contactOpen = true }
 
     Div({ classes(AppStyles.page) }) {
-        Header(openContact)
-        Main {
+        // Header and intro fill the first screen exactly
+        Div({ classes(AppStyles.hero) }) {
+            Header(openContact)
             IntroSection(openContact)
+        }
+        Main {
             Marquee(technologies)
             Div({ style { property("height", "clamp(24px, 3vw, 40px)") } })
             ApproachSection()

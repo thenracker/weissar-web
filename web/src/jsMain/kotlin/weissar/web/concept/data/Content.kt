@@ -75,6 +75,33 @@ val experience = listOf(
         ),
         chips = listOf(Translated("2019 — 2023", "2019 — 2023")),
     ),
+    Column(
+        icon = "smartphone",
+        title = Translated("MobileSoft", "MobileSoft"),
+        text = Translated(
+            "Tři roky Android aplikací pro klienty mobilní agentury – AppBlock, aplikace pro realitní makléře, chat i pivovary.",
+            "Three years of Android apps for a mobile agency's clients – AppBlock, an app for estate agents, a chat and breweries.",
+        ),
+        chips = listOf(Translated("2016 — 2019", "2016 — 2019")),
+    ),
+    Column(
+        icon = "precision_manufacturing",
+        title = Translated("IHMC Robotics", "IHMC Robotics"),
+        text = Translated(
+            "Výzkumná stáž na Floridě – Android aplikace na sběr dat ze senzorů telefonu a jejich streaming po LAN.",
+            "Research internship in Florida – an Android app collecting phone sensor data and streaming it over LAN.",
+        ),
+        chips = listOf(Translated("2016", "2016")),
+    ),
+    Column(
+        icon = "desktop_windows",
+        title = Translated("VEBA", "VEBA"),
+        text = Translated(
+            "Moje první práce v IT – začínal jsem jako technik a postupně přešel k desktopovým databázovým aplikacím v Javě.",
+            "My first job in IT – I started as a technician and moved on to desktop database apps in Java.",
+        ),
+        chips = listOf(Translated("2011 — 2015", "2011 — 2015")),
+    ),
 )
 
 val educationRows = listOf(

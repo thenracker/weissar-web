@@ -7,6 +7,7 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Nav
 import org.jetbrains.compose.web.dom.Text
 import weissar.web.components.AnimatedLogo
+import weissar.web.components.LanguageSwitch
 import weissar.web.concept.components.MaterialIcon
 import weissar.web.concept.theme.Colors
 import weissar.web.concept.theme.AppStyles
@@ -31,13 +32,18 @@ fun Header(onContact: () -> Unit) {
             A(href = "#expertiza", attrs = { classes(AppStyles.navLink) }) { Text(tr("Co dělám", "What I do")) }
             A(href = "#zkusenosti", attrs = { classes(AppStyles.navLink) }) { Text(tr("Zkušenosti", "Experience")) }
         }
-        Button({
-            classes(AppStyles.button, AppStyles.navCta, AppStyles.reveal)
+        Div({
+            classes(AppStyles.navEnd, AppStyles.reveal)
             style { property("--d", "1") }
-            onClick { onContact() }
         }) {
-            Text(tr("Napište mi", "Get in touch"))
-            MaterialIcon("arrow_forward", AppStyles.buttonIcon)
+            LanguageSwitch()
+            Button({
+                classes(AppStyles.button)
+                onClick { onContact() }
+            }) {
+                Text(tr("Napište mi", "Get in touch"))
+                MaterialIcon("arrow_forward", AppStyles.buttonIcon)
+            }
         }
     }
 }

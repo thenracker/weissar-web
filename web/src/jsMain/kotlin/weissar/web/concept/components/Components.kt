@@ -111,7 +111,8 @@ fun Marquee(items: List<String>) {
         attr("role", "img")
     }) {
         Div({ classes(AppStyles.marqueeTrack) }) {
-            repeat(2) {
+            // Two identical halves for a seamless loop, each wider than the widest page
+            repeat(4) {
                 items.forEach { item ->
                     Span({
                         classes(AppStyles.marqueeItem)

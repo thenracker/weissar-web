@@ -20,8 +20,8 @@ fun ExperienceSection() {
                 second = tr("i agenturní zakázky.", "and agency work."),
                 accentFirst = true,
                 note = tr(
-                    "V IT od roku 2011 – začínal jsem desktopovými aplikacemi v Javě, pak přišly tři roky v mobilní agentuře, vedení Android týmu a dnes mobilní bankovnictví.",
-                    "In IT since 2011 – I started with desktop apps in Java, then three years at a mobile agency, leading an Android team and now mobile banking.",
+                    "V IT od roku 2011 – od desktopových aplikací v Javě přes mobilní agenturu a vedení Android týmu až po mobilní bankovnictví.",
+                    "In IT since 2011 – from desktop apps in Java through a mobile agency and leading an Android team to mobile banking.",
                 ),
             )
             Columns(experience)

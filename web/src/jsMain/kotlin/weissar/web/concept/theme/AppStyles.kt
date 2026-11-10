@@ -17,6 +17,8 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     private const val TABLET = "(max-width: 1000px)"
     private const val PHONE = "(max-width: 640px)"
 
+    private const val MAX_WIDTH = "1600px"
+
     private const val SERIF = "'Source Serif 4', Georgia, serif"
     private const val SANS = "Inter, system-ui, sans-serif"
 
@@ -40,6 +42,9 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("--pad", "clamp(20px, 5vw, 64px)")
         property("--inset", "clamp(10px, 2.8vw, 36px)")
         property("min-height", "100vh")
+        // Wider than a 15" laptop, the whole page stays centered with the background around
+        property("padding-left", "max(0px, calc((100% - ${MAX_WIDTH}) / 2))")
+        property("padding-right", "max(0px, calc((100% - ${MAX_WIDTH}) / 2))")
         property("overflow-x", "clip")
         backgroundColor(Colors.background)
         color(Colors.text)
@@ -95,6 +100,11 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         backgroundColor(Colors.surface)
         property("overflow", "hidden")
         property("scroll-margin-top", "24px")
+    }
+
+    init {
+        // Ends with a card, the next section's top padding is enough
+        ".$block:has(> .$card:last-child)" style { property("padding-bottom", "0") }
     }
 
     val cardContent by style {
@@ -210,8 +220,23 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("transition", "color .2s ease")
     }
 
-    val navCta by style {
+    /** Language flags (shared with the old page) and the contact button. */
+    val navEnd by style {
         property("justify-self", "end")
+        property("display", "flex")
+        property("align-items", "center")
+        property("gap", "clamp(12px, 1.6vw, 24px)")
+    }
+
+    init {
+        // Fixed in the corner on the old page, here part of the header
+        ".$navEnd .${LegacyStyles.languageSwitch}" style { property("position", "static") }
+        media(PHONE) {
+            ".$navEnd .${LegacyStyles.flag} img" style {
+                property("width", "24px")
+                property("height", "16px")
+            }
+        }
     }
 
     init {
@@ -380,13 +405,30 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
 
     // region Intro
 
+    /** Header and intro, exactly one screen high (more only if the content doesn't fit). */
+    val hero by style {
+        property("display", "flex")
+        property("flex-direction", "column")
+        property("min-height", "100svh")
+    }
+
+    init {
+        ".$hero > :last-child" style {
+            property("flex", "1")
+            property("display", "flex")
+            property("align-items", "center")
+            property("width", "100%")
+            property("box-sizing", "border-box")
+        }
+    }
+
     val intro by style {
         property("display", "grid")
         property("grid-template-columns", "1.15fr 1fr")
         property("align-items", "center")
         property("gap", "48px")
-        property("padding-top", "clamp(40px, 7vw, 100px)")
-        property("padding-bottom", "clamp(64px, 9vw, 120px)")
+        property("width", "100%")
+        property("padding", "min(4vw, 6svh, 64px) 0")
     }
 
     val introText by style {
@@ -396,7 +438,6 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
     val badge by style {
         property("display", "inline-flex")
         property("align-items", "center")
-        property("flex-wrap", "wrap")
         property("gap", "10px")
         property("font-size", "13px")
         color(Colors.textSecondary)
@@ -408,17 +449,9 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         color(Colors.text)
     }
 
-    /** Lime dot in a dark circle. */
-    val badgeDot by style {
-        property("display", "grid")
-        property("place-items", "center")
-        property("width", "26px")
-        property("height", "26px")
-        property("border-radius", "50%")
-        backgroundColor(Colors.chip)
-    }
-
     val dot by style {
+        property("flex-shrink", "0")
+        property("margin", "0 4px")
         property("width", "8px")
         property("height", "8px")
         property("border-radius", "50%")
@@ -453,7 +486,9 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
 
     val visual by style {
         property("position", "relative")
-        property("width", "min(100%, 500px)")
+        // Shrinks on low screens so the intro still fits in one
+        property("width", "min(100%, 500px, calc(100svh - 300px))")
+        property("min-width", "min(100%, 280px)")
         property("justify-self", "center")
         property("padding", "24px 0")
     }
@@ -486,6 +521,51 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         media(TABLET) {
             ".$intro" style { property("grid-template-columns", "1fr") }
             ".$introText" style { property("padding-left", "0") }
+        }
+    }
+
+    // endregion
+
+    // region Contact modal
+
+    init {
+        // Shared ContactModal is styled for the old light page, rendered inside .page here
+        ".$page .${LegacyStyles.modalBackdrop}" style { property("background-color", "rgba(8, 6, 6, .6)") }
+        ".$page .${LegacyStyles.modal}" style {
+            backgroundColor(Colors.surface)
+            property("border", "1px solid ${Colors.divider}")
+            property("border-radius", "26px")
+            property("box-shadow", "0 30px 80px rgba(0, 0, 0, .5)")
+        }
+        ".$page .${LegacyStyles.modalClose}" style {
+            backgroundColor(Colors.chip)
+            color(Colors.text)
+        }
+        ".$page .${LegacyStyles.modalTitle}" style {
+            property("font-family", SERIF)
+            color(Colors.text)
+        }
+        ".$page .${LegacyStyles.modalText}" style { color(Colors.textSecondary) }
+        ".$page .${LegacyStyles.formLabel}" style { color(Colors.textTertiary) }
+        ".$page .${LegacyStyles.formInput}" style {
+            backgroundColor(Colors.background)
+            color(Colors.text)
+        }
+        ".$page .${LegacyStyles.formInput}:focus" style {
+            backgroundColor(Colors.background)
+            property("border-color", "${Colors.accent}")
+        }
+        ".$page .${LegacyStyles.formInput}::placeholder" style { color(Colors.textTertiary) }
+        ".$page .${LegacyStyles.formError}" style { color(Colors.accent) }
+        ".$page .${LegacyStyles.formSubmit}" style {
+            backgroundColor(Colors.accent)
+            property("border-radius", "999px")
+        }
+        ".$page .${LegacyStyles.formSubmit}:hover" style { backgroundColor(Colors.accent) }
+        ".$page .${LegacyStyles.formSubmit} .${LegacyStyles.cardText}" style {
+            color(Colors.onAccent)
+            property("font-size", "15px")
+            property("font-weight", "700")
         }
     }
 
@@ -682,22 +762,23 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("grid-template-columns", "1fr 1fr")
         property("align-items", "center")
         property("gap", "40px")
-        property("padding", "clamp(80px, 10vw, 140px) clamp(0px, 2.5vw, 44px) clamp(48px, 6vw, 80px)")
+        property("padding", "clamp(64px, 9vw, 120px) clamp(0px, 2.5vw, 44px) clamp(48px, 6vw, 80px)")
     }
 
-    /** Big logo, the svg is a mask so its color can change on hover. */
+    /** Big logo looping dots <-> strokes like on the old site, drawn in currentColor so hover can change it. */
     val watermark by style {
         property("width", "min(100%, 440px)")
-        property("aspect-ratio", "2 / 1")
         property("justify-self", "center")
-        property("background-color", "currentColor")
-        property("-webkit-mask", "url(/pw-logo-white.svg) center / contain no-repeat")
-        property("mask", "url(/pw-logo-white.svg) center / contain no-repeat")
         color(Colors.watermark)
         property("transition", "color .6s ease")
     }
 
+    init {
+        ".$watermark .${LegacyStyles.logo}" style { property("width", "100%") }
+    }
+
     val footer by style {
+        color(Colors.textSecondary)
         property("display", "flex")
         property("flex-wrap", "wrap")
         property("justify-content", "space-between")
@@ -706,19 +787,8 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
         property("font-size", "15px")
     }
 
-    val footerLink by style {
-        property("padding", "0")
-        property("border", "none")
-        property("background", "none")
-        property("font-size", "inherit")
-        property("cursor", "pointer")
-        color(Colors.textSecondary)
-        property("transition", "color .2s ease")
-    }
-
     init {
         ".$contact:hover .$watermark" style { color(Colors.chip) }
-        ".$footerLink:hover" style { color(Colors.accent) }
         media(TABLET) {
             ".$contact" style { property("grid-template-columns", "1fr") }
             ".$watermark" style { property("display", "none") }

@@ -19,8 +19,8 @@ fun LanguageSwitch(lightSectionIds: Set<String> = emptySet()) {
         classes(AppStyles.languageSwitch)
         if (SectionObserver.activeSection in lightSectionIds) classes(AppStyles.languageSwitchDark)
     }) {
-        Flag(Language.CS, src = "flag-cs.svg", label = "Čeština")
-        Flag(Language.EN, src = "flag-en.svg", label = "English")
+        Flag(Language.CS, src = "/flag-cs.svg", label = "Čeština")
+        Flag(Language.EN, src = "/flag-en.svg", label = "English")
     }
 }
 
