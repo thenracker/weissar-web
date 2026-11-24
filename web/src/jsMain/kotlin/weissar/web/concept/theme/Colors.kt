@@ -30,4 +30,8 @@ object Colors {
     // Lectures in the app's timetable
     val univerzitaLight = Color("#CF9C87")
     val onUniverzita = Color("#FBE4EE")
+    // Red and butter yellow of the app icon
+    val popcorn = Color("#C62828")
+    val popcornLight = Color("#FFD54F")
+    val onPopcorn = Color("#FFF8E7")
 }

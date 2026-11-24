@@ -20,6 +20,7 @@ import weissar.web.concept.sections.Header
 import weissar.web.concept.sections.ExperienceSection
 import weissar.web.concept.sections.ExpertiseSection
 import weissar.web.concept.sections.ProductsSection
+import weissar.web.concept.sections.SideProjectsSection
 import weissar.web.concept.theme.AppStyles
 import weissar.web.theme.AppStyles as LegacyStyles
 
@@ -46,6 +47,7 @@ fun Page() {
             Div({ style { property("height", "clamp(24px, 3vw, 40px)") } })
             ApproachSection()
             ProductsSection()
+            SideProjectsSection()
             ExpertiseSection()
             Marquee(technologies)
             ExperienceSection()

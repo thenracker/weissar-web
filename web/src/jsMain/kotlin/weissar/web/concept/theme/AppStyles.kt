@@ -786,6 +786,132 @@ object AppStyles : StyleSheet(customPrefix = "concept-") {
 
     // endregion
 
+    // region Side projects
+
+    /** Smaller than [display], these come after the big products. */
+    val sideHeading by style {
+        property("font-family", SERIF)
+        property("font-weight", "700")
+        property("font-size", "clamp(28px, 2.6vw, 40px)")
+        property("line-height", "1.1")
+        property("letter-spacing", "-.01em")
+    }
+
+    /** As many cards in a row as fit, two of them share the row half and half. */
+    val sideGrid by style {
+        property("display", "grid")
+        property("grid-template-columns", "repeat(auto-fit, minmax(min(100%, 340px), 1fr))")
+        property("gap", "clamp(12px, 1.4vw, 20px)")
+        property("margin", "0 var(--inset)")
+    }
+
+    val sideCell by style {
+        property("display", "grid")
+    }
+
+    /** Glow of the app's color behind the phones. */
+    val sideCard by style {
+        property("position", "relative")
+        property("display", "flex")
+        property("flex-direction", "column")
+        property("align-items", "flex-start")
+        property("padding", "clamp(28px, 3.4vw, 48px) clamp(24px, 3.4vw, 48px) 0")
+        property("border-radius", "clamp(18px, 2vw, 26px)")
+        property(
+            "background",
+            "radial-gradient(90% 60% at 50% 100%, color-mix(in srgb, var(--brand, transparent) 28%, transparent), transparent 70%), ${Colors.surface}",
+        )
+        property("overflow", "hidden")
+    }
+
+    val sideTop by style {
+        property("display", "flex")
+        property("align-items", "center")
+        property("gap", "18px")
+    }
+
+    val sideIcon by style {
+        property("width", "clamp(52px, 4.6vw, 64px)")
+        property("height", "clamp(52px, 4.6vw, 64px)")
+        property("border-radius", "28%")
+        property("box-shadow", "0 8px 24px rgba(0, 0, 0, .35)")
+        property("transition", "transform .6s cubic-bezier(.34, 1.56, .64, 1)")
+    }
+
+    val sideMeta by style {
+        property("margin-bottom", "4px")
+    }
+
+    val sideTitle by style {
+        property("font-family", SERIF)
+        property("font-weight", "700")
+        property("font-size", "clamp(24px, 2.2vw, 32px)")
+        property("line-height", "1.15")
+        property("color", "var(--brand-light, ${Colors.text})")
+    }
+
+    val sideText by style {
+        property("margin-top", "20px")
+    }
+
+    val sideButton by style {
+        property("margin-top", "28px")
+        property("background-color", "var(--brand)")
+        property("color", "var(--on-brand)")
+    }
+
+    /** Two phones peeking out of the bottom edge of the card. */
+    val miniPhones by style {
+        property("position", "relative")
+        property("align-self", "stretch")
+        property("height", "clamp(220px, 19vw, 270px)")
+        property("margin-top", "36px")
+    }
+
+    val miniPhone by style {
+        property("width", "clamp(130px, 11vw, 156px)")
+        property("aspect-ratio", "9 / 20")
+    }
+
+    /** Waiting apps, just an outline without the surface. */
+    val sideSoon by style {
+        property("background", "none")
+        property("border", "1.5px dashed ${Colors.divider}")
+        property("padding-bottom", "clamp(28px, 3.4vw, 48px)")
+    }
+
+    init {
+        ".$block:has(> .$sideGrid:last-child)" style { property("padding-bottom", "0") }
+        ".$sideTitle a" style { property("color", "inherit") }
+        ".$sideCard .$chip" style {
+            property("background-color", "var(--brand)")
+            property("color", "var(--on-brand)")
+        }
+        ".$sideCard:hover .$sideIcon" style { property("transform", "rotate(-8deg) scale(1.06)") }
+        ".$sideButton:hover" style { property("box-shadow", "0 10px 28px color-mix(in srgb, var(--brand) 40%, transparent)") }
+        ".$sideSoon .$badge" style { property("margin-bottom", "20px") }
+        ".$sideSoon .$arrowList" style { property("margin-top", "12px") }
+
+        // More specific than the fanned product phones, which would otherwise apply here too
+        ".$miniPhones .$miniPhone:nth-child(1)" style {
+            property("left", "auto")
+            property("right", "calc(50% - 8px)")
+            property("top", "44px")
+            property("transform", "rotate(-9deg)")
+        }
+        ".$miniPhones .$miniPhone:nth-child(2)" style {
+            property("left", "calc(50% - 8px)")
+            property("right", "auto")
+            property("top", "12px")
+            property("z-index", "1")
+            property("transform", "rotate(7deg)")
+        }
+        ".$sideCard:hover .$miniPhone:nth-child(1)" style { property("transform", "rotate(-12deg) translate(-8px, -12px)") }
+        ".$sideCard:hover .$miniPhone:nth-child(2)" style { property("transform", "rotate(9deg) translate(8px, -16px)") }
+    }
+
+    // endregion
+
     // region Education
 
     val table by style {

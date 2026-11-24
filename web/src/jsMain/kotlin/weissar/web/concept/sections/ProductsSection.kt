@@ -73,7 +73,7 @@ fun ProductsSection() {
 }
 
 /** App's brand [color] for the chips, [light] variant readable as text on the dark card. */
-private class Brand(val color: CSSColorValue, val light: CSSColorValue, val onColor: CSSColorValue)
+internal class Brand(val color: CSSColorValue, val light: CSSColorValue, val onColor: CSSColorValue)
 
 @Composable
 private fun Product(
