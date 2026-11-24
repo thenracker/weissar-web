@@ -61,9 +61,9 @@
 
 <!-- ============================== ČESKY ============================== -->
 <article id="cs" lang="cs">
-    <p class="meta">Platné a účinné od 24. 11. 2026</p>
+    <p class="meta">Platné a účinné od 25. 11. 2026 (předchozí znění od 24. 11. 2026)</p>
 
-    <p class="summary"><strong>Stručně:</strong> hra nesbírá ani neodesílá žádné osobní údaje. Nastavení a statistiky her se ukládají jen ve vašem telefonu. Aplikace nemá přístup k internetu, neobsahuje reklamy ani sledování.</p>
+    <p class="summary"><strong>Stručně:</strong> hra proti počítači funguje bez internetu a nic neodesílá. Pro hru s kamarády online potřebujeme jen přezdívku, zvolené zvířátko a anonymní identifikátor – žádné jméno, e-mail ani registraci. Online stoly se samy mažou po 24 hodinách. Pády aplikace nám hlásí služba Firebase Crashlytics. Žádné reklamy ani sledování.</p>
 
     <nav class="toc">
         <ol>
@@ -84,18 +84,21 @@
     <h2 id="cs-podminky">2. Podmínky užití</h2>
     <h3>2.1 Co aplikace dělá</h3>
     <p>
-        Prší je karetní hra s 32 mariášovými kartami. Hrajete proti počítačovým soupeřům přímo v telefonu, s pravidly, která si můžete nastavit
-        podle sebe. Hra je jen pro zábavu – nehraje se o peníze ani o žádné výhry.
+        Prší je karetní hra s 32 mariášovými kartami. Hrajete proti počítačovým soupeřům přímo v telefonu, nebo s kamarády online u stolu,
+        ke kterému se připojí pomocí kódu. Pravidla si můžete nastavit podle sebe. Hra je jen pro zábavu – nehraje se o peníze ani o žádné výhry.
     </p>
     <h3>2.2 Cena</h3>
     <p>
-        Aplikace je zdarma, bez reklam a bez nákupů v aplikaci. Instalací a používáním aplikace souhlasíte s těmito podmínkami.
+        Aplikace je zdarma, bez reklam a bez nákupů v aplikaci. Online hra s kamarády je zdarma v omezeném počtu her denně (počítají se hry, které spustí zakladatel stolu;
+        připojit se k cizímu stolu lze vždy). Instalací a používáním aplikace souhlasíte s těmito podmínkami.
         Pokud v budoucnu přibudou volitelné placené doplňky (např. další balíčky karet), budou jasně označené a jejich nákup proběhne přes obchod
         Google Play za jeho podmínek; tyto zásady před tím aktualizujeme.
     </p>
     <h3>2.3 Odpovědnost</h3>
     <ul>
         <li>Aplikaci poskytujeme tak, jak je. Snažíme se, aby fungovala spolehlivě, ale nezaručujeme, že bude vždy bez chyb nebo dostupná na každém zařízení.</li>
+        <li>Online hra vyžaduje připojení k internetu a závisí na dostupnosti služeb Google Firebase. Hráči, který odejde nebo dlouho nehraje, může tah dohrát počítač.</li>
+        <li>Přezdívka nesmí být urážlivá, vulgární ani se vydávat za jinou osobu. Nevhodné přezdívky můžeme odmítnout nebo odstranit.</li>
         <li>Neodpovídáme za ztrátu statistik nebo nastavení uložených v telefonu (např. po odinstalování aplikace nebo smazání jejích dat). Tím nejsou dotčena práva spotřebitele, která nelze smluvně omezit, ani odpovědnost za škodu způsobenou úmyslně nebo z hrubé nedbalosti.</li>
     </ul>
     <h3>2.4 Duševní vlastnictví</h3>
@@ -108,54 +111,87 @@
     <h2 id="cs-soukromi">3. Ochrana osobních údajů</h2>
     <p>Správcem je provozovatel uvedený v článku 1. Zásady vycházejí z nařízení (EU) 2016/679 (GDPR) a zákona č. 110/2019 Sb.</p>
 
-    <h3>3.1 Jaké údaje zpracováváme</h3>
-    <p><strong>Žádné osobní údaje nesbíráme.</strong> Aplikace nemá účet ani přihlášení, nepoužívá analytiku, sledování ani reklamní identifikátory a nemá oprávnění k přístupu na internet, takže z telefonu nic neodesílá.</p>
-
-    <h3>3.2 Co se ukládá v telefonu</h3>
+    <h3>3.1 Hra proti počítači</h3>
     <p>
-        Aby si hra pamatovala vaše volby, ukládá <strong>jen ve vašem telefonu</strong> nastavení (pravidla, počet a obtížnost soupeřů, rychlost hry, vzhled,
-        zvolený balíček karet, zapnutí haptiky) a jednoduché statistiky (počet her, výher a sérii výher). Tyto údaje nikam neodcházejí a nemáme k nim přístup.
-        Systém Android je může zahrnout do zálohy vašeho zařízení u Googlu, pokud máte zálohování zapnuté.
+        Při hře proti počítači aplikace nic neodesílá. Aby si hra pamatovala vaše volby, ukládá <strong>jen ve vašem telefonu</strong> nastavení (pravidla, soupeře,
+        rychlost, vzhled, balíček karet, haptiku, nápovědu tahů), statistiky (počet her, výher a sérii) a vaši přezdívku se zvířátkem pro online hru.
+        K těmto údajům nemáme přístup. Systém Android je může zahrnout do zálohy vašeho zařízení u Googlu, pokud máte zálohování zapnuté.
     </p>
 
-    <h3>3.3 Oprávnění zařízení</h3>
+    <h3>3.2 Online hra s kamarády</h3>
+    <p>Pokud otevřete „S kamarády“, zpracováváme:</p>
     <ul>
-        <li><strong>Vibrace</strong> – jen pro jemnou hmatovou odezvu při hraní karet. Můžete ji vypnout v nastavení hry. Nejde o přístup k žádným údajům.</li>
+        <li><strong>Anonymní identifikátor</strong> – aplikace se při první online hře automaticky přihlásí bez jména, e-mailu či hesla (anonymní účet Firebase Authentication). Identifikátor slouží k tomu, abychom poznali vaše místo u stolu a počítali denní limit her.</li>
+        <li><strong>Přezdívku a zvolené zvířátko</strong> – uvidí je ostatní hráči u stejného stolu.</li>
+        <li><strong>Průběh online hry</strong> – kód stolu, pravidla stolu, kdo u něj sedí, odehrané tahy a karty. Karty v ruce vidí jen jejich držitel a zakladatel stolu, jehož telefon hru řídí.</li>
+        <li><strong>Počet spuštěných online her</strong> za den a měsíc – kvůli limitu her zdarma.</li>
+        <li><strong>Hlas „Kamarád má iPhone“</strong> – pokud ho odešlete: počet kamarádů a zda chcete dát vědět o verzi pro iPhone. Pomáhá nám rozhodnout, zda vyvíjet verzi pro iOS.</li>
+    </ul>
+    <p>
+        Právním základem je plnění smlouvy, tedy poskytnutí online hry, o kterou žádáte (čl. 6 odst. 1 písm. b GDPR), a u limitu her a hlasu o iPhonu
+        náš oprávněný zájem na férovém provozu a rozvoji hry (čl. 6 odst. 1 písm. f GDPR).
+    </p>
+
+    <h3>3.3 Hlášení pádů</h3>
+    <p>
+        Když aplikace spadne, služba <strong>Firebase Crashlytics</strong> nám pošle technickou zprávu: popis chyby, model zařízení, verzi systému a aplikace
+        a náhodný identifikátor instalace. Zpráva neobsahuje vaši přezdívku ani obsah hry a slouží jen k opravám chyb (oprávněný zájem, čl. 6 odst. 1 písm. f GDPR).
+    </p>
+
+    <h3>3.4 Oprávnění zařízení</h3>
+    <ul>
+        <li><strong>Internet</strong> – pro online hru s kamarády a hlášení pádů. Hra proti počítači internet nepotřebuje.</li>
+        <li><strong>Vibrace</strong> – jen pro jemnou hmatovou odezvu při hraní karet. Můžete ji vypnout v nastavení hry.</li>
     </ul>
     <p>Jiná oprávnění (poloha, kontakty, mikrofon, fotoaparát, soubory apod.) aplikace nepožaduje.</p>
 
-    <h3>3.4 Komu údaje předáváme</h3>
-    <p>Nikomu. Údaje neprodáváme, nesdílíme a nepředáváme mimo EU, protože žádné nezískáváme.</p>
-    <p>Google Play, odkud aplikaci stahujete, může o instalaci a zařízení zpracovávat vlastní údaje podle <a href="https://policies.google.com/privacy">zásad ochrany soukromí Google</a>. Případné zprávy o pádech aplikace, které nám Google Play zpřístupní, obsahují jen technické údaje (např. model zařízení a verzi systému) bez vazby na vaši osobu.</p>
-
-    <h3>3.5 Uchovávání a smazání</h3>
-    <p>Nastavení a statistiky zůstávají v telefonu, dokud je nesmažete. Smažete je vymazáním dat aplikace v nastavení systému nebo odinstalováním aplikace.</p>
-
-    <h3>3.6 Vaše práva</h3>
+    <h3>3.5 Komu údaje předáváme</h3>
     <p>
-        Máte právo na přístup, opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Protože o vás žádné údaje nemáme, není zpravidla co vydat ani mazat;
-        s dotazem se ale můžete kdykoli obrátit na nás přes <a href="https://weissar.dev/#contact">kontaktní formulář</a>.
-        Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů (Pplk. Sochora 27, 170 00 Praha 7, <a href="https://uoou.gov.cz">uoou.gov.cz</a>).
+        Údaje neprodáváme ani nesdílíme pro reklamu. Online hru a hlášení pádů zajišťuje jako náš zpracovatel <strong>Google</strong> (Google Ireland Limited,
+        služby Firebase). Databáze online stolů a herní logika běží v datovém centru Googlu ve Frankfurtu (EU). Některé služby Firebase (přihlášení, Crashlytics)
+        mohou údaje zpracovávat i v USA; předání je zajištěno rámcem EU–USA pro ochranu osobních údajů (Data Privacy Framework) a standardními smluvními doložkami.
+        Více v <a href="https://firebase.google.com/support/privacy">zásadách Firebase</a>.
+    </p>
+    <p>Přezdívku a průběh hry vidí ostatní hráči u stejného stolu. Google Play, odkud aplikaci stahujete, zpracovává vlastní údaje podle <a href="https://policies.google.com/privacy">zásad ochrany soukromí Google</a>.</p>
+
+    <h3>3.6 Jak dlouho údaje uchováváme</h3>
+    <ul>
+        <li>Online stoly včetně tahů a karet se automaticky mažou <strong>do 24 hodin</strong> od poslední aktivity.</li>
+        <li>Počty spuštěných her uchováváme nejdéle 13 měsíců.</li>
+        <li>Hlasy „Kamarád má iPhone“ uchováváme do rozhodnutí o verzi pro iPhone, nejdéle 2 roky.</li>
+        <li>Zprávy o pádech Crashlytics uchovává 90 dní.</li>
+        <li>Anonymní účet zůstává, dokud aplikaci používáte; na požádání ho smažeme.</li>
+        <li>Údaje v telefonu smažete vymazáním dat aplikace nebo jejím odinstalováním.</li>
+    </ul>
+
+    <h3>3.7 Vaše práva</h3>
+    <p>
+        Máte právo na přístup, opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku proti zpracování na základě oprávněného zájmu.
+        Protože údaje nejsou spojené s vaším jménem ani e-mailem, napište nám přes <a href="https://weissar.dev/#contact">kontaktní formulář</a> svou přezdívku
+        a přibližný čas hry a pomůžeme vám. Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů (Pplk. Sochora 27, 170 00 Praha 7, <a href="https://uoou.gov.cz">uoou.gov.cz</a>).
     </p>
 
-    <h3>3.7 Děti</h3>
-    <p>Hra je vhodná pro všechny věkové kategorie. Nesbírá údaje o nikom, tedy ani o dětech, neobsahuje reklamy, nákupy ani komunikaci s jinými hráči.</p>
+    <h3>3.8 Děti</h3>
+    <p>
+        Hra je vhodná pro všechny věkové kategorie. Neobsahuje reklamy ani nákupy. Online hra nemá chat – hráči u stolu vidí jen přezdívku a zvířátko;
+        přezdívky automaticky filtrujeme. Doporučujeme, aby si mladší děti hrály online jen s kamarády, které znají.
+    </p>
 
     <h2 id="cs-zaver">4. Kontakt a změny</h2>
     <ul>
         <li>Dotazy, stížnosti a reklamace vyřizujeme přes <a href="https://weissar.dev/#contact">kontaktní formulář na weissar.dev</a>, zpravidla do 30 dní.</li>
         <li>Spotřebitel může využít mimosoudní řešení sporu u České obchodní inspekce (<a href="https://adr.coi.cz">adr.coi.cz</a>).</li>
         <li>Vztahy se řídí právem České republiky. Spotřebitele s bydlištěm v jiném státě EU to nezbavuje ochrany, kterou mu poskytují kogentní předpisy jeho státu.</li>
-        <li>Plánujeme přidat online hru s ostatními hráči. Než nová verze začne zpracovávat jakékoli údaje (např. přezdívku nebo průběh online hry), tyto zásady předem aktualizujeme a datum účinnosti uvedeme nahoře.</li>
+        <li>Pokud přidáme další funkce, které zpracovávají jiné údaje (např. žebříčky nebo předplatné), tyto zásady předem aktualizujeme a datum účinnosti uvedeme nahoře.</li>
         <li>Pokud se české a anglické znění liší, má přednost české znění.</li>
     </ul>
 </article>
 
 <!-- ============================== ENGLISH ============================== -->
 <article id="en" lang="en">
-    <p class="meta">Effective from 24 November 2026</p>
+    <p class="meta">Effective from 25 November 2026 (previous version from 24 November 2026)</p>
 
-    <p class="summary"><strong>In short:</strong> the game does not collect or send any personal data. Settings and game statistics are stored only on your phone. The app has no internet access, no ads and no tracking.</p>
+    <p class="summary"><strong>In short:</strong> playing against the computer works offline and sends nothing. To play online with friends we only need a nickname, the animal avatar you pick and an anonymous identifier – no name, e-mail or registration. Online tables delete themselves after 24 hours. Crashes are reported to us by Firebase Crashlytics. No ads, no tracking.</p>
 
     <nav class="toc">
         <ol>
@@ -177,17 +213,20 @@
     <h3>2.1 What the app does</h3>
     <p>
         Prší is a card game (a Czech variant of Mau-Mau) played with the 32-card German-suited pack. You play against computer opponents right on your phone,
-        with house rules you can set yourself. The game is for entertainment only – there is no gambling and nothing can be won.
+        or online with friends at a table they join with a code. You can set the house rules yourself. The game is for entertainment only – there is no gambling and nothing can be won.
     </p>
     <h3>2.2 Price</h3>
     <p>
-        The app is free, with no ads and no in-app purchases. By installing and using the app you agree to these terms.
+        The app is free, with no ads and no in-app purchases. Online play with friends is free for a limited number of games per day (games started by the table's host count;
+        joining someone else's table is always possible). By installing and using the app you agree to these terms.
         If optional paid add-ons (e.g. extra card packs) are added in the future, they will be clearly marked and purchased through Google Play under its terms;
         we will update this policy beforehand.
     </p>
     <h3>2.3 Liability</h3>
     <ul>
         <li>The app is provided as is. We aim for it to work reliably but do not guarantee it will always be error-free or available on every device.</li>
+        <li>Online play needs an internet connection and depends on the availability of Google Firebase services. The computer may play for a player who leaves or does not move for a long time.</li>
+        <li>Nicknames must not be offensive, vulgar or impersonate someone else. We may reject or remove inappropriate nicknames.</li>
         <li>We are not liable for the loss of statistics or settings stored on your phone (e.g. after uninstalling the app or clearing its data). This does not affect mandatory consumer rights or liability for damage caused intentionally or by gross negligence.</li>
     </ul>
     <h3>2.4 Intellectual property</h3>
@@ -200,45 +239,78 @@
     <h2 id="en-privacy">3. Privacy Policy</h2>
     <p>The controller is the operator named in section 1. This policy follows Regulation (EU) 2016/679 (GDPR) and Czech Act No. 110/2019 Coll.</p>
 
-    <h3>3.1 What data we process</h3>
-    <p><strong>We do not collect any personal data.</strong> The app has no account or sign-in, uses no analytics, tracking or advertising identifiers, and has no permission to access the internet, so it sends nothing from your phone.</p>
-
-    <h3>3.2 What is stored on your phone</h3>
+    <h3>3.1 Playing against the computer</h3>
     <p>
-        To remember your choices, the game stores <strong>only on your phone</strong> its settings (rules, number and difficulty of opponents, game speed, appearance,
-        selected card pack, haptics on/off) and simple statistics (games played, wins and win streak). This data never leaves your device and we have no access to it.
-        Android may include it in your device backup with Google if you have backup turned on.
+        When you play against the computer, the app sends nothing. To remember your choices, the game stores <strong>only on your phone</strong> its settings (rules, opponents,
+        speed, appearance, card pack, haptics, move hints), statistics (games, wins and streak) and your nickname and avatar for online play.
+        We have no access to this data. Android may include it in your device backup with Google if you have backup turned on.
     </p>
 
-    <h3>3.3 Device permissions</h3>
+    <h3>3.2 Online play with friends</h3>
+    <p>If you open “S kamarády” (With friends), we process:</p>
     <ul>
-        <li><strong>Vibration</strong> – only for subtle haptic feedback while playing cards. You can turn it off in the game settings. This does not access any data.</li>
+        <li><strong>An anonymous identifier</strong> – on your first online game the app signs in automatically without a name, e-mail or password (an anonymous Firebase Authentication account). It lets us recognise your seat at a table and count the daily game limit.</li>
+        <li><strong>Your nickname and chosen animal</strong> – shown to the other players at the same table.</li>
+        <li><strong>Online game progress</strong> – the table code, its rules, who sits there, moves and cards played. Cards in hand are visible only to their holder and to the table's host, whose phone runs the game.</li>
+        <li><strong>The number of online games started</strong> per day and month – for the free game limit.</li>
+        <li><strong>The “My friend has an iPhone” vote</strong> – if you send it: the number of friends and whether you want to hear about an iPhone version. It helps us decide whether to build an iOS version.</li>
+    </ul>
+    <p>
+        The legal basis is the performance of a contract, i.e. providing the online play you ask for (Art. 6(1)(b) GDPR), and for the game limit and the iPhone vote
+        our legitimate interest in fair operation and development of the game (Art. 6(1)(f) GDPR).
+    </p>
+
+    <h3>3.3 Crash reports</h3>
+    <p>
+        If the app crashes, <strong>Firebase Crashlytics</strong> sends us a technical report: the error, device model, OS and app version and a random installation
+        identifier. It contains neither your nickname nor game content and is used only to fix bugs (legitimate interest, Art. 6(1)(f) GDPR).
+    </p>
+
+    <h3>3.4 Device permissions</h3>
+    <ul>
+        <li><strong>Internet</strong> – for online play with friends and crash reports. Playing against the computer needs no internet.</li>
+        <li><strong>Vibration</strong> – only for subtle haptic feedback while playing cards. You can turn it off in the game settings.</li>
     </ul>
     <p>The app does not request any other permissions (location, contacts, microphone, camera, files, etc.).</p>
 
-    <h3>3.4 Who we share data with</h3>
-    <p>No one. We do not sell, share or transfer data outside the EU, because we do not obtain any.</p>
-    <p>Google Play, where you download the app, may process its own data about the installation and device under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. Any crash reports Google Play makes available to us contain only technical details (e.g. device model and OS version) that are not linked to you.</p>
-
-    <h3>3.5 Retention and deletion</h3>
-    <p>Settings and statistics stay on your phone until you delete them, either by clearing the app's data in system settings or by uninstalling the app.</p>
-
-    <h3>3.6 Your rights</h3>
+    <h3>3.5 Who we share data with</h3>
     <p>
-        You have the right of access, rectification, erasure, restriction of processing, data portability and the right to object. Since we hold no data about you, there is usually nothing to provide or delete,
-        but you can always contact us via the <a href="https://weissar.dev/#contact">contact form</a>.
-        You may also lodge a complaint with the Czech Office for Personal Data Protection (Pplk. Sochora 27, 170 00 Prague 7, <a href="https://uoou.gov.cz">uoou.gov.cz</a>) or the supervisory authority of your EU country.
+        We do not sell data or share it for advertising. Online play and crash reporting are provided by our processor <strong>Google</strong> (Google Ireland Limited,
+        Firebase services). The online table database and game logic run in Google's data centre in Frankfurt (EU). Some Firebase services (sign-in, Crashlytics)
+        may also process data in the USA; such transfers rely on the EU–US Data Privacy Framework and standard contractual clauses.
+        See the <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.
+    </p>
+    <p>Your nickname and game progress are visible to the other players at the same table. Google Play, where you download the app, processes its own data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+    <h3>3.6 Retention</h3>
+    <ul>
+        <li>Online tables, including moves and cards, are deleted automatically <strong>within 24 hours</strong> of the last activity.</li>
+        <li>Counts of games started are kept for at most 13 months.</li>
+        <li>“My friend has an iPhone” votes are kept until we decide on an iPhone version, at most 2 years.</li>
+        <li>Crashlytics keeps crash reports for 90 days.</li>
+        <li>The anonymous account remains while you use the app; we delete it on request.</li>
+        <li>You delete the data on your phone by clearing the app's data or uninstalling it.</li>
+    </ul>
+
+    <h3>3.7 Your rights</h3>
+    <p>
+        You have the right of access, rectification, erasure, restriction of processing, data portability and the right to object to processing based on legitimate interest.
+        Since the data is not linked to your name or e-mail, send us your nickname and the approximate time you played via the <a href="https://weissar.dev/#contact">contact form</a>
+        and we will help. You may also lodge a complaint with the Czech Office for Personal Data Protection (Pplk. Sochora 27, 170 00 Prague 7, <a href="https://uoou.gov.cz">uoou.gov.cz</a>) or the supervisory authority of your EU country.
     </p>
 
-    <h3>3.7 Children</h3>
-    <p>The game is suitable for all ages. It collects no data about anyone, including children, and contains no ads, purchases or communication with other players.</p>
+    <h3>3.8 Children</h3>
+    <p>
+        The game is suitable for all ages and has no ads or purchases. Online play has no chat – players at a table see only nicknames and animals;
+        nicknames are filtered automatically. We recommend that younger children play online only with friends they know.
+    </p>
 
     <h2 id="en-final">4. Contact and changes</h2>
     <ul>
         <li>We handle questions, complaints and claims via the <a href="https://weissar.dev/#contact">contact form at weissar.dev</a>, usually within 30 days.</li>
         <li>Consumers may use out-of-court dispute resolution at the Czech Trade Inspection Authority (<a href="https://adr.coi.cz/en">adr.coi.cz</a>).</li>
         <li>These terms are governed by Czech law. Consumers residing in another EU country keep the protection granted by the mandatory laws of their country.</li>
-        <li>We plan to add online play with other players. Before a new version starts processing any data (e.g. a nickname or online game progress), we will update this policy in advance and show the new effective date at the top.</li>
+        <li>If we add features that process other data (e.g. leaderboards or a subscription), we will update this policy in advance and show the new effective date at the top.</li>
         <li>If the Czech and English versions differ, the Czech version prevails.</li>
     </ul>
 </article>
