@@ -57,7 +57,21 @@ fun SideProjectsSection() {
                 link = "https://play.google.com/store/apps/details?id=cz.weissar.popcorn",
                 brand = Brand(Colors.popcorn, Colors.popcornLight, Colors.onPopcorn),
             )
-            ComingSoon(order = 3)
+            SideProject(
+                order = 3,
+                icon = "/apps/prsi.webp",
+                meta = tr("Android hra · 2026", "Android game · 2026"),
+                title = "Prší",
+                description = tr(
+                    "Klasické české Prší s mariášovými kartami. Proti botům i online s kamarády, s domácími pravidly a bez reklam.",
+                    "The classic Czech card game with traditional Czech cards. Against bots or online with friends, with house rules and no ads.",
+                ),
+                chips = listOf("Android", "Kotlin Multiplatform", "Firebase"),
+                screens = listOf("/screens/prsi-1.webp", "/screens/prsi-2.webp"),
+                link = "https://play.google.com/store/apps/details?id=cz.weissar.pony",
+                brand = Brand(Colors.prsi, Colors.prsiLight, Colors.onPrsi),
+            )
+            ComingSoon(order = 4)
         }
     }
 }
@@ -129,7 +143,6 @@ private fun ComingSoon(order: Int) {
             H3({ classes(AppStyles.sideTitle) }) { Text(tr("Další už se peče", "More in the oven")) }
             ArrowList(
                 listOf(
-                    tr("Prší – česká karetní klasika", "Prší – the classic Czech card game"),
                     tr("Flip a coin – když se nemůžete rozhodnout", "Flip a coin – for when you just can't decide"),
                 ),
             )

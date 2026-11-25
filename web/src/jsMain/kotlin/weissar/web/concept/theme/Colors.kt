@@ -34,4 +34,8 @@ object Colors {
     val popcorn = Color("#C62828")
     val popcornLight = Color("#FFD54F")
     val onPopcorn = Color("#FFF8E7")
+    // Green felt and the yellow "Hrát hned" button of the app
+    val prsi = Color("#2E7D57")
+    val prsiLight = Color("#FFC94D")
+    val onPrsi = Color("#FFFBF0")
 }
