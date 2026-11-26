@@ -61,9 +61,9 @@
 
 <!-- ============================== ČESKY ============================== -->
 <article id="cs" lang="cs">
-    <p class="meta">Platné a účinné od 25. 11. 2026 (předchozí znění od 24. 11. 2026)</p>
+    <p class="meta">Platné a účinné od 26. 11. 2026 (předchozí znění od 25. 11. 2026)</p>
 
-    <p class="summary"><strong>Stručně:</strong> hra proti počítači funguje bez internetu a nic neodesílá. Pro hru s kamarády online potřebujeme jen přezdívku, zvolené zvířátko a anonymní identifikátor – žádné jméno, e-mail ani registraci. Online stoly se samy mažou po 24 hodinách. Pády aplikace nám hlásí služba Firebase Crashlytics. Žádné reklamy ani sledování.</p>
+    <p class="summary"><strong>Stručně:</strong> hra proti počítači funguje bez internetu a nic neodesílá. Pro hru s kamarády online potřebujeme jen přezdívku, zvolené zvířátko a anonymní identifikátor – žádné jméno, e-mail ani registraci. Online stoly se samy mažou po 24 hodinách. Se spoluhráči se můžete zvát ke hře upozorněním, pokud to povolíte. Pády aplikace nám hlásí služba Firebase Crashlytics. Žádné reklamy ani sledování.</p>
 
     <nav class="toc">
         <ol>
@@ -125,6 +125,8 @@
         <li><strong>Přezdívku a zvolené zvířátko</strong> – uvidí je ostatní hráči u stejného stolu.</li>
         <li><strong>Průběh online hry</strong> – kód stolu, pravidla stolu, kdo u něj sedí, odehrané tahy a karty. Karty v ruce vidí jen jejich držitel a zakladatel stolu, jehož telefon hru řídí.</li>
         <li><strong>Počet spuštěných online her</strong> za den a měsíc – kvůli limitu her zdarma.</li>
+        <li><strong>Spoluhráče</strong> – s kým jste hráli online hru (jeho přezdívka, zvířátko, počet společných her a kdy naposledy), abyste se mohli navzájem pozvat ke hře. Seznam zapisuje jen server, kamaráda z něj můžete kdykoli odebrat a pak už se nemůžete zvát.</li>
+        <li><strong>Token pro upozornění</strong> (Firebase Cloud Messaging) – pokud povolíte upozornění, uložíme náhodný identifikátor zařízení, na který vám spoluhráč může poslat pozvánku. Pozvánky jde vypnout přepínačem „Pozvánky od spoluhráčů“ nebo v nastavení systému.</li>
         <li><strong>Hlas „Kamarád má iPhone“</strong> – pokud ho odešlete: počet kamarádů a zda chcete dát vědět o verzi pro iPhone. Pomáhá nám rozhodnout, zda vyvíjet verzi pro iOS.</li>
     </ul>
     <p>
@@ -141,6 +143,7 @@
     <h3>3.4 Oprávnění zařízení</h3>
     <ul>
         <li><strong>Internet</strong> – pro online hru s kamarády a hlášení pádů. Hra proti počítači internet nepotřebuje.</li>
+        <li><strong>Upozornění</strong> – jen pro pozvánky od spoluhráčů. Aplikace se zeptá až po první online hře a bez povolení funguje dál.</li>
         <li><strong>Vibrace</strong> – jen pro jemnou hmatovou odezvu při hraní karet. Můžete ji vypnout v nastavení hry.</li>
     </ul>
     <p>Jiná oprávnění (poloha, kontakty, mikrofon, fotoaparát, soubory apod.) aplikace nepožaduje.</p>
@@ -148,7 +151,7 @@
     <h3>3.5 Komu údaje předáváme</h3>
     <p>
         Údaje neprodáváme ani nesdílíme pro reklamu. Online hru a hlášení pádů zajišťuje jako náš zpracovatel <strong>Google</strong> (Google Ireland Limited,
-        služby Firebase). Databáze online stolů a herní logika běží v datovém centru Googlu ve Frankfurtu (EU). Některé služby Firebase (přihlášení, Crashlytics)
+        služby Firebase). Databáze online stolů a herní logika běží v datovém centru Googlu ve Frankfurtu (EU). Některé služby Firebase (přihlášení, upozornění, Crashlytics)
         mohou údaje zpracovávat i v USA; předání je zajištěno rámcem EU–USA pro ochranu osobních údajů (Data Privacy Framework) a standardními smluvními doložkami.
         Více v <a href="https://firebase.google.com/support/privacy">zásadách Firebase</a>.
     </p>
@@ -158,6 +161,8 @@
     <ul>
         <li>Online stoly včetně tahů a karet se automaticky mažou <strong>do 24 hodin</strong> od poslední aktivity.</li>
         <li>Počty spuštěných her uchováváme nejdéle 13 měsíců.</li>
+        <li>Spoluhráče mažeme 6 měsíců po vaší poslední společné hře, nebo hned, když je odeberete.</li>
+        <li>Token pro upozornění se maže 9 měsíců po posledním otevření online části, nebo když přestane platit (např. po odinstalaci).</li>
         <li>Hlasy „Kamarád má iPhone“ uchováváme do rozhodnutí o verzi pro iPhone, nejdéle 2 roky.</li>
         <li>Zprávy o pádech Crashlytics uchovává 90 dní.</li>
         <li>Anonymní účet zůstává, dokud aplikaci používáte; na požádání ho smažeme.</li>
@@ -189,9 +194,9 @@
 
 <!-- ============================== ENGLISH ============================== -->
 <article id="en" lang="en">
-    <p class="meta">Effective from 25 November 2026 (previous version from 24 November 2026)</p>
+    <p class="meta">Effective from 26 November 2026 (previous version from 25 November 2026)</p>
 
-    <p class="summary"><strong>In short:</strong> playing against the computer works offline and sends nothing. To play online with friends we only need a nickname, the animal avatar you pick and an anonymous identifier – no name, e-mail or registration. Online tables delete themselves after 24 hours. Crashes are reported to us by Firebase Crashlytics. No ads, no tracking.</p>
+    <p class="summary"><strong>In short:</strong> playing against the computer works offline and sends nothing. To play online with friends we only need a nickname, the animal avatar you pick and an anonymous identifier – no name, e-mail or registration. Online tables delete themselves after 24 hours. If you allow it, players you have played with can invite you by notification. Crashes are reported to us by Firebase Crashlytics. No ads, no tracking.</p>
 
     <nav class="toc">
         <ol>
@@ -253,6 +258,8 @@
         <li><strong>Your nickname and chosen animal</strong> – shown to the other players at the same table.</li>
         <li><strong>Online game progress</strong> – the table code, its rules, who sits there, moves and cards played. Cards in hand are visible only to their holder and to the table's host, whose phone runs the game.</li>
         <li><strong>The number of online games started</strong> per day and month – for the free game limit.</li>
+        <li><strong>Mates</strong> – who you played an online game with (their nickname, animal, number of games together and when you last played), so you can invite each other. Only the server writes this list; you can remove a mate at any time, after which neither of you can invite the other.</li>
+        <li><strong>A notification token</strong> (Firebase Cloud Messaging) – if you allow notifications, we store a random device identifier a mate can send an invite to. Turn invites off with the “Pozvánky od spoluhráčů” switch or in the system settings.</li>
         <li><strong>The “My friend has an iPhone” vote</strong> – if you send it: the number of friends and whether you want to hear about an iPhone version. It helps us decide whether to build an iOS version.</li>
     </ul>
     <p>
@@ -269,6 +276,7 @@
     <h3>3.4 Device permissions</h3>
     <ul>
         <li><strong>Internet</strong> – for online play with friends and crash reports. Playing against the computer needs no internet.</li>
+        <li><strong>Notifications</strong> – only for invites from mates. The app asks after your first online game and works fine without it.</li>
         <li><strong>Vibration</strong> – only for subtle haptic feedback while playing cards. You can turn it off in the game settings.</li>
     </ul>
     <p>The app does not request any other permissions (location, contacts, microphone, camera, files, etc.).</p>
@@ -276,7 +284,7 @@
     <h3>3.5 Who we share data with</h3>
     <p>
         We do not sell data or share it for advertising. Online play and crash reporting are provided by our processor <strong>Google</strong> (Google Ireland Limited,
-        Firebase services). The online table database and game logic run in Google's data centre in Frankfurt (EU). Some Firebase services (sign-in, Crashlytics)
+        Firebase services). The online table database and game logic run in Google's data centre in Frankfurt (EU). Some Firebase services (sign-in, notifications, Crashlytics)
         may also process data in the USA; such transfers rely on the EU–US Data Privacy Framework and standard contractual clauses.
         See the <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.
     </p>
@@ -286,6 +294,8 @@
     <ul>
         <li>Online tables, including moves and cards, are deleted automatically <strong>within 24 hours</strong> of the last activity.</li>
         <li>Counts of games started are kept for at most 13 months.</li>
+        <li>Mates are deleted 6 months after your last game together, or as soon as you remove them.</li>
+        <li>The notification token is deleted 9 months after you last opened the online part, or once it stops being valid (e.g. after uninstalling).</li>
         <li>“My friend has an iPhone” votes are kept until we decide on an iPhone version, at most 2 years.</li>
         <li>Crashlytics keeps crash reports for 90 days.</li>
         <li>The anonymous account remains while you use the app; we delete it on request.</li>
